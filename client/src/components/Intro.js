@@ -2,7 +2,7 @@ import React from 'react'
 import './Intro.css'
 function Intro() {
     return (
-        <div className="intro-main" id="about">
+        <div className="intro-main">
             <div className="container">
             <h2>Dear participants, I welcome you all to this program. </h2>
             <p>I, Ms Freyana Shinde am the developer of the program and currently a research scholar at the Amity Institute of Behavioural and Allied Sciences, Mumbai.
