@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Intro from './components/Intro';
@@ -20,6 +21,7 @@ function App() {
       
       <Home />
       <Intro />
+      
       <Hope />
        
     </div>
@@ -27,6 +29,3 @@ function App() {
 }
 
 export default App
-
-
-
