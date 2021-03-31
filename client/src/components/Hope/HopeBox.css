@@ -1,3 +1,87 @@
 .HopeBox-main{
-    background-color: #fdff80;
+    background-color: #f5f1bf;
+    padding-top: 70px;
+    padding-bottom: 120px;
 }
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .inputfile + label {
+    font-size: 1em;
+    font-weight: 400;
+    border-radius: 25px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    
+    font-weight: 800;
+    transition: 0.2s;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.Submit-btn{
+    text-align: center;
+    margin-left: 250px;
+    margin-top: 70px;
+    
+}
+p{
+    margin-left: 190px;
+    margin-right: 190px;
+}
+
+button{
+    padding: 10px;
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+button:hover{
+    background-color: teal;
+    border: 2px solid teal;
+    color: white;
+    transition: 0.4s;
+}
+
+ .box{
+     border: none;
+     padding: 60px;
+    width: 50%;
+    margin-left: 360px;
+    background-color: rgba(255, 255, 255, 0.5);
+ }
+
+ .list{
+   margin-right: 20px;
+ }

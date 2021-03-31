@@ -1,5 +1,9 @@
-
+h3{
+    padding-bottom: 80px;
+}
 .quiz-main{
-    background-color: #fcff4d;
+    background-color: #f5ee9f;
     margin-top: -8px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
