@@ -1,0 +1,19 @@
+*{
+    text-align: center;
+}
+.intro-main{
+    background-color: #f5e4f1;
+
+}
+.container{
+    padding-top:130px;
+    padding-bottom: 190px;
+}
+h2{   
+   padding:40px; 
+}
+p{
+    line-height: 200%;
+    margin-left: 60px;
+    margin-right: 60px;
+}
