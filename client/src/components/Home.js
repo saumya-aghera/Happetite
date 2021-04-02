@@ -1,5 +1,7 @@
 import React from 'react'
 import './Home.css'
+import Intro from '././Intro'
+import Hope from '././Modules/HopeModule'
 
 
 const Home=()=> {
@@ -15,6 +17,8 @@ const Home=()=> {
                 </div>
                 
             </div>
+            <Intro />
+            <Hope />
         </div>
         
     );
