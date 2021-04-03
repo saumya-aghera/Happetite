@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import './HopeBox.css'
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
-
+import axios from 'axios';
 
 function HopeBox() {
-    
+    const [hopebox, sethopebox] = useState({
+        list: '',
+        file: ''
+    });
+    const createhopebox = () => {
+        console.log(`Box submitted: `);
+          axios.post('http://localhost:5000/hopebox', hopebox)
+      }
     return (
         <>
             <div className="HopeBox-main">
@@ -24,17 +29,19 @@ function HopeBox() {
 
                 <div className="row">
                 <div className="column">
-                <div className="list"><TextField id="standard-secondary" label="List it down!" color="primary" /></div>
+                <div className="list"><TextField id="standard-secondary" label="List it down!" color="primary" value={hopebox.list} onChange={(event)=>{
+      sethopebox({ ...hopebox, list: event.target.value})}}/></div>
                 </div>
                 <div className="column">
                 <div className="file-input">
-                <input type="file" name="file" id="file" class="inputfile" />
-                    <label for="file">Choose A File</label>
+                <input type="file" name="file" id="file" class="inputfile" value={hopebox.file} onChange={(event)=>{
+      sethopebox({ ...hopebox, file: event.target.value})}}/>
+                    
   
                 </div>
                 </div>
                     <div className="Submit-btn">
-                        <button type="submit">
+                        <button type="submit" onClick={createhopebox}>
                         Submit
                         </button>
                     
