@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Switch, Route } from "react-router-dom";
+//import { useHistory as history, useLocation } from 'react-router-dom';
 import history from './History';
 import Auth from './components/Auth/Auth'
 import Home from './components/Home'

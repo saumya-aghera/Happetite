@@ -4,6 +4,9 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import history from '.././History'
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
+import useStyles from './HeaderStyle';
+import Avatar from 'react-avatar';
+import decode from 'jwt-decode';
 
 const Header = () => {
   
@@ -11,22 +14,30 @@ const Header = () => {
   const dispatch = useDispatch();
   const hist = useHistory();
   const location = useLocation();
+  const classes = useStyles();
 
-
-  useEffect(() => {
-    const token = user?.token;
-
-    //JWT
-
-    setUser(JSON.parse(localStorage.getItem('profile')))
-  },[location])
-  
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
     history.push('/')
 
     setUser(null);
   }
+
+  useEffect(() => {
+    const token = user?.token;
+    
+    //JWT
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
+
+    setUser(JSON.parse(localStorage.getItem('profile')))
+    
+  },[location])
+  
+  
 
 
   return (
@@ -81,8 +92,17 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Button variant="outline-light" onClick={() => history.push('/Auth')}>SignIn</Button>
-            <Button variant="outline-light" onClick={logout}>Logout</Button>
+            {user?.result ? (
+          <div className={classes.profile}>
+            <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+            <h6 className={classes.userName}>{user?.result.name}</h6>
+            <Button variant="outline-light" className={classes.logout} onClick={logout}>Logout</Button>
+          </div>
+        ) : (
+          <Button variant="outline-light" onClick={() => history.push('/Auth')}>Sign In</Button>
+            
+            )}
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -92,3 +112,6 @@ const Header = () => {
 }
 
 export default Header
+
+
+      

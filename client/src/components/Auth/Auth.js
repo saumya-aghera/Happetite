@@ -13,54 +13,49 @@ import Input from './Input';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
-const Auth = () => {
+const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
-  const [formData, setFormData] = useState();
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (isSignup) {
-      dispatch(signup(formData, history));
-    } else {
-      dispatch(signin(formData, history));
-    }
-  }
-    
   const switchMode = () => {
-    
+    setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
 
-  
-  const googleSuccess = async (res) => {
-      const result = res?.profileObj;
-      const token = res?.tokenId
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      try {
-        dispatch({ type: 'AUTH', data: { result, token } });
-            history.push('/')
-      
-      }
-          catch (error) {
-              
-          console.log(error)
-      }
+    if (isSignup) {
+      dispatch(signup(form, history));
+    } else {
+      dispatch(signin(form, history));
+    }
+  };
+
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+
+      history.push('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
   return (
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>
@@ -107,4 +102,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default SignUp;
