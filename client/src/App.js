@@ -1,31 +1,47 @@
-import React from 'react'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route ,Switch,Link} from 'react-router-dom';
+
+import Home from './components/Home';
 import Header from './components/Header';
 import Intro from './components/Intro';
-import Home from './components/Home';
+import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Auth from './components/Auth/Auth';
+import axios from 'axios';
 
 
+class App extends Component {
 
 
+  checkLoginStatus() {
+    axios
+      .get("http://localhost:3000/logout", { withCredentials: true })
+      .then(response => {
+        console.log("response", response);
+      })
+      .catch(error => {
+        console.log("check login error", error);
+      });
+  }
 
+   componentDidMount() {
+    this.checkLoginStatus();
+  }
 
-function App() {
-  return (
-    <div>
-      
-        
-      <Header />
-      
-      <Home />
-      <Intro />
-      
-      <Hope />
-       
-    </div>
-  );
+  render() {
+    return (
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={Intro} />
+          <Route path='/FAQ' component={FAQ} />
+          <Route path='/Hope' component={Hope} />
+          <Route path='/Auth' component={Auth} />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
-export default App
+export default App;

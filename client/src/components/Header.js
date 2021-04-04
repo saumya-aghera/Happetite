@@ -1,58 +1,128 @@
-import React from 'react'
-import ReactBootstrap, { Navbar,Nav,NavDropdown,Button} from 'react-bootstrap'
-import { Link, animateScroll as scroll } from "react-scroll";
+import React, { useEffect, useState } from 'react';
+import { Navbar, Nav} from 'react-bootstrap';
+import { Link} from "react-scroll";
+import {useLocation } from 'react-router-dom';
+import useStyles from './HeaderStyle';
+import { Avatar, Button} from '@material-ui/core';
+import { refreshTokenSetup } from '../utils/refreshToken';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
-const Header=()=> {
-    return (
-        <div>
+
+const clientId =
+  '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
+
+
+
+
+const Header = () => {
+  const classes = useStyles();
+  const location = useLocation();
+  const [logged, setLog] = useState(false);
+  const [user, setUser] = useState({
+    value:JSON.parse(localStorage.getItem('profile'))
+  });
+  const [userHelp, setUserHelp] = useState(Object.assign({}, user));
+  
+ 
+  
+
+  const onSuccess = async(res) => {
+    setUser({ value: res });
+    setUserHelp({value:res});
+    console.log('login',userHelp.value.profileObj)
+    setLog(true);
+    refreshTokenSetup(res);
+  };
+
+    const onFailure = (res) => {
+        console.log('Login failed:', res.profileObj);
+        alert('Google Sign In was unsuccessful. Try again later');
+  };
+  
+  const logout = () => {
+    setLog(false);
+    setUser({ value: null });
+    console.log('logout',userHelp.value.profileObj)
+    
+    };
+
+  useEffect(() => {
+  
+    setUser(JSON.parse(localStorage.getItem('profile')))
+    
+  },[location])
+
+  return (
+    
             
-           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
-  <Navbar.Brand><Link
-    activeClass="active"
-    to="home"
-    spy={true}
-    smooth={true}
-    offset={-70}
-                            duration={500}
-                            activeStyle={{ color: 'white' }}
->WEBSITE Name</Link></Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link><Link
-    activeClass="active"
-    to="about"
-    spy={true}
-    smooth={true}
-    offset={-70}
-                            duration={500}
-                            activeStyle={{ color: 'white' }}
->About</Link></Nav.Link>
-      <Nav.Link><Link
-    activeClass="active"
-    to="module"
-    spy={true}
-    smooth={true}
-    offset={-70}
-                            duration={500}
-                            activeStyle={{ color: 'white' }}
->Modules</Link></Nav.Link>
-      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Nav>
-      <Button variant="outline-light">SignIn</Button>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
-           
-        </div>
-    );
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
+      <Navbar.Brand href="/">WEBSITE</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link><Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >About</Link></Nav.Link>
+          <Nav.Link><Link
+            activeClass="active"
+            to="module"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+             
+          >Modules</Link></Nav.Link>
+          <Nav.Link href="/FAQ">FAQ</Nav.Link>
+        
+        <Nav.Link onClick={()=>window.open('mailto:email@example.com?')}>Contact Us</Nav.Link>
+          
+        </Nav>
+        
+        <Nav>
+          {logged?(<div><GoogleLogout
+              clientId={clientId}
+              render={renderProps => (
+                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                      Logout
+                  </Button>)}
+        buttonText="Logout"
+        onLogoutSuccess={logout}
+          ></GoogleLogout>
+            <div className={classes.profile}>
+            <Avatar className={classes.purple} alt={userHelp.value.profileObj?.name} src={userHelp.value.profileObj?.imageUrl}>{userHelp.value.profileObj?.name.charAt(0)}</Avatar>
+              <h6 className={classes.userName}>{userHelp.value.profileObj?.givenName}</h6>
+              </div>
+              </div>):(<div><GoogleLogin
+            clientId={clientId}
+              render={renderProps => (
+                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                      Sign In
+                  </Button>)}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        style={{ marginTop: '100px' }}
+        isSignedIn={true}
+      />
+       </div>   )}
+            
+          </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
-export default Header
+export default Header;
+
+
+
+      
