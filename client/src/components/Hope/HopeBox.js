@@ -10,23 +10,26 @@ import { refreshTokenSetup } from '../../utils/refreshToken';
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
-function HopeBox({ loggedIn,onLogin}) {
+function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const onSuccess = async (res) => {
         onLogin(true);
+        setUser({ value: res });
+        setUserHelp({ value: res });
+        console.log('login', userHelp.value.profileObj)
+        refreshTokenSetup(res);
         handleClose();
-    refreshTokenSetup(res);
-  };
+    };
 
     const onFailure = (res) => {
         handleClose();
     alert('Google Sign In was unsuccessful. Try again later');
   };
   
-
+  
 
     const [hopebox, sethopebox] = useState({
         list: '',
@@ -36,6 +39,10 @@ function HopeBox({ loggedIn,onLogin}) {
         if (loggedIn) {
             axios.post('http://localhost:5000/hopebox', hopebox);
             console.log(`Box submitted: `);
+            sethopebox({
+                list: '',
+                file: ''
+            });
         } else {
             handleShow();
         }

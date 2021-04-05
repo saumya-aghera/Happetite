@@ -14,15 +14,9 @@ const clientId =
 
 
 
-const Header = ({loggedIn,onLogin}) => {
+const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
   const classes = useStyles();
   const location = useLocation();
-  const [user, setUser] = useState({
-    value:JSON.parse(localStorage.getItem('profile'))
-  });
-  const [userHelp, setUserHelp] = useState(Object.assign({}, user));
-  
- 
   
 
   const onSuccess = async (res) => {
