@@ -11,7 +11,7 @@ import { GoogleLogin } from 'react-google-login';
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
-function HomeAssign({ loggedIn, onLogin }) {
+function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
   
   const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -19,8 +19,11 @@ function HomeAssign({ loggedIn, onLogin }) {
 
   const onSuccess = async (res) => {
     onLogin(true);
-    handleClose();
+    setUser({ value: res });
+    setUserHelp({value:res});
+    console.log('login',userHelp.value.profileObj)
     refreshTokenSetup(res);
+    handleClose();
   };
 
   const onFailure = (res) => {
@@ -65,7 +68,14 @@ function HomeAssign({ loggedIn, onLogin }) {
     if (loggedIn) {
       axios.post('http://localhost:5000/assign', homeassign);
       console.log(`Form submitted: `);
+      sethomeassign({
+        goal1: '',
+        goal2: '',
+        goal3: '',
+        obs: ''
+      });
       alert(`thank you for your message`);
+      
     } else {
       handleShow();
     }
