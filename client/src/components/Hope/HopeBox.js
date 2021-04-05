@@ -3,18 +3,71 @@ import './HopeBox.css'
 import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 import axios from 'axios';
+import { Modal, Button } from 'react-bootstrap';
+import { GoogleLogin } from 'react-google-login';
+import { refreshTokenSetup } from '../../utils/refreshToken';
 
-function HopeBox() {
+const clientId =
+  '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
+
+function HopeBox({ loggedIn,onLogin}) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const onSuccess = async (res) => {
+        onLogin(true);
+        handleClose();
+    refreshTokenSetup(res);
+  };
+
+    const onFailure = (res) => {
+        handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
+  };
+  
+
+
     const [hopebox, sethopebox] = useState({
         list: '',
         file: ''
     });
     const createhopebox = () => {
-        console.log(`Box submitted: `);
-          axios.post('http://localhost:5000/hopebox', hopebox)
+        if (loggedIn) {
+            axios.post('http://localhost:5000/hopebox', hopebox);
+            console.log(`Box submitted: `);
+        } else {
+            handleShow();
+        }
+        
       }
     return (
         <>
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+        <Modal.Title>Sign Required</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Please Sign in before submit</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <GoogleLogin
+            clientId={clientId}
+              render={renderProps => (
+                  <Button variant="contained" color="primary" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                      Sign In
+                  </Button>)}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        style={{ marginTop: '100px' }}
+        isSignedIn={true}
+      />
+        </Modal.Footer>
+            </Modal>
+            
             <div className="HopeBox-main">
                 <Typography>
                     <h2>HopeBox</h2>

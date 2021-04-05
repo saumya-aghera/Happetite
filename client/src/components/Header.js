@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef} from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
 import { Link} from "react-scroll";
 import {useLocation } from 'react-router-dom';
@@ -14,10 +14,9 @@ const clientId =
 
 
 
-const Header = () => {
+const Header = ({loggedIn,onLogin}) => {
   const classes = useStyles();
   const location = useLocation();
-  const [logged, setLog] = useState(false);
   const [user, setUser] = useState({
     value:JSON.parse(localStorage.getItem('profile'))
   });
@@ -26,11 +25,11 @@ const Header = () => {
  
   
 
-  const onSuccess = async(res) => {
+  const onSuccess = async (res) => {
+    onLogin(true);
     setUser({ value: res });
     setUserHelp({value:res});
     console.log('login',userHelp.value.profileObj)
-    setLog(true);
     refreshTokenSetup(res);
   };
 
@@ -40,7 +39,7 @@ const Header = () => {
   };
   
   const logout = () => {
-    setLog(false);
+    onLogin(false);
     setUser({ value: null });
     console.log('logout',userHelp.value.profileObj)
     
@@ -87,7 +86,7 @@ const Header = () => {
         </Nav>
         
         <Nav>
-          {logged?(<div><GoogleLogout
+          {loggedIn?(<div><GoogleLogout
               clientId={clientId}
               render={renderProps => (
                   <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
@@ -98,7 +97,7 @@ const Header = () => {
           ></GoogleLogout>
             <div className={classes.profile}>
             <Avatar className={classes.purple} alt={userHelp.value.profileObj?.name} src={userHelp.value.profileObj?.imageUrl}>{userHelp.value.profileObj?.name.charAt(0)}</Avatar>
-              <h6 className={classes.userName}>{userHelp.value.profileObj?.givenName}</h6>
+              <h6 className={classes.userName}>{userHelp.value.profileObj?.name}</h6>
               </div>
               </div>):(<div><GoogleLogin
             clientId={clientId}
