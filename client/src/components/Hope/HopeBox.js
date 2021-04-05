@@ -52,9 +52,9 @@ function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
         <>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-        <Modal.Title>Sign Required</Modal.Title>
+        <Modal.Title>Sign in Required</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Please Sign in before submit</Modal.Body>
+        <Modal.Body>Please Sign in before submitting</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -78,8 +78,8 @@ function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
             <div className="HopeBox-main">
                 <Typography>
                     <h2>HopeBox</h2>
-                    <p>There are certain people or objects that make you feel hopeful, happy and relaxed. In this activity, you need to list down/upload all the items that make you feel hopeful, if it a person you can even add a picture of that individual.</p>
-                    <p> There is no limit to the number of items that you would like to submit. </p>
+                    <p>There are certain people or objects that make you feel hopeful, happy and relaxed. In this activity, you need to list down/upload all the items that make you feel hopeful, if it a person you can even add a picture of that individual.
+                    <br /> There is no limit to the number of items that you would like to submit. </p>
                 </Typography>
                 
                 

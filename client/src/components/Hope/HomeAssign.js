@@ -74,7 +74,7 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
         goal3: '',
         obs: ''
       });
-      alert(`thank you for your message`);
+      alert(`thank you for your answers`);
       
     } else {
       handleShow();
@@ -104,9 +104,9 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign Required</Modal.Title>
+          <Modal.Title>Sign in Required</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Please Sign in before submit</Modal.Body>
+        <Modal.Body>Please Sign in before submitting</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -139,7 +139,7 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
           <div className="row">
             <div className="column">
               <div className="list">
-                <h5>Set Realistic Goals</h5>
+                <h5 className="assign-h5">Set Realistic Goals</h5>
                 <TextField id="standard-secondary" label="Goal 1" autocomplete="off" value={homeassign.goal1} onChange={(event) => {
                   sethomeassign({ ...homeassign, goal1: event.target.value })
                 }} />
@@ -152,7 +152,7 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
               </div>
             </div>
             <div className="column">
-              <h5>Overcoming Obstacles</h5>
+              <h5 className="assign-h5">Overcoming Obstacles</h5>
               <TextField id="outlined-basic" label="" variant="outlined" value={homeassign.obs} onChange={(event) => {
                 sethomeassign({ ...homeassign, obs: event.target.value })
               }} />
