@@ -2,42 +2,55 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-
+import i1 from "../../images/yellow.jpeg";
+import i2 from "../../images/red.jpeg";
+import i3 from "../../images/pink.jpeg";
+import i4 from "../../images/orange.jpeg";
+import i5 from "../../images/green.jpeg";
+import i6 from "../../images/blue.jpeg";
 import './Module.css'
 
 const images1 = [
   {
-    url: "../../images/yellow.png",
-    title: 'Hope',
+    url: i1,
+    title: 'Module 1: Hope',
     width: '30%',
-  },
+  }
+]
+const images2 = [
   {
-    url: '../../images/pink.jpg',
-    title: 'Hope',
+    url: i2,
+    title: 'Module 4: Hope',
     width: '30%',
-  },
+  }
+]
+const images3 = [
   {
-    url: '../../images/blue.jpg',
-    title: 'Hope',
+    url: i3,
+    title: 'Module 3: Hope',
     width: '30%',
     },
   
 ];
 
-const images2 = [
+const images4 = [
     {
-    url: '../../images/red.jpg',
-    title: 'Hope',
+    url: i4,
+    title: 'Module 6: Hope',
     width: '30%',
-    },
+    }
+]
+const images5 = [
   {
-    url: '../../images/orange.jpg',
-    title: 'Hope',
+    url: i5,
+    title: 'Module 5: Hope',
     width: '30%',
-    },
+    }
+]
+const images6 = [
    {
-    url: '../../images/green.jpg',
-    title: 'Hope',
+    url: i6,
+    title: 'Module 2: Hope',
     width: '30%',
   }
 ]
@@ -49,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     width: '100%',
   },
+ 
   image: {
     position: 'relative',
     height: 200,
@@ -104,6 +118,8 @@ const useStyles = makeStyles((theme) => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    fontWeight: 'bolder',
+    fontSize: '20px',
   },
   imageMarked: {
     height: 3,
@@ -133,7 +149,7 @@ function Module() {
                     {images1.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'5px'}}>
-                            <a href='/Hope'>
+                            <a href='/Hope' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -168,16 +184,51 @@ function Module() {
                             </div>
                           
                         ))}
-                    
-                </div>
 
-
-                <div id="outer" >
                     
-                    {images2.map((image) => (
+{images6.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope'>
+                            <a href='/Hope' target="_blank">
+                            <ButtonBase
+                                focusRipple
+                                key={image.title}
+                                className={classes.image}
+                                focusVisibleClassName={classes.focusVisible}
+                                style={{
+                                    width: image.width,
+                                    padding:'20px'
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        backgroundImage: `url(${image.url})`,
+                                    }}
+                                    className={classes.imageSrc}
+                                    
+                                />
+                                <span className={classes.imageBackdrop} />
+                                <span className={classes.imageButton}>
+                                    <Typography
+                                        component="span"
+                                        variant="subtitle1"
+                                        color="inherit"
+                                        className={classes.imageTitle}
+                                    >
+                                        {image.title}
+                                        <span className={classes.imageMarked} />
+                                    </Typography>
+                                </span>
+                                </ButtonBase>
+                                </a>
+                            </div>
+                            
+                        ))}
+
+{images3.map((image) => (
+                        
+                        <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
+                            <a href='/Hope' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -214,6 +265,130 @@ function Module() {
                         ))}
                     
                 </div>
+
+
+                
+                
+                <div id="outer" >
+                    
+                    {images2.map((image) => (
+                        
+                        <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
+                            <a href='/Hope' target="_blank">
+                            <ButtonBase
+                                focusRipple
+                                key={image.title}
+                                className={classes.image}
+                                focusVisibleClassName={classes.focusVisible}
+                                style={{
+                                    width: image.width,
+                                    padding:'20px'
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        backgroundImage: `url(${image.url})`,
+                                    }}
+                                    className={classes.imageSrc}
+                                    
+                                />
+                                <span className={classes.imageBackdrop} />
+                                <span className={classes.imageButton}>
+                                    <Typography
+                                        component="span"
+                                        variant="subtitle1"
+                                        color="inherit"
+                                        className={classes.imageTitle}
+                                    >
+                                        {image.title}
+                                        <span className={classes.imageMarked} />
+                                    </Typography>
+                                </span>
+                                </ButtonBase>
+                                </a>
+                            </div>
+                            
+                        ))}
+                         {images5.map((image) => (
+                        
+                        <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
+                            <a href='/Hope' target="_blank">
+                            <ButtonBase
+                                focusRipple
+                                key={image.title}
+                                className={classes.image}
+                                focusVisibleClassName={classes.focusVisible}
+                                style={{
+                                    width: image.width,
+                                    padding:'20px'
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        backgroundImage: `url(${image.url})`,
+                                    }}
+                                    className={classes.imageSrc}
+                                    
+                                />
+                                <span className={classes.imageBackdrop} />
+                                <span className={classes.imageButton}>
+                                    <Typography
+                                        component="span"
+                                        variant="subtitle1"
+                                        color="inherit"
+                                        className={classes.imageTitle}
+                                    >
+                                        {image.title}
+                                        <span className={classes.imageMarked} />
+                                    </Typography>
+                                </span>
+                                </ButtonBase>
+                                </a>
+                            </div>
+                            
+                        ))}
+                    {images4.map((image) => (
+                        
+                        <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
+                            <a href='/Hope' target="_blank">
+                            <ButtonBase
+                                focusRipple
+                                key={image.title}
+                                className={classes.image}
+                                focusVisibleClassName={classes.focusVisible}
+                                style={{
+                                    width: image.width,
+                                    padding:'20px'
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        backgroundImage: `url(${image.url})`,
+                                    }}
+                                    className={classes.imageSrc}
+                                    
+                                />
+                                <span className={classes.imageBackdrop} />
+                                <span className={classes.imageButton}>
+                                    <Typography
+                                        component="span"
+                                        variant="subtitle1"
+                                        color="inherit"
+                                        className={classes.imageTitle}
+                                    >
+                                        {image.title}
+                                        <span className={classes.imageMarked} />
+                                    </Typography>
+                                </span>
+                                </ButtonBase>
+                                </a>
+                            </div>
+                            
+                        ))}
+                    
+                </div>
+                
+                
             </div>
             
         </>
@@ -221,8 +396,3 @@ function Module() {
 }
 
 export default Module
-
-
-
-
-
