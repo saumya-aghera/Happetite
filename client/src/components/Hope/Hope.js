@@ -4,14 +4,14 @@ import HopeBox from './HopeBox';
 import Quiz from './Quiz';
 import HomeAssign from './HomeAssign';
 
-const Hope = () => {
+const Hope = ({ loggedIn,onLogin }) => {
     
     return (
         <div>
         <Video />
-        <HopeBox />
+            <HopeBox loggedIn={ loggedIn} onLogin={onLogin}/>
         <Quiz />
-        <HomeAssign />        
+        <HomeAssign loggedIn={ loggedIn} onLogin={onLogin}/>        
         </div>
     );
 }

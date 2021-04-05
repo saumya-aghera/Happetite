@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route ,Switch,Link} from 'react-router-dom';
 
 import Home from './components/Home';
@@ -7,41 +7,33 @@ import Intro from './components/Intro';
 import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
 import Auth from './components/Auth/Auth';
-import axios from 'axios';
 
 
-class App extends Component {
+
+function App() {
+
+  const [loggedIn, setLogin] = useState(false);
+  
 
 
-  checkLoginStatus() {
-    axios
-      .get("http://localhost:3000/logout", { withCredentials: true })
-      .then(response => {
-        console.log("response", response);
-      })
-      .catch(error => {
-        console.log("check login error", error);
-      });
-  }
-
-   componentDidMount() {
-    this.checkLoginStatus();
-  }
-
-  render() {
     return (
       <Router>
-        <Header />
+        <Header
+          loggedIn={loggedIn}
+          onLogin={setLogin} />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/about' component={Intro} />
-          <Route path='/FAQ' component={FAQ} />
-          <Route path='/Hope' component={Hope} />
-          <Route path='/Auth' component={Auth} />
+          <Route exact path='/'><Home /></Route>
+          <Route path='/about'><Intro /></Route>
+          <Route path='/FAQ'><FAQ /></Route>
+          <Route path='/Hope'>
+            <Hope
+              loggedIn={loggedIn}
+              onLogin={setLogin}/>
+          </Route>
         </Switch>
       </Router>
     );
   }
-}
+
 
 export default App;
