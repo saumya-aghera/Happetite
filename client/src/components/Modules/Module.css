@@ -1,0 +1,123 @@
+.modules{
+    background:#FDFAFE ;
+    
+    padding-top: 80px;
+}
+.mod-h2{
+    color: black;
+}
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+    margin-bottom: 120px;
+    margin-right: 30px;
+}
+.msgBtn1{
+    background-color: #fffe7a;
+    border: 3px solid black;
+    
+    
+}
+.bt{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 3px solid black;
+}
+/* .msgBtn1:hover{
+    background-color: yellow;
+    border: 2px solid yellow;
+    color: black;
+} */
+.bt span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+  
+  .bt span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+    
+  }
+  
+  .bt:hover span {
+    padding-right: 25px;
+    
+  }
+  .msgBtn1:hover{
+      background-color: #fffe7a;
+      border: 3px solid black;
+      color: black;
+  }
+  .msgBtn2:hover{
+    background-color: #77dd77;
+    border: 3px solid black;
+    color: black;
+}
+.msgBtn3:hover{
+    background-color: #89CFF0;
+    border: 3px solid black;
+    color: black;
+}
+.msgBtn4:hover{
+    background-color:  #FAC898;
+    border: 3px solid black;
+    color: black;
+}
+.msgBtn5:hover{
+    background-color: #ffd1dc;
+    border: 3px solid black;
+    color: black;
+}
+.msgBtn6:hover{
+    background-color: #ff6961;
+    border: 3px solid black;
+    color: black;
+}
+
+  .bt:hover span:after {
+    opacity: 1;
+    right: 0;
+    
+  }
+.msgBtn2{
+    background-color: #77dd77;
+    border: 3px solid black;
+    
+}
+.msgBtn3{
+    background-color: #89CFF0;
+    border: 3px solid black;
+    
+}
+.msgBtn4{
+    background-color:  #FAC898;
+    border: 3px solid black;
+    
+}
+.msgBtn5{
+    background-color: #ffd1dc;
+    border: 3px solid black;
+   
+}
+.msgBtn6{
+    background-color: #ff6961;
+    border: 3px solid black;
+   
+}
+.msgBtn7{
+    background-color: #99c5c4;
+    border: 3px solid black;
+    transition: 0.6s;
+}
