@@ -26,8 +26,8 @@ p{
   .hw{
       width: 70%;
       border: 2px solid black;
-      margin-left: 210px;
       
+      margin: auto;
   }
   h5{
       color: teal;
