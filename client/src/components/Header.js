@@ -17,13 +17,13 @@ const clientId =
 const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
   const classes = useStyles();
   const location = useLocation();
-  
 
-  const onSuccess = async (res) => {
+
+  const onSuccess = (res) => {
     onLogin(true);
     setUser({ value: res });
     setUserHelp({value:res});
-    console.log('login',userHelp.value.profileObj)
+    console.log('login',userHelp,res)
     refreshTokenSetup(res);
   };
 
@@ -43,7 +43,7 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
   
     setUser(JSON.parse(localStorage.getItem('profile')))
     
-  },[location])
+  },[location,onLogin])
 
   return (
     
@@ -69,11 +69,11 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
             spy={true}
             smooth={true}
             offset={-10}
-            duration={500}
+            duration={100}
             activeStyle={{ color: 'white' }}
              
           >Modules</Link></Nav.Link>
-          <Nav.Link href="/FAQ">FAQ</Nav.Link>
+          <Nav.Link href="/FAQ" target="blank">FAQ</Nav.Link>
         
         <Nav.Link onClick={()=>window.open('mailto:email@example.com?')}>Contact Us</Nav.Link>
           

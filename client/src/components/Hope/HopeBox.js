@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './HopeBox.css'
 import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
@@ -14,6 +14,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [test, setTest] = useState();
 
     const onSuccess = async (res) => {
         onLogin(true);
@@ -29,16 +30,27 @@ function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
     alert('Google Sign In was unsuccessful. Try again later');
   };
   
+    useEffect(() => {
+        sethopebox({
+            userName: userHelp.value.result.name,
+            userEmailId:userHelp.value.result.email
+        })
+        
+    }, [onLogin])
   
 
     const [hopebox, sethopebox] = useState({
+        userName:'',
+        userEmailId:'',
         list: '',
         file: ''
     });
     const createhopebox = () => {
         if (loggedIn) {
+            console.log('testing', user, userHelp)
+            
             axios.post('http://localhost:5000/hopebox', hopebox);
-            console.log(`Box submitted: `);
+            console.log(`Box submitted:`,hopebox);
             sethopebox({
                 list: '',
                 file: ''

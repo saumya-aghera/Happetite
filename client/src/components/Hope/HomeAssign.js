@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './HomeAssign.css'
 import { Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
@@ -31,15 +31,23 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     alert('Google Sign In was unsuccessful. Try again later');
   };
   
-
+  useEffect(() => {
+        sethomeassign({
+            userName: userHelp.value.result.name,
+            userEmailId:userHelp.value.result.email
+        })
+        
+    }, [onLogin])
 
  
-    const [homeassign, sethomeassign] = useState({
-        goal1: '',
-        goal2: '',
-        goal3: '',
-        obs: ''
-    });
+  const [homeassign, sethomeassign] = useState({
+    userName: '',
+    userEmailId: '',
+    goal1: '',
+    goal2: '',
+    goal3: '',
+    obs: ''
+  });
     // constructor(){
     //     super();
     //     this.state = {
@@ -67,14 +75,14 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
       
     if (loggedIn) {
       axios.post('http://localhost:5000/assign', homeassign);
-      console.log(`Form submitted: `);
+      console.log(`Form submitted: `,homeassign);
       sethomeassign({
         goal1: '',
         goal2: '',
         goal3: '',
         obs: ''
       });
-      alert(`thank you for your answers`);
+      //alert(`thank you for your answers`);//very annoying
       
     } else {
       handleShow();
