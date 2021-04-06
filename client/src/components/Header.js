@@ -105,6 +105,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
+            <Nav.Link>
           <GoogleLogin
             clientId={clientId}
               render={renderProps => (
@@ -116,8 +117,10 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
         style={{ marginTop: '100px' }}
-        isSignedIn={true}
-      />
+                isSignedIn={true}
+                
+              />
+              </Nav.Link>
       </Nav>  )}
             
        
