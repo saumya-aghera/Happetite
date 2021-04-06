@@ -2,12 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import i1 from "../../images/yellow.jpg";
-import i2 from "../../images/red.jpg";
-import i3 from "../../images/pink.jpg";
-import i4 from "../../images/orange.jpg";
-import i5 from "../../images/green.jpg";
-import i6 from "../../images/blue.jpg";
+import i1 from "../../images/yellow.jpeg";
+import i2 from "../../images/red.jpeg";
+import i3 from "../../images/pink.jpeg";
+import i4 from "../../images/orange.jpeg";
+import i5 from "../../images/green.jpeg";
+import i6 from "../../images/blue.jpeg";
 import './Module.css'
 
 const images1 = [
@@ -20,14 +20,14 @@ const images1 = [
 const images2 = [
   {
     url: i2,
-    title: 'Module 4: Hope',
+    title: 'Module 4: TBA',
     width: '30%',
   }
 ]
 const images3 = [
   {
     url: i3,
-    title: 'Module 3: Hope',
+    title: 'Module 3: TBA',
     width: '30%',
     },
   
@@ -36,21 +36,21 @@ const images3 = [
 const images4 = [
     {
     url: i4,
-    title: 'Module 6: Hope',
+    title: 'Module 6: TBA',
     width: '30%',
     }
 ]
 const images5 = [
   {
     url: i5,
-    title: 'Module 5: Hope',
+    title: 'Module 5: TBA',
     width: '30%',
     }
 ]
 const images6 = [
    {
     url: i6,
-    title: 'Module 2: Hope',
+    title: 'Module 2: TBA',
     width: '30%',
   }
 ]
@@ -149,7 +149,7 @@ function Module() {
                     {images1.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'5px'}}>
-                            <a href='/Hope' >
+                            <a href='/Hope' target="_blank" >
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -189,7 +189,7 @@ function Module() {
 {images6.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope' target="_blank">
+                            <a href='/underconstruction' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -228,7 +228,7 @@ function Module() {
 {images3.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope' target="_blank">
+                            <a href='/underconstruction' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -274,7 +274,7 @@ function Module() {
                     {images2.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope' target="_blank">
+                            <a href='/underconstruction' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -312,7 +312,7 @@ function Module() {
                          {images5.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope' target="_blank">
+                            <a href='/underconstruction' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
@@ -350,7 +350,7 @@ function Module() {
                     {images4.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/Hope' target="_blank">
+                            <a href='/underconstruction' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
