@@ -14,36 +14,35 @@ const clientId =
 
 
 
-const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
+const Header = ({loggedIn,onLogin,user,setUser}) => {
   const classes = useStyles();
   const location = useLocation();
 
 
   const onSuccess = (res) => {
     onLogin(true);
-    setUser({ value: res });
-    setUserHelp({value:res});
-    console.log('login',userHelp,res)
+    setUser({
+      email: res.profileObj.email,
+      familyName: res.profileObj.familyName,
+      givenName: res.profileObj.givenName,
+      googleId: res.profileObj.googleId,
+      imageUrl: res.profileObj.imageUrl,
+      name: res.profileObj.name
+    });
+    console.log('login', user, res)
     refreshTokenSetup(res);
   };
 
     const onFailure = (res) => {
-        console.log('Login failed:', res.profileObj);
+        console.log('Login failed:', res);
         alert('Google Sign In was unsuccessful. Try again later');
   };
   
   const logout = () => {
     onLogin(false);
-    setUser({ value: null });
-    console.log('logout',userHelp.value.profileObj)
-    
+    console.log('logout',user)  
     };
 
-  useEffect(() => {
-  
-    setUser(JSON.parse(localStorage.getItem('profile')))
-    
-  },[location,onLogin])
 
   return (
     
@@ -59,7 +58,7 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
             to="about"
             spy={true}
             smooth={true}
-            offset={-10}
+            offset={120}
             duration={500}
             activeStyle={{ color: 'white' }}
           >About</Link></Nav.Link>
@@ -68,8 +67,8 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
             to="module"
             spy={true}
             smooth={true}
-            offset={-10}
-            duration={100}
+            offset={-20}
+            duration={500}
             activeStyle={{ color: 'white' }}
              
           >Modules</Link></Nav.Link>
@@ -80,7 +79,7 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
         </Nav>
         
         <Nav>
-          {loggedIn?(<div><GoogleLogout
+          {loggedIn?(<div style={{diplay:'flex'}}><div ><GoogleLogout
               clientId={clientId}
               render={renderProps => (
                   <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
@@ -88,10 +87,10 @@ const Header = ({loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) => {
                   </Button>)}
         buttonText="Logout"
         onLogoutSuccess={logout}
-          ></GoogleLogout>
+          ></GoogleLogout></div>
             <div className={classes.profile}>
-            <Avatar className={classes.purple} alt={userHelp.value.profileObj?.name} src={userHelp.value.profileObj?.imageUrl}>{userHelp.value.profileObj?.name.charAt(0)}</Avatar>
-              <h6 className={classes.userName}>{userHelp.value.profileObj?.name}</h6>
+            <Avatar className={classes.purple} alt={user.name} src={user.imageUrl}>{user.name.charAt(0)}</Avatar>
+              <h6 className={classes.userName}>{user.name}</h6>
               </div>
               </div>):(<div><GoogleLogin
             clientId={clientId}

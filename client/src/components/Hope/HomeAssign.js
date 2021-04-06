@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
+import {useLocation } from 'react-router-dom';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -15,67 +16,43 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
   
   const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);
+  const location = useLocation();
 
-  const onSuccess = async (res) => {
-    onLogin(true);
-    setUser({ value: res });
-    setUserHelp({value:res});
-    console.log('login',userHelp.value.profileObj)
-    refreshTokenSetup(res);
-    handleClose();
-  };
+   const onSuccess = async (res) => {
+        onLogin(true);
+        setUser({
+            email: res.profileObj.email,
+            familyName: res.profileObj.familyName,
+            givenName: res.profileObj.givenName,
+            googleId: res.profileObj.googleId,
+            imageUrl: res.profileObj.imageUrl,
+            name: res.profileObj.name
+        });
+        console.log('login', user, res)
+     refreshTokenSetup(res);
+     handleClose();
+    };
 
   const onFailure = (res) => {
     handleClose();
     alert('Google Sign In was unsuccessful. Try again later');
   };
   
-  useEffect(() => {
-        sethomeassign({
-            userName: userHelp.value.result.name,
-            userEmailId:userHelp.value.result.email
-        })
-        
-    }, [onLogin])
 
- 
   const [homeassign, sethomeassign] = useState({
-    userName: '',
-    userEmailId: '',
     goal1: '',
     goal2: '',
     goal3: '',
     obs: ''
   });
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //       goal1: '',
-    //       goal2:'',
-    //       goal3:'',
-    //       obs:''
-    //     };
-    //   };
-      // onChange = e => {
-      //   this.setState({ [e.target.name]: e.target.value });
-      // };
-    
-      // onSubmit = e => {
-      //   e.preventDefault();
-      //   console.log(`Form submitted: `);
-      //   // console.log(`${this.state.goal1} `);
-      //   const data = {
-      //     goal1: this.state.goal1,
-      //     goal2: this.state.goal2,
-      //     goal3: this.state.goal3,
-      //     obs: this.state.obs
-      //   };
+   
   const createhomeassign = () => {
       
     if (loggedIn) {
+     
       axios.post('http://localhost:5000/assign', homeassign);
-      console.log(`Form submitted: `,homeassign);
+      console.log(`Form submitted: `,homeassign,user.name,user.email);
       sethomeassign({
         goal1: '',
         goal2: '',
