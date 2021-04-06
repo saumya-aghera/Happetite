@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Intro from './components/Intro';
 import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
-import Auth from './components/Auth/Auth';
+
 
 
 
@@ -14,9 +14,13 @@ function App() {
 
   const [loggedIn, setLogin] = useState(false);
   const [user, setUser] = useState({
-    value:JSON.parse(localStorage.getItem('profile'))
+    email: "start@gmail.com",
+    familyName: "start",
+    givenName: "start",
+    googleId: "106161716030241020753",
+    imageUrl: "https://lh6.googleusercontent.com/-YnY_k1gqAsc/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucljSruPsTBmPmYNkGzUARwKYtu0UA/s96-c/photo.jpg",
+    name: "start"
   });
-  const [userHelp, setUserHelp] = useState(Object.assign({}, user));
 
   
 
@@ -27,8 +31,7 @@ function App() {
         onLogin={setLogin}
         user={user}
         setUser={setUser}
-        userHelp={userHelp}
-        setUserHelp={setUserHelp}
+      
       />
       <Switch>
         <Route exact path='/'><Home /></Route>
@@ -40,8 +43,7 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
-            userHelp={userHelp}
-            setUserHelp={setUserHelp} />
+           />
         </Route>
       </Switch>
     </Router>

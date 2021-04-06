@@ -6,51 +6,55 @@ import axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import { refreshTokenSetup } from '../../utils/refreshToken';
+import {useLocation } from 'react-router-dom';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
-function HopeBox({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp}) {
+function HopeBox({ loggedIn,onLogin,user,setUser}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [test, setTest] = useState();
 
     const onSuccess = async (res) => {
         onLogin(true);
-        setUser({ value: res });
-        setUserHelp({ value: res });
-        console.log('login', userHelp.value.profileObj)
+        setUser({
+            email: res.profileObj.email,
+            familyName: res.profileObj.familyName,
+            givenName: res.profileObj.givenName,
+            googleId: res.profileObj.googleId,
+            imageUrl: res.profileObj.imageUrl,
+            name: res.profileObj.name
+        });
+        console.log('login', user, res)
         refreshTokenSetup(res);
         handleClose();
     };
 
     const onFailure = (res) => {
         handleClose();
-    alert('Google Sign In was unsuccessful. Try again later');
+        alert('Google Sign In was unsuccessful. Try again later');
   };
   
-    useEffect(() => {
-        sethopebox({
-            userName: userHelp.value.result.name,
-            userEmailId:userHelp.value.result.email
-        })
-        
-    }, [onLogin])
-  
+    
 
     const [hopebox, sethopebox] = useState({
-        userName:'',
-        userEmailId:'',
         list: '',
         file: ''
     });
-    const createhopebox = () => {
+
+    useEffect(() => {
+        console.log('inside effect',user)
+      
+       
+    }, [])
+
+    const createhopebox = async() => {
         if (loggedIn) {
-            console.log('testing', user, userHelp)
-            
+            console.log('testing', user)
+              
             axios.post('http://localhost:5000/hopebox', hopebox);
-            console.log(`Box submitted:`,hopebox);
+            console.log(`Box submitted:`,hopebox,user.name,user.email);
             sethopebox({
                 list: '',
                 file: ''

@@ -149,7 +149,7 @@ function Module() {
                     {images1.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'5px'}}>
-                            <a href='/Hope' >
+                            <a href='/Hope' target="blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
