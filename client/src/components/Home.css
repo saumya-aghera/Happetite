@@ -3,31 +3,44 @@
 	
 
 }
+#video{
+	position: relative;
+	z-index: -1;
+	width: 100%;
+}
+.home-h1{
+	font-size: 80px;
+}
 .home-main {
 	/* background-color: #ffffe6; */
-	background-image: url("../images/back.jpg"); 
+	/* background-image: url("../images/back.jpg"); 
 	
 	background-repeat: no-repeat;
-	background-size: 1500px 900px;
+	background-size: 1500px 900px; */
 	/* position: relative; */
-	text-align: center;
+	/* text-align: center; */
+	position: relative;
 
 }
-.container-home{
+/* .container-home{ */
 	/* position: absolute; */
 	/* top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%); */
-	padding-top:270px;
+	/* padding-top:270px;
     padding-bottom: 320px;
 	
-}
+} */
 .home-text{
 	color: white;
 	border: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
 	border-radius: 5px;
 	padding: 50px;
-	width: 40%;
 	transform: translate(80%, 0%);
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.7);
+	margin-top: -800px;
 }
