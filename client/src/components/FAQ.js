@@ -20,7 +20,7 @@ const FAQ = () => {
     
             <div class="row py-5">
                 <div class="col-lg-9 mx-auto text-white text-center">
-                    <h1 class="display-4">Frequently asked Questions (FAQ)</h1>
+                    <h1 class="display-4">Frequently Asked Questions (FAQ)</h1>
                 </div>
             </div>
             <div class="row">
@@ -127,9 +127,3 @@ const FAQ = () => {
 }
 
 export default FAQ
-
-
-
-
-   
-   
