@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Route ,Switch,Link} from 'react-router-dom';
-
+import UnderCons from './components/UnderCons';
 import Home from './components/Home';
 import Header from './components/Header';
 import Intro from './components/Intro';
@@ -43,7 +43,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
-           />
+          />
+          <Route path='/underconstruction'><UnderCons /></Route>
         </Route>
       </Switch>
     </Router>

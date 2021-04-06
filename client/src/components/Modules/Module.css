@@ -1,5 +1,8 @@
+/** @format */
+
 .modules {
 	background: #fdfafe;
+	background-image: linear-gradient(320deg, #c797eb 0%, #f0ecfc 50%);
 	padding-top: 10px;
 	padding-bottom: 80px;
 	padding-left: 50px;
