@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
+      border: 'none',
       '& $imageBackdrop': {
         opacity: 0.15,
       },
@@ -112,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
+    opacity: 0.3,
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
@@ -120,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
     fontWeight: 'bolder',
     fontSize: '20px',
+    fontFamily: 'Raleway', 
   },
   imageMarked: {
     height: 3,
