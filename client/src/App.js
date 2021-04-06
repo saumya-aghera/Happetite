@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Intro from './components/Intro';
 import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
-
+import './App.css';
 
 
 
@@ -53,3 +53,6 @@ function App() {
 
 
 export default App;
+
+
+

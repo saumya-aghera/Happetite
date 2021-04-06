@@ -1,11 +1,11 @@
-import React, { useEffect, useState,useRef} from 'react';
+import React from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
 import { Link} from "react-scroll";
-import {useLocation } from 'react-router-dom';
-import useStyles from './HeaderStyle';
+import './Header.css';
 import { Avatar, Button} from '@material-ui/core';
 import { refreshTokenSetup } from '../utils/refreshToken';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+
 
 
 const clientId =
@@ -15,10 +15,6 @@ const clientId =
 
 
 const Header = ({loggedIn,onLogin,user,setUser}) => {
-  const classes = useStyles();
-  const location = useLocation();
-
-
   const onSuccess = (res) => {
     onLogin(true);
     setUser({
@@ -43,6 +39,12 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
     console.log('logout',user)  
     };
 
+  
+  const popUp = () => {
+    console.log('inside function')
+    var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+  }
 
   return (
     
@@ -78,8 +80,10 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
           
         </Nav>
         
-        <Nav>
-          {loggedIn?(<div style={{diplay:'flex'}}><div ><GoogleLogout
+        
+        {loggedIn ? (<Nav>
+          <Nav.Link>
+            <GoogleLogout
               clientId={clientId}
               render={renderProps => (
                   <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
@@ -87,12 +91,21 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                   </Button>)}
         buttonText="Logout"
         onLogoutSuccess={logout}
-          ></GoogleLogout></div>
-            <div className={classes.profile}>
-            <Avatar className={classes.purple} alt={user.name} src={user.imageUrl}>{user.name.charAt(0)}</Avatar>
-              <h6 className={classes.userName}>{user.name}</h6>
-              </div>
-              </div>):(<div><GoogleLogin
+            />
+          </Nav.Link>
+          <Nav.Link >
+            <div className="popup" onClick={popUp} style={{ textAlign: 'center' }}>
+              <Avatar alt={user.name} src={user.imageUrl}>{user.name.charAt(0)}
+                 </Avatar>
+              <p class="popuptext" id="myPopup">
+                Signed in as {user.name}
+              </p>
+                </div>
+           
+                
+            </Nav.Link>
+        </Nav>) : (<Nav>
+          <GoogleLogin
             clientId={clientId}
               render={renderProps => (
                   <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
@@ -105,9 +118,9 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         style={{ marginTop: '100px' }}
         isSignedIn={true}
       />
-       </div>   )}
+      </Nav>  )}
             
-          </Nav>
+       
       </Navbar.Collapse>
     </Navbar>
   );
