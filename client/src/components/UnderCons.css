@@ -1,0 +1,14 @@
+.cons-content{
+    margin-top: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    margin-right: 400px;
+    margin-left: 400px;
+    /* margin: auto; */
+    border-radius: 5px;
+}
+.cons-h1{
+    padding-bottom: 60px;
+}

@@ -5,7 +5,8 @@
 }
 .home-main {
 	/* background-color: #ffffe6; */
-	background-image: url("../images/flower.png"); 
+	background-image: url("../images/back.jpg"); 
+	
 	background-repeat: no-repeat;
 	background-size: 1500px 900px;
 	/* position: relative; */
