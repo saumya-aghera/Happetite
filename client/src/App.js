@@ -7,8 +7,8 @@ import Intro from './components/Intro';
 import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
 import Auth from './components/Auth/Auth';
-
-
+import UnderCons from './components/UnderCons';
+import './App.css';
 
 function App() {
 
@@ -43,6 +43,7 @@ function App() {
             userHelp={userHelp}
             setUserHelp={setUserHelp} />
         </Route>
+        <Route path='/underconstruction'><UnderCons /></Route>
       </Switch>
     </Router>
   );
