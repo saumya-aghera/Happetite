@@ -23,7 +23,7 @@ const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
 
-const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName})=> {
+const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName,menu})=> {
   const classes = useStyles();
 
     const onSuccess = (res) => {
@@ -62,9 +62,9 @@ const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName})=> {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
            
             <Navbar.Brand >
-                <SideMenu pageWrapId={'page-wrap'} outerContainerId={'outer-container'} /> 
+          <SideMenu menu={menu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
           </Navbar.Brand>
-                <Navbar.Brand style={{marginLeft:'30px'}} href="/">WEBSITE</Navbar.Brand>
+                <Navbar.Brand style={{marginLeft:'30px'}} href="/">HAPPETITE</Navbar.Brand>
                 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">

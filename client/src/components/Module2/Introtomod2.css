@@ -1,8 +1,18 @@
-.mod2-main{
-    background-color: #F5FCFF;
+/** @format */
+
+.mod2-main {
+	background-color: #f5fcff;
 }
-.intro-cont-mod2{
-    padding-top: 250px;
-    padding-bottom: 250px;
-    
+.intro-cont-mod2 {
+	padding-top: 250px;
+	padding-bottom: 250px;
+}
+.imageSrc {
+	position: "absolute";
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-size: "cover";
+	background-position: "center 40%";
 }

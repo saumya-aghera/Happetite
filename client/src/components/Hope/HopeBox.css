@@ -1,7 +1,7 @@
 /** @format */
 
 .HopeBox-main {
-	background-color: #f5f1bf !important;
+	background-color: #fff7a3 !important;
 	padding-top: 1px;
 	padding-bottom: 1px;
 	box-shadow: inset 0 0 20px #000000;
@@ -75,7 +75,7 @@ button:hover {
 
 .outer-box2 {
 	margin: 70px;
-	background-color: #f5f1bf !important;
+	background-color: #fff7a3 !important;
 	padding: 20px;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),

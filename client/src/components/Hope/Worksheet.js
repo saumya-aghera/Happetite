@@ -63,7 +63,7 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
 }
    
     return (
-        <>
+        <div id='worksheet'>
            <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Sign in Required</Modal.Title>
@@ -88,7 +88,8 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
           />
         </Modal.Footer>
       </Modal>
-            <div className="worksheet-main">
+        <div className="worksheet-main" >
+          <div className="outer-box4">
             <Typography>
                     <h2>Cultivating Hope & Possibility</h2>
                     <p>That was something new and interesting we learned, so let’s try and apply it in the worksheet given below.
@@ -104,7 +105,7 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                 <TextField
                     id="outlined-full-width"
                     label=""
-                    style={{ width: 1000 }}
+                    style={{ width: 700 }}
                     placeholder=""
                     fullWidth
                     margin="normal"
@@ -124,7 +125,7 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                 <TextField
                     id="outlined-full-width"
                     label=""
-                    style={{ width: 1000 }}
+                    style={{ width: 700 }}
                     placeholder=""
                     fullWidth
                     margin="normal"
@@ -144,7 +145,7 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                 <TextField
                     id="outlined-full-width"
                     label=""
-                    style={{ width: 1000 }}
+                    style={{ width: 700 }}
                     placeholder=""
                     fullWidth
                     margin="normal"
@@ -165,9 +166,9 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                     
                     </div>
                 </div>
-                
+                </div>
            </div> 
-        </>
+        </div>
     )
 }
 
