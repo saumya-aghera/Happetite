@@ -5,6 +5,7 @@ import cors from 'cors';
 import HomeAssignRoutes from './routes/homeassign.js';
 import HopeBoxRoutes from './routes/hopebox.js';
 import WorksheetRoutes from './routes/worksheet.js';
+import MindfullRoutes from './routes/mindfull.js';
 
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
@@ -13,6 +14,7 @@ app.use(express.json({ extended: false }));
 app.use('/assign', HomeAssignRoutes);
 app.use('/hopebox', HopeBoxRoutes);
 app.use('/worksheet', WorksheetRoutes);
+app.use('/mindfull', MindfullRoutes);
 
 app.use(bodyParser.json({limit:"20mb", extended:"true"}));
 app.use(bodyParser.urlencoded({limit:"20mb", extended:"true"}));
