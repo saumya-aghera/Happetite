@@ -15,7 +15,7 @@ const SideMenu = () => {
                 smooth={true}
                 offset={-20}
                 duration={500}
-                activeStyle={{ color: 'white' }}
+                activeStyle={{ color: 'white'}}
                 className="menu-item"
             >Hope Theory</Link>
             

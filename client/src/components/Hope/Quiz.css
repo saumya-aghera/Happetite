@@ -1,9 +1,22 @@
-h3{
-    padding-bottom: 80px;
+/** @format */
+
+h3 {
+	padding-bottom: 80px;
 }
-.quiz-main{
-    background-color: #f5ee9f;
-    margin-top: -8px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.quiz-main {
+	background-color: #f5ee9f !important;
+	margin-top: -8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	box-shadow: inset 0 0 20px #000000;
+}
+
+.outer-box3 {
+	margin: 70px;
+	background-color: #f5ee9f !important;
+	padding: 20px;
+	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
+		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 179px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
 }

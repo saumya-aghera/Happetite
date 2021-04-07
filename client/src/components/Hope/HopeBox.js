@@ -92,6 +92,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
             </Modal>
             
             <div className="HopeBox-main">
+                <div className="outer-box2">
                 <Typography>
                     <h2>HopeBox</h2>
                     <p>There are certain people or objects that make you feel hopeful, happy and relaxed. In this activity, you need to list down/upload all the items that make you feel hopeful, if it a person you can even add a picture of that individual.
@@ -110,14 +111,14 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
                 </div>
                 <div className="column">
                 <div className="file-input">
-                <input type="file" name="file" id="file" class="inputfile" value={hopebox.file} onChange={(event)=>{
+                <input type="file" name="file" id="file" className="inputfile" value={hopebox.file} onChange={(event)=>{
       sethopebox({ ...hopebox, file: event.target.value})}}/>
                     
   
                 </div>
                 </div>
                     <div className="Submit-btn">
-                        <button type="submit" onClick={createhopebox}>
+                        <button type="submit" onClick={createhopebox} className='primary'>
                         Submit
                         </button>
                     
@@ -126,7 +127,8 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
                 
             </div>
             
-        </div>
+                </div>
+                </div>
         </div>
     )
 }
