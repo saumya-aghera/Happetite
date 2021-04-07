@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Intro from './components/Intro';
 import FAQ from './components/FAQ';
 import Hope from './components/Hope/Hope';
+import Module2 from './components/Module2/Module2';
 import './App.css';
 
 
@@ -44,7 +45,18 @@ function App() {
             user={user}
             setUser={setUser}
           />
+          
           <Route path='/underconstruction'><UnderCons /></Route>
+        </Route>
+        <Route path='/Module2'>
+          <Module2
+            loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+          />
+          
+          
         </Route>
       </Switch>
     </Router>
@@ -53,6 +65,3 @@ function App() {
 
 
 export default App;
-
-
-
