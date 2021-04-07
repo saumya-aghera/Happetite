@@ -3,8 +3,12 @@ import Video from './Video';
 import HopeBox from './HopeBox';
 import Quiz from './Quiz';
 import HomeAssign from './HomeAssign';
+
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import SideMenu from '../Menu/SideMenu';
+
+import Worksheet from './Worksheet';
+
 
 const Hope = ({ loggedIn,onLogin,user,setUser }) => {
     
@@ -18,6 +22,13 @@ const Hope = ({ loggedIn,onLogin,user,setUser }) => {
                 setUser={setUser} />
             
             <Video />
+            <Worksheet
+                loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}
+                
+            />
             <HopeBox
                 loggedIn={loggedIn}
                 onLogin={onLogin}

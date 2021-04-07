@@ -51,7 +51,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
     
             
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
-      <Navbar.Brand href="/">WEBSITE</Navbar.Brand>
+      <Navbar.Brand href="/">HAPPETITE</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -133,6 +133,3 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
 
 export default Header;
 
-
-
-      
