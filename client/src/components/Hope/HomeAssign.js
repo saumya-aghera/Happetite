@@ -86,7 +86,7 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
   // };
    
   return (
-    <>
+    <div id='homeAssignment'>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Sign in Required</Modal.Title>
@@ -154,7 +154,7 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

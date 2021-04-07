@@ -4,7 +4,7 @@ import './Video.css';
 
 function Video(){
     return (
-        <div className="vid-main">
+        <div className="vid-main" id="hopeVideo">
             <h2>Hope Theory</h2>
             <div className="video">
                 <ReactPlayer 

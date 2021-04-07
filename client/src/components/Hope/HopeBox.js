@@ -65,7 +65,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
         
       }
     return (
-        <>
+        <div id='hopeBox'>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
         <Modal.Title>Sign in Required</Modal.Title>
@@ -127,7 +127,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
             </div>
             
         </div>
-        </>
+        </div>
     )
 }
 
