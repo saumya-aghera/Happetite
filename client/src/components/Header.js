@@ -5,7 +5,8 @@ import './Header.css';
 import { Avatar, Button} from '@material-ui/core';
 import { refreshTokenSetup } from '../utils/refreshToken';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const clientId =
@@ -74,6 +75,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             activeStyle={{ color: 'white' }}
              
           >Modules</Link></Nav.Link>
+         
           <Nav.Link href="/FAQ" target="blank">FAQ</Nav.Link>
         
         <Nav.Link onClick={()=>window.open('mailto:email@example.com?')}>Contact Us</Nav.Link>

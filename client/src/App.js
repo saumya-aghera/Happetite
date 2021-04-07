@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Route ,Switch,Link} from 'react-router-dom';
-import UnderCons from './components/UnderCons';
-import Home from './components/Home';
+import UnderCons from './components/UnderCons/UnderCons';
+import Home from './components/HomePage/Home';
 import Header from './components/Header';
-import Intro from './components/Intro';
-import FAQ from './components/FAQ';
+import Intro from './components/Intro/Intro';
+import FAQ from './components/FAQ/FAQ';
 import Hope from './components/Hope/Hope';
 import './App.css';
 
