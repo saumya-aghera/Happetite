@@ -4,20 +4,22 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import HomeAssignRoutes from './routes/homeassign.js';
 import HopeBoxRoutes from './routes/hopebox.js';
+import WorksheetRoutes from './routes/worksheet.js';
 
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 app.use('/assign', HomeAssignRoutes);
-app.use('/hopebox', HopeBoxRoutes)
+app.use('/hopebox', HopeBoxRoutes);
+app.use('/worksheet', WorksheetRoutes);
 
 app.use(bodyParser.json({limit:"20mb", extended:"true"}));
 app.use(bodyParser.urlencoded({limit:"20mb", extended:"true"}));
 
 // app.use((cors()));
 
-const CONNECT_URL = 'mongodb+srv://pragya:pb78fFEj4s5QKddN@cluster0.pbcpg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECT_URL = 'tmongodb+srv://trial:trial@cluster0.2jmqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECT_URL,{
