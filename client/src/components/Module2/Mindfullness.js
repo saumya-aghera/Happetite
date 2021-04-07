@@ -56,58 +56,59 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
       handleShow();
     }
 }
-    return (
-        <>
-        <div className="mind-main">
-            <div className="mind-cont">
-                <h2>Mindfullness</h2>
-                <h5 className="mind-h5">What is Mindfulness?</h5>
-                <div className="video">
-                <ReactPlayer 
-                    className="vid-container"
-                    url="https://www.youtube.com/watch?v=7-1Y6IbAxdM"
+  return (
+        
+    <div className="mind-main">
+      <div className="mind-cont">
+        <h2>Mindfullness</h2>
+        <h5 className="mind-h5">What is Mindfulness?</h5>
+        <div className="video">
+          <ReactPlayer
+            className="vid-container"
+            url="https://www.youtube.com/watch?v=7-1Y6IbAxdM"
                     
-                />
-                <p className="para1">Now that we have a basic understanding of mindfulness, let’s try and use a method of it on ourselves</p>
-                <p>This week we will learn and practice mindfulness. As we have understood, mindfulness is way of being conscious, paying attention to the here and now: on purpose, having a non-judgemental and embracing attitude. It helps increase positive emotions which help reduce the effect of bad situations and bad feelings associated with it. It also helps us notice smaller things and helps us deal with situations instead of worrying about them constantly. Mindfulness has also shown results in helping and improving our emotional regulation (Huang, 2019).</p>
-                <div className="act-mind">
-                <p className="para2"><u>Instruction: </u>Let’s try practicing it by dedicating 10 mins of our time. The video below is a mindfulness meditation.</p>
-                <ReactPlayer 
-                    className="vid-container"
-                    url="https://www.youtube.com/watch?v=ZToicYcHIOU"
+          />
+          <p className="para1">Now that we have a basic understanding of mindfulness, let’s try and use a method of it on ourselves</p>
+          <p>This week we will learn and practice mindfulness. As we have understood, mindfulness is way of being conscious, paying attention to the here and now: on purpose, having a non-judgemental and embracing attitude. It helps increase positive emotions which help reduce the effect of bad situations and bad feelings associated with it. It also helps us notice smaller things and helps us deal with situations instead of worrying about them constantly. Mindfulness has also shown results in helping and improving our emotional regulation (Huang, 2019).</p>
+          <div className="act-mind">
+            <p className="para2"><u>Instruction: </u>Let’s try practicing it by dedicating 10 mins of our time. The video below is a mindfulness meditation.</p>
+            <ReactPlayer
+              className="vid-container"
+              url="https://www.youtube.com/watch?v=ZToicYcHIOU"
                     
-                />
-                <p className="para1">After completing the exercise, in the space provided below, write some words which describe how you are feeling.
+            />
+            <p className="para1">After completing the exercise, in the space provided below, write some words which describe how you are feeling.
 </p>
-                <TextField
-                        id="outlined-full-width"
-                        label=""
-                        style={{ margin: 8 }}
-                        placeholder=""
-                        helperText=""
-                        fullWidth
-                        margin="normal"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        variant="outlined"
-                        value={mindfull.feelings} 
-                        onChange={(event)=>{
-                        setmindfull({ ...mindfull, feelings: event.target.value})}}
-                        />
-                        <div className="Submit-btn workbtn">
-                        <button type="submit" onClick={createmindfull}>
-                        Submit
+            <TextField
+              id="outlined-full-width"
+              label=""
+              style={{ margin: 8 }}
+              placeholder=""
+              helperText=""
+              fullWidth
+              margin="normal"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              value={mindfull.feelings}
+              onChange={(event) => {
+                setmindfull({ ...mindfull, feelings: event.target.value })
+              }}
+            />
+            <div className="Submit-btn workbtn">
+              <button type="submit" onClick={createmindfull}>
+                Submit
                         </button>
                     
-                    </div>
-                </div>
-                </div>
             </div>
-            </div>
+          </div>
+        </div>
+      </div>
+    </div>
             
-        </>
-    )
+        
+  );
 }
 
 export default Mindfullness

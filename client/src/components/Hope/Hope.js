@@ -10,6 +10,30 @@ import SideMenu from '../Menu/SideMenu';
 import Worksheet from './Worksheet';
 
 
+const menu = [
+    {
+        title:"Hope Theory",
+        id:"hopeVideo"
+    },
+    {
+        title:'Cultivating Hope and Possibility',
+        id:"worksheet"
+    },
+    {
+        title:'Hope Box',
+        id:"hopeBox"
+    },
+    {
+        title:'Take this Quiz',
+        id:"hopeQuiz"
+    },
+    {
+        title:'Home Assignment',
+        id:"homeAssignment"
+    }
+]
+
+
 const Hope = ({ loggedIn,onLogin,user,setUser }) => {
     
     return (
@@ -19,7 +43,9 @@ const Hope = ({ loggedIn,onLogin,user,setUser }) => {
                 loggedIn={loggedIn}
                 onLogin={onLogin}
                 user={user}
-                setUser={setUser} />
+                setUser={setUser}
+                menu = {menu}
+            />
             
             <Video />
             <Worksheet
