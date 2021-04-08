@@ -3,6 +3,7 @@ import './Home.css'
 import Intro from '../Intro/Intro'
 import Module from '../Modules/Module'
 import vid from '../../images/vid.mp4'
+import FAQ from '../FAQ/FAQ'
 
 
 const Home=()=> {
@@ -23,6 +24,7 @@ const Home=()=> {
             {/* </div> */}
             <Intro />
             <Module />
+          
            
            
         </div>

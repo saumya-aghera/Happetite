@@ -85,7 +85,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
             <TextField
               id="outlined-full-width"
               label=""
-              style={{ width:'700px', left:'140px' }}
+              style={{ width:'700px'}}
               placeholder=""
               helperText=""
               fullWidth
