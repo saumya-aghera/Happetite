@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import './Game.css'
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import i1 from '../../images/game.png'
+//import i1 from '../../images/game.png'
 function Game() {
     const [minute, setMinuter] = useState(15);
   const funRef = useRef(null);
@@ -53,7 +53,7 @@ function Game() {
       </CountdownCircleTimer>
                 </div>
                 <div className="col">
-                <img src={i1} className="crossword" alt="Game" />;
+             
                 </div>
       
       
