@@ -2,12 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import i1 from "../../images/yellow.jpg";
-import i2 from "../../images/red.jpg";
-import i3 from "../../images/pink.jpg";
-import i4 from "../../images/orange.jpg";
-import i5 from "../../images/green.jpg";
-import i6 from "../../images/blue.jpg";
+import i1 from "../../images/yellow.jpeg";
+import i2 from "../../images/red.jpeg";
+import i3 from "../../images/pink.jpeg";
+import i4 from "../../images/orange.jpeg";
+import i5 from "../../images/green.jpeg";
+import i6 from "../../images/blue.jpeg";
 import './Module.css'
 
 const images1 = [
@@ -27,7 +27,7 @@ const images2 = [
 const images3 = [
   {
     url: i3,
-    title: 'Module 3: TBA',
+    title: 'Module 3: Looking for the good things in life',
     width: '30%',
     },
   
@@ -230,7 +230,7 @@ function Module() {
 {images3.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/underconstruction' target="_blank">
+                            <a href='/Module3' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
