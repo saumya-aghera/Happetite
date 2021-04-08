@@ -1,13 +1,11 @@
 import React from 'react'
 import './Introtomod2.css'
-import minfullness from '../../images/minfullness.jpg';
-import wheel from '../../images/wheel.jpg';
-import bulb from '../../images/bulb.jpg';
+
 
 function Introtomod2() {
     return (
       
-        <div className="mod2-main" id="welcome" styles={{ backgroundImage: `url(${minfullness})` }}>
+        <div className="mod2-main" id="welcome">
             
             <div className="intro-cont-mod2">
             <h2>Welcome</h2>
