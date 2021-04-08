@@ -1,9 +1,11 @@
-.game-main{
-    background-color: #92DFF3;
+/** @format */
+
+.game-main {
+	background-color: #92dff3;
 }
-.timer-game{
-    margin-left: 40px;
+.timer-game {
+	margin-left: 40px;
 }
-.crossword{
-    width: 500px;
+.crossword {
+	width: 500px;
 }

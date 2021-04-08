@@ -1,8 +1,6 @@
 import React from 'react'
 import './Introtomod2.css'
-import minfullness from '../../images/minfullness.jpeg';
-import wheel from '../../images/wheel.jpeg';
-import bulb from '../../images/bulb.jpeg';
+
 
 function Introtomod2() {
     return (

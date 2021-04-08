@@ -1,8 +1,5 @@
 /** @format */
 
-* {
-	text-align: center;
-}
 #video {
 	position: relative;
 	z-index: -1;
