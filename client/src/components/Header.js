@@ -61,7 +61,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             to="about"
             spy={true}
             smooth={true}
-            offset={120}
+            offset={-80}
             duration={500}
             activeStyle={{ color: 'white' }}
           >About</Link></Nav.Link>
@@ -70,7 +70,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             to="module"
             spy={true}
             smooth={true}
-            offset={-20}
+            offset={-25}
             duration={500}
             activeStyle={{ color: 'white' }}
              

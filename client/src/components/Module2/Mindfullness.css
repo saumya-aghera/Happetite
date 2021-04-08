@@ -1,7 +1,10 @@
+/** @format */
+
 .mind-main {
-	background-color: #B2E6B2!important;
+	background-color: #ecffd9 !important;
 	padding: 50px;
 	box-shadow: inset 0 0 20px #000000;
+	text-align: center;
 }
 .mind-h5 {
 	color: black;

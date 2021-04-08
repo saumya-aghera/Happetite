@@ -1,8 +1,5 @@
 /** @format */
 
-* {
-	text-align: center;
-}
 .intro-main {
 	background: #654ea3;
 	/* background: -webkit-linear-gradient(to left, #654ea3, #eaafc8);
@@ -11,14 +8,13 @@
 	background-image: linear-gradient(320deg, #c797eb 0%, #f0ecfc 50%);
 	/* background-image: -webkit-linear-gradient(320deg, #c797eb 0%,  #f0ecfc 50%); */
 
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: -10px;
+	padding-bottom: -10px;
 }
 .container {
 	padding-bottom: 50px;
 	padding-top: 40px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+
 	background: rgba(0, 0, 0, 0.5);
 	color: white;
 	border: none;
