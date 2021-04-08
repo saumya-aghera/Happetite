@@ -1,7 +1,10 @@
-/** @format */
-
 .mod2-main {
 	background-color: #f5fcff;
+	background: url(../../images/bulb.jpeg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 }
 .intro-cont-mod2 {
 	padding-top: 250px;
