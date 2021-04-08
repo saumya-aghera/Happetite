@@ -1,7 +1,5 @@
-/** @format */
-
 .hw-main {
-	background-color: #ffef7a !important;
+	background-color: #FFFF00 !important;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	box-shadow: inset 0 0 20px #000000;
@@ -29,7 +27,7 @@ p {
 	width: 70%;
 	border: 2px solid black;
 	margin: 70px;
-	background-color: #f5f1bf;
+	background-color: #E6E600;
 	padding: 20px;
 	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -54,7 +52,7 @@ p {
 
 .outer-box {
 	margin: 70px;
-	background-color: #ffef7a !important;
+	background-color: #FFFF00 !important;
 	padding: 20px;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
