@@ -8,6 +8,8 @@ import FAQ from './components/FAQ/FAQ';
 import Hope from './components/Hope/Hope';
 import Module2 from './components/Module2/Module2';
 import Module3 from './components/Module3/Module3';
+import Module4 from './components/Module4/Module4';
+
 import './App.css';
 
 
@@ -61,6 +63,16 @@ function App() {
         </Route>
         <Route path='/Module3'>
           <Module3
+            loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+          />
+          
+          
+        </Route>
+        <Route path='/Module4'>
+          <Module4
             loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
