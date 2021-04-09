@@ -3,9 +3,10 @@ import './Homework3.css'
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
-import { Modal, Button } from 'react-bootstrap';
-import { GoogleLogin } from 'react-google-login';
+
 import {useLocation } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
@@ -41,6 +42,7 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     c: '',
     d: '',
     e: '',
+    date: new Date(),
   });
   const createh3 = () => {
       
@@ -54,6 +56,7 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     c: '',
     d: '',
     e: '',
+    date: new Date(),
       });
       //alert(`thank you for your answers`);//very annoying
       
@@ -152,6 +155,17 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                 seth3({ ...h3, e: event.target.value })
               }}
         />
+        <label>Date: </label>
+        {/* <DatePicker selected={h3}/> */}
+        <DatePicker
+            closeOnScroll={true}
+            selected={h3.date}
+            // onChange={date => seth3(date)}
+            onChange={(date) => {
+              seth3({ ...h3, date })
+            }}
+          />
+            
              <div className="Submit-btn">
                         <button type="submit" onClick={createh3} className='primary'>
                         Submit
