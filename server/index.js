@@ -8,6 +8,9 @@ import WorksheetRoutes from './routes/worksheet.js';
 import MindfullRoutes from './routes/mindfull.js';
 import H3Routes from './routes/h3.js';
 import TryRoutes from './routes/try.js';
+import LetRoutes from './routes/letter.js';
+import ThankRoutes from './routes/thankful.js';
+
 
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
@@ -19,6 +22,10 @@ app.use('/worksheet', WorksheetRoutes);
 app.use('/mindfull', MindfullRoutes);
 app.use('/h3', H3Routes);
 app.use('/tryy', TryRoutes);
+app.use('/letter', LetRoutes);
+app.use('/thankful', ThankRoutes);
+
+
 
 
 
