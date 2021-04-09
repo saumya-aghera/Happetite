@@ -20,7 +20,7 @@ const images1 = [
 const images2 = [
   {
     url: i2,
-    title: 'Module 4: TBA',
+    title: 'Module 4: Make gratitude your attitude',
     width: '30%',
   }
 ]
@@ -276,7 +276,7 @@ function Module() {
                     {images2.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            <a href='/underconstruction' target="_blank">
+                            <a href='/Module4' target="_blank">
                             <ButtonBase
                                 focusRipple
                                 key={image.title}
