@@ -64,119 +64,126 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
       handleShow();
     }
 }
-    return (
-        <>
-            <div className="hw3-main">
-            <h2>Home Assignment</h2>
-            <p>Instructions: As practice, you need to dedicate 10 mins of your time daily till the next session to writing an online journal practicing positive appraisal. Journaling helps you document your thoughts and feelings. The more you practice, the more you will gain out of it. Every day, you need to write about one stressful or negative even that you encountered and try applying the ABCDE model to it. List some ways showing maybe it wasn’t as bad as it could have been.
-</p>
-<TextField
-          id="outlined-full-width"
-          label="Adversity"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={h3.a}
-              onChange={(event) => {
-                seth3({ ...h3, a: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Beliefs"
-          style={{ width: '50%', marginRight: '10px'}}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={h3.b}
-              onChange={(event) => {
-                seth3({ ...h3, b: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Consequences"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={h3.c}
-              onChange={(event) => {
-                seth3({ ...h3, c: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Disputation"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={h3.d}
-              onChange={(event) => {
-                seth3({ ...h3, d: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Energization"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={h3.e}
-              onChange={(event) => {
-                seth3({ ...h3, e: event.target.value })
-              }}
-        />
-        <label>Date: </label>
-        {/* <DatePicker selected={h3}/> */}
-        <DatePicker
+  return (
+       
+    <div className="hw3-main" id="home3">
+      <div className='hw3-cont'>
+        <h2>Home Assignment</h2>
+        <p>Instructions: As practice, you need to dedicate 10 mins of your time daily till the next session to writing an online journal practicing positive appraisal. Journaling helps you document your thoughts and feelings. The more you practice, the more you will gain out of it. Every day, you need to write about one stressful or negative even that you encountered and try applying the ABCDE model to it. List some ways showing maybe it wasn’t as bad as it could have been.
+          </p>
+        <div className='hw3-text'>
+          <TextField
+            id="outlined-full-width"
+            label="Adversity"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={h3.a}
+            onChange={(event) => {
+              seth3({ ...h3, a: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Beliefs"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={h3.b}
+            onChange={(event) => {
+              seth3({ ...h3, b: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Consequences"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={h3.c}
+            onChange={(event) => {
+              seth3({ ...h3, c: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Disputation"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={h3.d}
+            onChange={(event) => {
+              seth3({ ...h3, d: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Energization"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={h3.e}
+            onChange={(event) => {
+              seth3({ ...h3, e: event.target.value })
+            }}
+          />
+          <div style={{marginTop: '10px', marginLeft:'15%'}}>
+          <label style={{marginRight: '10px'}}>Date: </label>
+          {/* <DatePicker selected={h3}/> */}
+            <DatePicker
+            
             closeOnScroll={true}
             selected={h3.date}
             // onChange={date => seth3(date)}
             onChange={(date) => {
               seth3({ ...h3, date })
-            }}
+              }}
+              
           />
-            
-             <div className="Submit-btn">
-                        <button type="submit" onClick={createh3} className='primary'>
-                        Submit
+          </div>  
+          <div className="Submit-btn">
+            <button type="submit" onClick={createh3} className='primary' style={{marginRight:'57%'}}>
+              Submit
                         </button>
                     
-                    </div>
             </div>
             
+        </div>
             
-        </>
-    )
+      </div>
+    </div>
+       
+  );
 }
 
 export default Homework3

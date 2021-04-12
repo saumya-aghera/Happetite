@@ -3,7 +3,7 @@ import './Introtomod3.css'
 function Introtomod3() {
     return (
         <>
-            <div className="mod3-main" id="welcome">
+            <div className="mod3-main" id="welcome3">
             
             <div className="intro-cont-mod3">
             <h2>Welcome</h2>

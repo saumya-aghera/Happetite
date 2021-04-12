@@ -1,3 +1,5 @@
+/** @format */
+
 .mod3-main {
 	padding: 200px;
 	background-color: #f5fcff;
@@ -12,8 +14,8 @@
 	z-index: 1;
 	width: 85%;
 	margin-left: 10%;
-
 	display: flex-box;
+
 	border-radius: 5px;
 	top: 45%;
 	background: rgba(0, 0, 0, 0.7);

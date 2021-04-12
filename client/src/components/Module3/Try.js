@@ -62,107 +62,111 @@ const createtryy = () => {
     handleShow();
   }
 }
-    return (
-        <>
-            <div className="try-main">
-            <h2>Try It Yourself!</h2>
-            <p>Instructions: Since we have a basic understanding of how the ABCDE model works, let’s try using it on ourselves. Think of a negative situation that has happened to you recently, and try applying positive reappraisal to it. Remember to start writing down how you felt/feel about the event without reacting straight away. The worksheet provided below gives you the space to note down the event, your thoughts, the consequences, your disputation and energization or the positive feeling after disputing your negative thought. Remember to start with small events as positive appraisal is a skill we are learning to develop.
-</p>
-<TextField
-          id="outlined-full-width"
-          label="Adversity"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={tryy.ta}
-              onChange={(event) => {
-                settryy({ ...tryy, ta: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Beliefs"
-          style={{ width: '50%', marginRight: '10px'}}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={tryy.tb}
-              onChange={(event) => {
-                settryy({ ...tryy, tb: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Consequences"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={tryy.tc}
-              onChange={(event) => {
-                settryy({ ...tryy, tc: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Disputation"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={tryy.td}
-              onChange={(event) => {
-                settryy({ ...tryy, td: event.target.value })
-              }}
-        />
-        <TextField
-          id="outlined-full-width"
-          label="Energization"
-          style={{ width: '50%', marginRight: '10px' }}
-          placeholder=""
-          helperText=""
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={tryy.te}
-              onChange={(event) => {
-                settryy({ ...tryy, te: event.target.value })
-              }}
-        />
-        <div className="Submit-btn">
-                        <button type="submit" onClick={createtryy} className='primary'>
-                        Submit
-                        </button>
-                    
-                    </div>
-            </div>
+  return (
+       
+    <div className="try-main" id='try'>
+      <div className='try-cont'>
+        <h2>Try It Yourself!</h2>
+        <p>Instructions: Since we have a basic understanding of how the ABCDE model works, let’s try using it on ourselves. Think of a negative situation that has happened to you recently, and try applying positive reappraisal to it. Remember to start writing down how you felt/feel about the event without reacting straight away. The worksheet provided below gives you the space to note down the event, your thoughts, the consequences, your disputation and energization or the positive feeling after disputing your negative thought. Remember to start with small events as positive appraisal is a skill we are learning to develop.
+          </p>
+        <div className='try-text'>
+          <TextField
+            id="outlined-full-width"
+            label="Adversity"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={tryy.ta}
+            onChange={(event) => {
+              settryy({ ...tryy, ta: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Beliefs"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={tryy.tb}
+            onChange={(event) => {
+              settryy({ ...tryy, tb: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Consequences"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={tryy.tc}
+            onChange={(event) => {
+              settryy({ ...tryy, tc: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Disputation"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={tryy.td}
+            onChange={(event) => {
+              settryy({ ...tryy, td: event.target.value })
+            }}
+          />
+          <TextField
+            id="outlined-full-width"
+            label="Energization"
+            style={{ width: '50%', marginRight: '10px' }}
+            placeholder=""
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="outlined"
+            value={tryy.te}
+            onChange={(event) => {
+              settryy({ ...tryy, te: event.target.value })
+            }}
+          />
             
-        </>
-    )
+          <div className="Submit-btn">
+            <button type="submit" onClick={createtryy} className='primary' style={{marginRight:'57%'}}>
+              Submit
+            </button>
+                    
+          </div>
+        </div>
+      </div>
+    </div>
+       
+  );
 }
 
 export default Try

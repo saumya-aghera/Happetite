@@ -1,8 +1,8 @@
 import React from 'react'
 import './Affirmations.css'
 import { List } from 'semantic-ui-react'
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { } from "@fortawesome/react-fontawesome";
+
+
 import { MDBIcon} from 'mdbreact';
 
 
