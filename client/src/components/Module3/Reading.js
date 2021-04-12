@@ -1,14 +1,22 @@
 import React from 'react'
-import './Reading.css'
+import './Reading.css';
+import { Accordion, Card } from 'react-bootstrap';
+
 
 function Reading() {
+
+   
+
+
     return (
-        <>
-           <div className="read-main"> 
-           <h2>Reading Material</h2>
-           <p>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
+     
+        <div className="read-main" id='read'>
+            <div className='read-cont'>
+                <h2>Reading Material</h2>
+              
+                <p>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
 </p>
-<p>Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
+                <p>Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
  There are several key differences between how pessimistic and optimistic people tend to think about the bad and good things that happen to them
 (Seligman, 1991, 1998; Seligman et al., 1995). More specifically, people who
 are optimistic make external, variable, and specific attributions for failure-like
@@ -46,51 +54,71 @@ may be helpful. Please record at least five disputation examples in the
 spaces provided below.<b />
  Two examples of completed ABCDE disputation records are provided
 below for your reference. The first example is about a bad event and the
-second is about a good event.<br />
- Example 1: Negative event<br />
-Adversity : I received a negative review from my boss at work.
+second is about a good event.
+</p>
+
+
+
+
+                <Accordion defaultActiveKey="0">
+                    <Card style={{ width: '70%', left:'15%'}}>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                           <span style={{ fontWeight: 'bold' }}> Example 1: Negative event</span>
+    </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body><span style={{ fontWeight: 'bold' }}>Adversity :</span> I received a negative review from my boss at work.
 She said that I am not outgoing enough to work the sales floor
 and therefore is going to have me work in the stockroom instead.<br />
-Beliefs : I have been working really hard and obviously it does
+                                <span style={{ fontWeight: 'bold' }}>Beliefs</span> : I have been working really hard and obviously it does
 not matter. I hate my boss and this stupid job. I don’t want to
 see her or anyone at work for that matter. I am fed up with the
 whole thing.<br />
-Consequences : I got my review two days ago and am still furious. I
+                                <span style={{ fontWeight: 'bold' }}>Consequences : </span>I got my review two days ago and am still furious. I
 really want to tell my boss off and then quit so that she can deal
 with covering my hours for the next week. I called in sick already
 yesterday since I could not fathom seeing her. I don’t know what
 I am going to do tomorrow though. I am scheduled to work a double shift and don’t have any more sick days left.
-<br />Disputation : Although I think my boss could have been more fair in
-my review, she is probably right that my personality is not as naturally outgoing as many of the other salespeople. I am not always
-comfortable talking to all of the customers and that probably
-shows through, but at the same time, I am not completely incapable as she made it seem. I guess she must see this on some level
-since she still wants me to work there, just in a different position.
-If she really disliked me, she could have just fired me. Maybe I
-am taking this too personally. I really do like my colleagues and the
-pay is pretty good. I guess in the stockroom I will have more time
-to interact with my colleagues and I don’t have to worry so much
+                                <br />
+                                <span style={{ fontWeight: 'bold' }}>Disputation : </span>Although I think my boss could have been more fair in
+                                my review, she is probably right that my personality is not as naturally outgoing as many of the other salespeople. I am not always
+                                comfortable talking to all of the customers and that probably
+                                shows through, but at the same time, I am not completely incapable as she made it seem. I guess she must see this on some level
+                                since she still wants me to work there, just in a different position.
+                                If she really disliked me, she could have just fired me. Maybe I
+                                am taking this too personally. I really do like my colleagues and the
+                                pay is pretty good. I guess in the stockroom I will have more time
+                                to interact with my colleagues and I don’t have to worry so much
 about my wardrobe. Professional work clothes are expensive!<br />
-Energization : I feel much less angry. I am still a little bothered
+                                <span style={{ fontWeight: 'bold' }}>Energization :</span> I feel much less angry. I am still a little bothered
 by how the review focused only on the negatives, but I know my
 boss had a lot of reviews to do that day so she was probably just
 trying to conserve time. It was hard to admit that I am not as outgoing as some of my colleagues, but I do realize that this is
 the case. I am actually looking forward to spending more time
 with my colleagues in the stock room and not feeling so on edge
-all the time.<br />
- Example 2: Positive event<br />
-Adversity : I wrote a paper for my English class and my professor
-thought it was excellent. He asked me to write another paper to
-submit for a writing competition. The winner of the competition
+all the time.</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                    <Card style={{ width: '70%', left:'15%', bottom:'10px'}}>
+                        
+
+                        <Accordion.Toggle as={Card.Header} eventKey="1">
+                            <span style={{ fontWeight: 'bold' }}>Example 2: Positive event</span>
+    </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                            <Card.Body>
+                                <span style={{ fontWeight: 'bold' }}>Adversity : </span>I wrote a paper for my English class and my professor
+                                thought it was excellent. He asked me to write another paper to
+                                submit for a writing competition. The winner of the competition
 will have his or her work published nationally.<br />
-Beliefs : Oh my goodness. I am terrified! I am not that good of a
+                                <span style={{ fontWeight: 'bold' }}>Beliefs :</span> Oh my goodness. I am terrified! I am not that good of a
 writer. I just got lucky on that last paper. There is no way that I
 am going to be able to write anything even close to being competitive with all the other entries. I am going to utterly disappoint
 my professor and probably end up with a poor grade in this class
 as a result. I wish he had never asked me to do this.<br />
-Consequences : I have writer’s block and feel sick to my stomach.
+<span style={{ fontWeight: 'bold' }}>Consequences :</span> I have writer’s block and feel sick to my stomach.
 I don’t even know where to begin. I just want to forget all about
 this.<br />
-Disputation : Wait a minute here, would a professor really tell me
+                                <span style={{ fontWeight: 'bold' }}>Disputation :</span> Wait a minute here, would a professor really tell me
 how good my work is if that were not true? What reason would
 he have for doing that? He has been teaching for almost 25
 years so surely has seen a lot of papers and if he thinks mine is
@@ -99,16 +127,22 @@ grades in my English classes and on my papers for other classes
 too. Maybe I am not giving myself enough credit here. I already
 committed to doing this so I should just follow through. Even if I
 don’t win, it will be a good experience to at least try.<br />
-Energization : I feel much more relaxed and able to think more
+                                <span style={{ fontWeight: 'bold' }}>Energization : </span>I feel much more relaxed and able to think more
 clearly. I think I am over my writer’s block too. I have a good
 idea of the topic I will write on and am going to head to the
-library right now to get a few more resources<br /></p>
-<p>Please make at least five copies of the following chart in order to record at
+library right now to get a few more resources</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
+                
+                <p>Please make at least five copies of the following chart in order to record at
 least five instances of ABCDE disputation in your own life. </p>
+                
+            </div>
+            
+        </div>
+    );
 
-           </div>
-        </>
-    )
 }
 
 export default Reading
