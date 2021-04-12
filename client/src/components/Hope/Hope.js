@@ -6,11 +6,15 @@ import HomeAssign from './HomeAssign';
 
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import SideMenu from '../Menu/SideMenu';
-
+import HopePPT from './HopePPT'
 import Worksheet from './Worksheet';
 
 
 const menu = [
+    {
+        title: "What is Hope?",
+        id: 'hopeppt'
+    },
     {
         title:"Hope Theory",
         id:"hopeVideo"
@@ -46,7 +50,7 @@ const Hope = ({ loggedIn,onLogin,user,setUser }) => {
                 setUser={setUser}
                 menu = {menu}
             />
-            
+            <HopePPT />
             <Video />
             <Worksheet
                 loggedIn={loggedIn}

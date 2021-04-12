@@ -1,5 +1,7 @@
+/** @format */
+
 .vid-main {
-	background-color: #FFFF99 !important;
+	background-color: #fffa8a !important;
 	box-shadow: inset 0 0 20px #000000;
 	padding: 50px;
 	text-align: center;
@@ -18,7 +20,7 @@ h2 {
 
 .outer-box1 {
 	margin: 40px;
-	background-color: #FFFF99 !important;
+	background-color: #fffa8a !important;
 
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
