@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-
+import TextareaAutosize from 'react-textarea-autosize';
 import './Letter.css'
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
@@ -54,35 +54,49 @@ const createletter = () => {
     handleShow();
   }
 }
-    return (
-        <>
-        <div className="letter-main">
-            <h2>My Gratitude Letter</h2>
-            <p><u>Instructions:</u> In this activity, you will write a letter in the space provided below as short or long as you want to the person who you are thankful for. It could be a friend, family member, partner, mentor, colleague or even your pet. Write about why you are thankful for them and how or in what way have they positively impacted your life. 
-</p>
-<TextField
-          id="outlined-full-width"
-          label="Write Your Letter"
-          style={{ margin: 8, width: "50%"}}
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-          value={letter.let}
+
+
+
+  
+  return (
+     
+    <div className="letter-main" id='letter'>
+      <div className='letter-cont'>
+        <h2>My Gratitude Letter</h2>
+        <p><u>Instructions:</u> In this activity, you will write a letter in the space provided below as short or long as you want to the person who you are thankful for. It could be a friend, family member, partner, mentor, colleague or even your pet. Write about why you are thankful for them and how or in what way have they positively impacted your life.
+          </p>
+        <div className='letter-text'>
+
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon">
+                <i className="fas fa-pencil-alt prefix"></i>
+              </span>
+            </div>
+              
+            <TextareaAutosize
+              autoFocus
+              minRows='15'
+              style={{ width: '90%' }}
+              placeholder="Write your Letter here"
+              id="outlined-full-width"
+         
+              value={letter.let}
               onChange={(event) => {
                 setletter({ ...letter, let: event.target.value })
               }}
-        />
-        <div className="Submit-btn">
-                        <button type="submit" onClick={createletter} className='primary'>
-                        Submit
+            />
+          </div>
+          <div className="Submit-btn">
+            <button type="submit" onClick={createletter} className='primary' style={{ marginRight: '57%' }}>
+              Submit
                         </button>
                     
-                    </div>
+          </div>
         </div>
-        </>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Letter
