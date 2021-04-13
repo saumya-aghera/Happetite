@@ -63,8 +63,15 @@ const createletter = () => {
     <div className="letter-main" id='letter'>
       <div className='letter-cont'>
         <h2>My Gratitude Letter</h2>
-        <p><u>Instructions:</u> In this activity, you will write a letter in the space provided below as short or long as you want to the person who you are thankful for. It could be a friend, family member, partner, mentor, colleague or even your pet. Write about why you are thankful for them and how or in what way have they positively impacted your life.
-          </p>
+        <div style={{
+                    textAlign:'center',
+                    fontSize: 'medium',
+                    fontWeight:'500',
+                    paddingBottom: '20px',
+                    paddingLeft: '75px',
+                    paddingRight: '75px'
+                }}><u>Instructions:</u> In this activity, you will write a letter in the space provided below as short or long as you want to the person who you are thankful for. It could be a friend, family member, partner, mentor, colleague or even your pet. Write about why you are thankful for them and how or in what way have they positively impacted your life.
+          </div>
         <div className='letter-text'>
 
           <div className="input-group">

@@ -69,8 +69,11 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     <div className="hw3-main" id="home3">
       <div className='hw3-cont'>
         <h2>Home Assignment</h2>
-        <p>Instructions: As practice, you need to dedicate 10 mins of your time daily till the next session to writing an online journal practicing positive appraisal. Journaling helps you document your thoughts and feelings. The more you practice, the more you will gain out of it. Every day, you need to write about one stressful or negative even that you encountered and try applying the ABCDE model to it. List some ways showing maybe it wasn’t as bad as it could have been.
-          </p>
+        <div style={{
+          textAlign: 'center', fontSize: 'medium', fontWeight: '500',
+          paddingLeft: '60px', paddingRight: '60px', paddingBottom: '20px'
+        }}>Instructions: As practice, you need to dedicate 10 mins of your time daily till the next session to writing an online journal practicing positive appraisal. Journaling helps you document your thoughts and feelings. The more you practice, the more you will gain out of it. Every day, you need to write about one stressful or negative even that you encountered and try applying the ABCDE model to it. List some ways showing maybe it wasn’t as bad as it could have been.
+          </div>
         <div className='hw3-text'>
           <TextField
             id="outlined-full-width"

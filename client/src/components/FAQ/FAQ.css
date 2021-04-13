@@ -1,10 +1,13 @@
+/** @format */
+
 .collapsible-link {
 	width: 100%;
 	position: relative;
 	text-align: left;
 }
-.card-body{
+.card-body {
 	color: black;
+	font-size: medium;
 }
 .collapsible-link::before {
 	content: "\f107";
@@ -38,4 +41,21 @@ body {
     background-image: linear-gradient(320deg, #c797eb 0%,  #f0ecfc 30%); */
 	min-height: 100vh;
 	/* background-repeat: no-repeat; */
+}
+
+.cont-faq {
+	background: #654ea3;
+	/* background: -webkit-linear-gradient(to left, #654ea3, #eaafc8);
+	background: linear-gradient(to left, #654ea3, #eaafc8); */
+	background-color: #f0ecfc;
+	background-image: linear-gradient(320deg, #c797eb 0%, #f0ecfc 50%);
+	text-align: center;
+	width: 90%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	border: none;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.7);
+	margin: 100px auto;
 }

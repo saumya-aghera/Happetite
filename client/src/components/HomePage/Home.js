@@ -24,7 +24,7 @@ const Home=()=> {
             {/* </div> */}
             <Intro />
             <Module />
-          
+            <FAQ />
            
            
         </div>

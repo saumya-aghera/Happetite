@@ -55,30 +55,46 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link><Link
+          <Nav.Link  style={{fontSize:'medium', fontWeight:'400'}}><Link
             activeClass="active"
-            to="about"
+            to="home"
             spy={true}
             smooth={true}
             offset={-80}
             duration={500}
             activeStyle={{ color: 'white' }}
+          >Home</Link></Nav.Link>
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-120}
+            duration={500}
+            activeStyle={{ color: 'white' }}
           >About</Link></Nav.Link>
-          <Nav.Link><Link
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
             activeClass="active"
             to="module"
             spy={true}
             smooth={true}
-            offset={-25}
+            offset={-35}
             duration={500}
             activeStyle={{ color: 'white' }}
              
           >Modules</Link></Nav.Link>
          
-          <Nav.Link href="/FAQ" target="blank">FAQ</Nav.Link>
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="faq"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >FAQ</Link></Nav.Link>
         
-        <Nav.Link onClick={()=>window.open('mailto:email@example.com?')}>Contact Us</Nav.Link>
+        <Nav.Link onClick={()=>window.open('mailto:email@example.com?')} style={{fontSize:'medium', fontWeight:'400'}}>Contact Us</Nav.Link>
           
         </Nav>
         
