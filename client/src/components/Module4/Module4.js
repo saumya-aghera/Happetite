@@ -5,11 +5,50 @@ import Grat from './Grat';
 import Letter from './Letter';
 import Homework4 from './Homework4';
 import Quiz4 from './Quiz4';
+import ModuleHeader from '../ModuleHeader/ModuleHeader';
+
+const menu = [
+    {
+        title: "Welcome",
+        id:"welcome4"
+    },
+    {
+        title: "Introduction to Gratitude",
+        id:"into-grat"
+    },
+    {
+        title: "What are you Thankful for?",
+        id:"thankful"
+    },
+    {
+        title: "My Gratitude Letter",
+        id:"letter"
+    },
+    {
+        title: "Home Assignment",
+        id:"home4"
+    },
+    {
+        title: "Take the Quiz",
+        id:"quiz4"
+
+    }
+    
+
+]
+
 
 const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
     
     return (
         <div>
+            <ModuleHeader
+            loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}
+                menu={menu}
+            />
             <Introtomod4/>
             <GratIntro/>
             <Grat

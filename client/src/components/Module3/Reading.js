@@ -14,9 +14,10 @@ function Reading() {
             <div className='read-cont'>
                 <h2>Reading Material</h2>
               
-                <p>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
-</p>
-                <p>Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
+                <p style={{textAlign:'center'}}>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
+                </p>
+                <div className='read-worksheet'>
+                <p >Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
  There are several key differences between how pessimistic and optimistic people tend to think about the bad and good things that happen to them
 (Seligman, 1991, 1998; Seligman et al., 1995). More specifically, people who
 are optimistic make external, variable, and specific attributions for failure-like
@@ -51,7 +52,7 @@ D ispute your current beliefs in order to feel more E nergized and optimistic
 about the adversities. If you find it difficult to dispute the thoughts on your
 own, turning to a friend or a loved one for help in finding the disputation
 may be helpful. Please record at least five disputation examples in the
-spaces provided below.<b />
+spaces provided below.<br />
  Two examples of completed ABCDE disputation records are provided
 below for your reference. The first example is about a bad event and the
 second is about a good event.
@@ -134,7 +135,7 @@ library right now to get a few more resources</Card.Body>
                         </Accordion.Collapse>
                     </Card>
                 </Accordion>
-                
+                </div>
                 <p>Please make at least five copies of the following chart in order to record at
 least five instances of ABCDE disputation in your own life. </p>
                 

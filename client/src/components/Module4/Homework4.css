@@ -1,3 +1,390 @@
-.hw4-main{
-    background-color: #ff7f7f;
+/** @format */
+
+.hw4-main {
+	background-color: #ff7f7f;
+	padding: 50px;
+	box-shadow: inset 0 0 20px #000000;
+}
+
+.hw4-cont {
+	background-color: #ff7f7f !important;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
+		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 179px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.hw4-pointer {
+	border: none;
+	text-align: center;
+	padding: 60px;
+	width: 80%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.pointer1 {
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer1:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer1:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+
+.pointer1:hover {
+	opacity: 1;
+}
+.pointer1:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer2 {
+	margin-top: 15px;
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer2:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer2:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+
+.pointer2:hover {
+	opacity: 1;
+}
+.pointer2:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer3 {
+	margin-top: 15px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer3:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer3:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+
+.pointer3:hover {
+	opacity: 1;
+}
+.pointer3:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer4 {
+	margin-top: 15px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer4:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer4:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer4:hover {
+	opacity: 1;
+}
+.pointer4:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer5 {
+	margin-top: 15px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer5:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer5:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer5:hover {
+	opacity: 1;
+}
+.pointer5:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer6 {
+	margin-top: 15px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer6:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer6:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer6:hover {
+	opacity: 1;
+}
+.pointer6:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.pointer7 {
+	margin-top: 15px;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	width: 400px;
+	height: 40px;
+	padding-left: 40px;
+	padding-top: 10px;
+	position: relative;
+	margin-left: 200px;
+	background: red;
+	color: black;
+	font-weight: bolder;
+	font-size: large;
+	font-style: italic;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+.pointer7:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid rgba(255, 255, 255, 0.5);
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.pointer7:before {
+	content: "";
+	position: absolute;
+	right: -20px;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 20px solid red;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+
+.pointer7:hover {
+	opacity: 1;
+}
+.pointer7:active {
+	background-color: red;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }

@@ -1,12 +1,13 @@
 /** @format */
 
 .hw3-main {
-	background-color: #ffc2d6;
+	background-color: #ffbade;
 	padding: 50px;
 	box-shadow: inset 0 0 20px #000000;
 }
 .hw3-cont {
-	background-color: #ffc2d6 !important;
+	text-align: center;
+	background-color: #ffbade !important;
 	padding: 20px;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),

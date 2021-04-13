@@ -61,29 +61,32 @@ const createthankful = () => {
     handleShow();
   }
 }
-    return (
-        <>
-        <div className="grat-main">
-            <h2>What are you thankful for?</h2>
-            <p><u>Instructions:</u> Every person feels grateful or thankful for something, whether it is small or big that does not matter. What matters is that we have aspects of our life that are of value to us and that make us feel good and positive. In this activity, you need to list in the space provided below any 5 aspects that you are grateful for, it could be a person, pet or a thing. 
-</p>
-<TextField
+  return (
+       
+    <div className="grat-main" id='thankful'>
+      <div className='grat-cont'>
+        <h2>What are you thankful for?</h2>
+        <p><u>Instructions:</u> Every person feels grateful or thankful for something, whether it is small or big that does not matter. What matters is that we have aspects of our life that are of value to us and that make us feel good and positive. In this activity, you need to list in the space provided below any 5 aspects that you are grateful for, it could be a person, pet or a thing.
+        </p>
+        
+        <div className='grat-text'>
+        <TextField
           id="standard-full-width"
           label="Number 1"
-          style={{ margin: 8, width: "50%"}}
+          style={{ margin: 8, width: "50%" }}
           margin="normal"
           InputLabelProps={{
             shrink: true,
             
           }}
           value={thankful.n1}
-              onChange={(event) => {
-                setthankful({ ...thankful, n1: event.target.value })
-              }}/>
-          <TextField
+          onChange={(event) => {
+            setthankful({ ...thankful, n1: event.target.value })
+          }} />
+        <TextField
           id="standard-full-width"
           label="Number 2"
-          style={{ margin: 8, width: "50%"}}
+          style={{ margin: 8, width: "50%" }}
           margin="normal"
           InputLabelProps={{
             shrink: true,
@@ -91,54 +94,55 @@ const createthankful = () => {
           value={thankful.n2}
           onChange={(event) => {
             setthankful({ ...thankful, n2: event.target.value })
-          }}/>
-          <TextField
+          }} />
+        <TextField
           id="standard-full-width"
           label="Number 3"
-          style={{ margin: 8, width: "50%"}}
+          style={{ margin: 8, width: "50%" }}
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
           value={thankful.n3}
-              onChange={(event) => {
-                setthankful({ ...thankful, n3: event.target.value })
-              }}/>
-          <TextField
+          onChange={(event) => {
+            setthankful({ ...thankful, n3: event.target.value })
+          }} />
+        <TextField
           id="standard-full-width"
           label="Number 4"
-          style={{ margin: 8, width: "50%"}}
+          style={{ margin: 8, width: "50%" }}
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
           value={thankful.n4}
-              onChange={(event) => {
-                setthankful({ ...thankful, n4: event.target.value })
-              }}
-          />
-          <TextField
+          onChange={(event) => {
+            setthankful({ ...thankful, n4: event.target.value })
+          }}
+        />
+        <TextField
           id="standard-full-width"
           label="Number 5"
-          style={{ margin: 8, width: "50%"}}
+          style={{ margin: 8, width: "50%" }}
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
           value={thankful.n5}
-              onChange={(event) => {
-                setthankful({ ...thankful, n5: event.target.value })
-              }}
-          />
-          <div className="Submit-btn">
-                        <button type="submit" onClick={createthankful} className='primary'>
-                        Submit
+          onChange={(event) => {
+            setthankful({ ...thankful, n5: event.target.value })
+          }}
+        />
+        <div className="Submit-btn">
+          <button type="submit" onClick={createthankful} className='primary' style={{marginRight:'57%'}}>
+            Submit
                         </button>
                     
-                    </div>
         </div>
-        </>
-    )
+        </div>
+        </div>
+    </div>
+  );
 }
 
 export default Grat
