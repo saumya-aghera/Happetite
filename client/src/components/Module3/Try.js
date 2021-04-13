@@ -67,8 +67,11 @@ const createtryy = () => {
     <div className="try-main" id='try'>
       <div className='try-cont'>
         <h2>Try It Yourself!</h2>
-        <p>Instructions: Since we have a basic understanding of how the ABCDE model works, let’s try using it on ourselves. Think of a negative situation that has happened to you recently, and try applying positive reappraisal to it. Remember to start writing down how you felt/feel about the event without reacting straight away. The worksheet provided below gives you the space to note down the event, your thoughts, the consequences, your disputation and energization or the positive feeling after disputing your negative thought. Remember to start with small events as positive appraisal is a skill we are learning to develop.
-          </p>
+        <div style={{
+          textAlign: 'center', fontSize: 'medium', fontWeight: '500',
+          paddingLeft: '60px', paddingRight: '60px', paddingBottom: '20px'
+        }}>Instructions: Since we have a basic understanding of how the ABCDE model works, let’s try using it on ourselves. Think of a negative situation that has happened to you recently, and try applying positive reappraisal to it. Remember to start writing down how you felt/feel about the event without reacting straight away. The worksheet provided below gives you the space to note down the event, your thoughts, the consequences, your disputation and energization or the positive feeling after disputing your negative thought. Remember to start with small events as positive appraisal is a skill we are learning to develop.
+          </div>
         <div className='try-text'>
           <TextField
             id="outlined-full-width"

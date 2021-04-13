@@ -88,7 +88,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
       <div className="mind-cont">
         <div className="video-box">
         <h2>Mindfullness</h2>
-        <h5 className="mind-h5">What is Mindfulness?</h5>
+        <h4 className="mind-h4">What is Mindfulness?</h4>
         <div className="video">
           <ReactPlayer
             className="vid-container"
@@ -97,17 +97,18 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
             />
           </div>
           </div>
-          <p className="para1">Now that we have a basic understanding of mindfulness, let’s try and use a method of it on ourselves</p>
-          <p>This week we will learn and practice mindfulness. As we have understood, mindfulness is way of being conscious, paying attention to the here and now: on purpose, having a non-judgemental and embracing attitude. It helps increase positive emotions which help reduce the effect of bad situations and bad feelings associated with it. It also helps us notice smaller things and helps us deal with situations instead of worrying about them constantly. Mindfulness has also shown results in helping and improving our emotional regulation (Huang, 2019).</p>
+          <div className="para1" style={{ fontSize: 'medium',padding:'50px', fontWeight:'500' }}>Now that we have a basic understanding of mindfulness, let’s try and use a method of it on ourselves
+          <br />This week we will learn and practice mindfulness. As we have understood, mindfulness is way of being conscious, paying attention to the here and now: on purpose, having a non-judgemental and embracing attitude. It helps increase positive emotions which help reduce the effect of bad situations and bad feelings associated with it. It also helps us notice smaller things and helps us deal with situations instead of worrying about them constantly. Mindfulness has also shown results in helping and improving our emotional regulation (Huang, 2019).
+          </div>
           <div className="act-mind">
-            <p className="para2"><u>Instruction: </u>Let’s try practicing it by dedicating 10 mins of our time. The video below is a mindfulness meditation.</p>
+            <div className="para2" style={{ fontSize: 'medium',padding:'30px', fontWeight:'750' }}><u>Instruction: </u>Let’s try practicing it by dedicating 10 mins of our time. The video below is a mindfulness meditation.</div>
             <ReactPlayer
               className="vid-container"
               url="https://www.youtube.com/watch?v=ZToicYcHIOU"
                     
             />
-            <p className="para1">After completing the exercise, in the space provided below, write some words which describe how you are feeling.
-</p>
+            <div style={{ fontSize: 'medium',paddingTop:'30px', fontWeight:'500' }}>After completing the exercise, in the space provided below, write some words which describe how you are feeling.
+</div>
             <TextField
               id="outlined-full-width"
               label=""

@@ -14,10 +14,10 @@ function Reading() {
             <div className='read-cont'>
                 <h2>Reading Material</h2>
               
-                <p style={{textAlign:'center'}}>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
-                </p>
+                <div style={{textAlign:'center', fontSize:'medium', fontWeight:'500', paddingLeft:'20px', paddingRight:'20px', paddingBottom:'20px'}}>This reading material provided to you will simply guide you and give you a better understanding of the ABCDE model/technique through the examples provided. This reading material can be used as a reference throughout this module and in the future to guide you and focus on how to practice learned optimism.
+                </div>
                 <div className='read-worksheet'>
-                <p >Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
+                <div style={{ fontSize:'medium', fontWeight:'500', paddingLeft:'100px', paddingRight:'100px', paddingBottom:'50px'}} >Worksheet 4.13 ABCDE Disputation (Seligman, 2002) Instructions<br />
  There are several key differences between how pessimistic and optimistic people tend to think about the bad and good things that happen to them
 (Seligman, 1991, 1998; Seligman et al., 1995). More specifically, people who
 are optimistic make external, variable, and specific attributions for failure-like
@@ -56,15 +56,15 @@ spaces provided below.<br />
  Two examples of completed ABCDE disputation records are provided
 below for your reference. The first example is about a bad event and the
 second is about a good event.
-</p>
+</div>
 
 
 
 
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey="">
                     <Card style={{ width: '70%', left:'15%'}}>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                           <span style={{ fontWeight: 'bold' }}> Example 1: Negative event</span>
+                           <span style={{ fontWeight: 'bolder' }}> Example 1: Negative event</span>
     </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body><span style={{ fontWeight: 'bold' }}>Adversity :</span> I received a negative review from my boss at work.
@@ -136,8 +136,8 @@ library right now to get a few more resources</Card.Body>
                     </Card>
                 </Accordion>
                 </div>
-                <p>Please make at least five copies of the following chart in order to record at
-least five instances of ABCDE disputation in your own life. </p>
+                <div style={{ textAlign:'center', fontSize:'medium', fontWeight:'500', paddingLeft:'100px', paddingRight:'100px', paddingTop:'10px'}}>Please make at least five copies of the following chart in order to record at
+least five instances of ABCDE disputation in your own life. </div>
                 
             </div>
             

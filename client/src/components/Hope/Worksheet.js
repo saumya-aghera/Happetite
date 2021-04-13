@@ -92,11 +92,11 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
           <div className="outer-box4">
             <Typography>
                     <h2>Cultivating Hope & Possibility</h2>
-                    <p>That was something new and interesting we learned, so let’s try and apply it in the worksheet given below.
-                        <br />The worksheet is called The Hope Planning Worksheet (Kate Snowice, 2016).
+                    <div style={{fontSize:'medium', display:'flex-box', padding:'20px'}}>That was something new and interesting we learned, so let’s try and apply it in the worksheet given below.
+                       The worksheet is called The Hope Planning Worksheet (Kate Snowice, 2016).
 
-                        <br />Instructions- Please complete the worksheet by applying what you have understood in the previous video to a problem that you may be facing in your life. Read the instructions on the worksheet very carefully and fill in the details.
-                    </p>
+                        <br /><span style={{textDecoration: 'underline'}}>Instructions-</span> Please complete the worksheet by applying what you have understood in the previous video to a problem that you may be facing in your life. Read the instructions on the worksheet very carefully and fill in the details.
+                    </div>
                     
                 </Typography>
                 <div className="ans-main">

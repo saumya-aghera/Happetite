@@ -15,12 +15,12 @@ const FAQ = () => {
 
 
     return (
-        <div class="container" id="faq">
+        <div class="cont-faq" id="faq">
 
     
             <div class="row py-5">
                 <div class="col-lg-9 mx-auto text-white text-center">
-                    <h1 class="display-4">Frequently Asked Questions (FAQ)</h1>
+                    <h1 class="display-4" style={{fontWeight:'500'}}>Frequently Asked Questions (FAQ)</h1>
                 </div>
             </div>
             <div class="row">
@@ -30,10 +30,10 @@ const FAQ = () => {
                         <div class="card">
                     <div id="headingOne" class="card-header bg-white shadow-sm border-0">
                         <h2 class="mb-0">
-                            <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link text-dark font-weight-bold text-uppercase collapsible-link">Why should you complete all the activities (videos, quizzes etc.)?</button>
+                            <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="btn btn-link text-dark font-weight-bold text-uppercase collapsible-link">Why should you complete all the activities (videos, quizzes etc.)?</button>
                         </h2>
                     </div>
-                    <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
+                    <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
                         <div class="card-body p-5">
                             <p class="font-weight-light m-0">The purpose of the various activities is to enable you to understand, reflect and apply the knowledge. Different activities are chosen for different modules based on the content. Your complete involvement in the program activities will help you to check your application of the content explained and if it is improving your overall well-being and reducing negative thoughts.</p>
                         </div>

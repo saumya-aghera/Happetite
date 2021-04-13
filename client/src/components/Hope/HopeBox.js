@@ -95,8 +95,8 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
                 <div className="outer-box2">
                 <Typography>
                     <h2>HopeBox</h2>
-                    <p>There are certain people or objects that make you feel hopeful, happy and relaxed. In this activity, you need to list down/upload all the items that make you feel hopeful, if it a person you can even add a picture of that individual.
-                    <br /> There is no limit to the number of items that you would like to submit. </p>
+                    <div style={{fontSize:'medium', paddingLeft:'50px', paddingRight:'50px',paddingBottom:'10px'}}>There are certain people or objects that make you feel hopeful, happy and relaxed. In this activity, you need to list down/upload all the items that make you feel hopeful, if it a person you can even add a picture of that individual.
+                    <br /> There is no limit to the number of items that you would like to submit. </div>
                 </Typography>
                 
                 

@@ -66,8 +66,15 @@ const createthankful = () => {
     <div className="grat-main" id='thankful'>
       <div className='grat-cont'>
         <h2>What are you thankful for?</h2>
-        <p><u>Instructions:</u> Every person feels grateful or thankful for something, whether it is small or big that does not matter. What matters is that we have aspects of our life that are of value to us and that make us feel good and positive. In this activity, you need to list in the space provided below any 5 aspects that you are grateful for, it could be a person, pet or a thing.
-        </p>
+        <div style={{
+                    textAlign:'center',
+                    fontSize: 'medium',
+                    fontWeight:'500',
+                    paddingBottom: '20px',
+                    paddingLeft: '75px',
+                    paddingRight: '75px'
+                }}><u>Instructions:</u> Every person feels grateful or thankful for something, whether it is small or big that does not matter. What matters is that we have aspects of our life that are of value to us and that make us feel good and positive. In this activity, you need to list in the space provided below any 5 aspects that you are grateful for, it could be a person, pet or a thing.
+        </div>
         
         <div className='grat-text'>
         <TextField

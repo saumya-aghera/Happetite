@@ -13,7 +13,7 @@ import './Module.css'
 const images1 = [
   {
     url: i1,
-    title: 'Module 1: Hope',
+    title: 'Module 1: Hope and Scope',
     width: '30%',
   }
 ]
@@ -151,7 +151,7 @@ function Module() {
                     {images1.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'5px'}}>
-                            <a href='/Hope' target="_blank" >
+                            <a href='/Module1' target="_blank" >
                             <ButtonBase
                                 focusRipple
                                 key={image.title}

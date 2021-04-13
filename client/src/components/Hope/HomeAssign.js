@@ -117,8 +117,8 @@ function HomeAssign({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
         <div className="outer-box">
         <Typography>
           <h2>Home Assignment</h2>
-          <p>Since you have a basic understanding of hope let’s try and use it. You need to set three  realistic goals for yourself or that you have made and write it down in the section provided to you. Applying the hope theory you saw, note your potential barriers/obstacles and what are the realistic alternatives you have thought of to reach your goal by overcoming those barriers/obstacles.
-</p>
+          <div style={{fontSize:'medium', paddingLeft:'50px', paddingRight:'50px',paddingBottom:'10px'}}>Since you have a basic understanding of hope let’s try and use it. You need to set three  realistic goals for yourself or that you have made and write it down in the section provided to you. Applying the hope theory you saw, note your potential barriers/obstacles and what are the realistic alternatives you have thought of to reach your goal by overcoming those barriers/obstacles.
+</div>
         </Typography>
         <div className="box">
 

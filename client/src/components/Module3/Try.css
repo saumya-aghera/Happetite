@@ -1,14 +1,14 @@
 /** @format */
 
 .try-main {
-	background-color: #ffbfd9;
+	background-color: #ffb4da;
 	padding: 50px;
 	box-shadow: inset 0 0 20px #000000;
 }
 
 .try-cont {
-	background-color: #ffbfd9 !important;
-	padding: 20px;
+	background-color: #ffbcdd !important;
+	padding: 40px;
 	text-align: center;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),

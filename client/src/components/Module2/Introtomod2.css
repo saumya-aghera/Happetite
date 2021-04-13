@@ -12,12 +12,13 @@
 }
 .intro-cont-mod2 {
 	z-index: 1;
+	padding: 20px;
 	width: 85%;
 	margin-left: 10%;
-
+	text-align: center;
 	display: flex-box;
 	border-radius: 5px;
-	top: 45%;
+	top: 40%;
 	background: rgba(0, 0, 0, 0.7);
 	color: white;
 }

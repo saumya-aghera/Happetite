@@ -8,10 +8,10 @@
 
 .listm {
 	border-radius: 7%;
-
+	font-size: medium;
 	border: none;
 	padding: 40px;
-	width: 48%;
+	width: 54%;
 	margin: auto;
 	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),

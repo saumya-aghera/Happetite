@@ -41,7 +41,7 @@ function App() {
         <Route exact path='/'><Home /></Route>
         <Route path='/about'><Intro /></Route>
         <Route path='/FAQ'><FAQ /></Route>
-        <Route path='/Hope'>
+        <Route path='/Module1'>
           <Hope
             loggedIn={loggedIn}
             onLogin={setLogin}

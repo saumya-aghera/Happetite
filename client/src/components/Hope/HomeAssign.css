@@ -1,7 +1,7 @@
 /** @format */
 
 .hw-main {
-	background-color: #ffe64c !important;
+	background-color: #ffe052 !important;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	box-shadow: inset 0 0 20px #000000;
@@ -48,14 +48,12 @@ h5 {
 .assign-h5 {
 	padding-bottom: 20px;
 }
-p {
-	padding-bottom: 20px;
-}
 
 .outer-box {
 	margin: 70px;
-	background-color: #ffe64c !important;
-	padding: 20px;
+	background-color: #ffe052 !important;
+	padding: 40px;
+	font-size: medium;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
 		0 22.3px 179px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
