@@ -3,7 +3,8 @@ import './Homework3.css'
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
-
+import { Modal, Button } from 'react-bootstrap';
+import { GoogleLogin } from 'react-google-login';
 import {useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -67,6 +68,30 @@ function Homework3({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
   return (
        
     <div className="hw3-main" id="home3">
+       <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign in Required</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Please Sign in before submitting</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <GoogleLogin
+            clientId={clientId}
+            render={renderProps => (
+              <Button variant="contained" color="primary" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                Sign In
+              </Button>)}
+            buttonText="Login"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+            style={{ marginTop: '100px' }}
+            isSignedIn={true}
+          />
+        </Modal.Footer>
+      </Modal>
       <div className='hw3-cont'>
         <h2>Home Assignment</h2>
         <div style={{

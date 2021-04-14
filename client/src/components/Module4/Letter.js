@@ -61,6 +61,30 @@ const createletter = () => {
   return (
      
     <div className="letter-main" id='letter'>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign in Required</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Please Sign in before submitting</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <GoogleLogin
+            clientId={clientId}
+            render={renderProps => (
+              <Button variant="contained" color="primary" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                Sign In
+              </Button>)}
+            buttonText="Login"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+            style={{ marginTop: '100px' }}
+            isSignedIn={true}
+          />
+        </Modal.Footer>
+      </Modal>
       <div className='letter-cont'>
         <h2>My Gratitude Letter</h2>
         <div style={{

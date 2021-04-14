@@ -11,29 +11,29 @@ const clientId =
 
 function Try({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
-const location = useLocation();
+    const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const location = useLocation();
 
- const onSuccess = async (res) => {
-      onLogin(true);
-      setUser({
-          email: res.profileObj.email,
-          familyName: res.profileObj.familyName,
-          givenName: res.profileObj.givenName,
-          googleId: res.profileObj.googleId,
-          imageUrl: res.profileObj.imageUrl,
-          name: res.profileObj.name
-      });
-      console.log('login', user, res)
-   refreshTokenSetup(res);
-   handleClose();
+   const onSuccess = async (res) => {
+        onLogin(true);
+        setUser({
+            email: res.profileObj.email,
+            familyName: res.profileObj.familyName,
+            givenName: res.profileObj.givenName,
+            googleId: res.profileObj.googleId,
+            imageUrl: res.profileObj.imageUrl,
+            name: res.profileObj.name
+        });
+        console.log('login', user, res)
+     refreshTokenSetup(res);
+     handleClose();
+    };
+
+  const onFailure = (res) => {
+    handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
   };
-
-const onFailure = (res) => {
-  handleClose();
-  alert('Google Sign In was unsuccessful. Try again later');
-};
 
 
 const [tryy, settryy] = useState({
@@ -65,6 +65,30 @@ const createtryy = () => {
   return (
        
     <div className="try-main" id='try'>
+       <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign in Required</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Please Sign in before submitting</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <GoogleLogin
+            clientId={clientId}
+            render={renderProps => (
+              <Button variant="contained" color="primary" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                Sign In
+              </Button>)}
+            buttonText="Login"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+            style={{ marginTop: '100px' }}
+            isSignedIn={true}
+          />
+        </Modal.Footer>
+      </Modal>
       <div className='try-cont'>
         <h2>Try It Yourself!</h2>
         <div style={{

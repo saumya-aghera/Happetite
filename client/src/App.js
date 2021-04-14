@@ -5,6 +5,8 @@ import Home from './components/HomePage/Home';
 import Header from './components/Header';
 import Intro from './components/Intro/Intro';
 import FAQ from './components/FAQ/FAQ';
+import Helplines from './components/Helplines/Helplines';
+
 import Hope from './components/Hope/Hope';
 import Module2 from './components/Module2/Module2';
 import Module3 from './components/Module3/Module3';
@@ -18,6 +20,7 @@ import HW_Day6 from './components/Module4/HW_Day6';
 import HW_Day7 from './components/Module4/HW_Day7';
 
 import './App.css';
+import { Helpers } from 'react-scroll';
 
 
 
@@ -44,10 +47,12 @@ function App() {
         setUser={setUser}
       
       />
+      
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route path='/about'><Intro /></Route>
         <Route path='/FAQ'><FAQ /></Route>
+        
         <Route path='/Module1'>
           <Hope
             loggedIn={loggedIn}
@@ -116,6 +121,7 @@ function App() {
             setUser={setUser}/></Route>
         
       </Switch>
+      <Helplines />
     </Router>
   );
   }
