@@ -101,7 +101,15 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         
         
         {loggedIn ? (<Nav>
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}>Helplines</Nav.Link>
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="helpline"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >Helplines</Link></Nav.Link>
           <Nav.Link>
             <GoogleLogout
               clientId={clientId}
@@ -125,7 +133,15 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
-            <Nav.Link style={{ fontSize: 'medium', fontWeight: '400' }}><div style={{ textAlign: 'center' }}>Helplines</div></Nav.Link>
+            <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="helpline"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >Helplines</Link></Nav.Link>
             <Nav.Link>
           <GoogleLogin
             clientId={clientId}

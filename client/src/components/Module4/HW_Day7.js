@@ -5,6 +5,7 @@ import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import './HW_Day7.css'
+import HW_Header from './HW_Header';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -82,7 +83,14 @@ const HW_Day7 = ({ loggedIn, onLogin, user, setUser }) => {
         isSignedIn={true}
       />
         </Modal.Footer>
-            </Modal>
+        </Modal>
+        <HW_Header
+            loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}
+             
+        />
             <div className='day7-main'>
         <div className='day7-cont'>
           <h2>Day 7</h2>

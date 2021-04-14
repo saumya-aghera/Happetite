@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import './Homework4.css'
-
+import { Modal, Button } from 'react-bootstrap';
+import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { useLocation } from 'react-router-dom';
 
 
+const clientId =
+  '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
 function Homework4({ loggedIn,onLogin,user,setUser}) {
   const [show, setShow] = useState(false);
@@ -74,13 +77,13 @@ function Homework4({ loggedIn,onLogin,user,setUser}) {
           </div>
           <div className='hw4-pointer'>
 
-            <a href="/HW4/Day1" target="_blank" style={{textDecoration:'none'}}><div className='pointer1' >DAY 1</div></a>
-            <a href="/HW4/Day2" target="_blank" style={{textDecoration:'none'}}><div className='pointer2' >DAY 2</div></a>
-            <a href="/HW4/Day3" target="_blank" style={{textDecoration:'none'}}><div className='pointer3' >DAY 3</div></a>
-            <a href="/HW4/Day4" target="_blank" style={{textDecoration:'none'}}><div className='pointer4' >DAY 4</div></a>
-            <a href="/HW4/Day5" target="_blank" style={{textDecoration:'none'}}><div className='pointer5' >DAY 5</div></a>
-            <a href="/HW4/Day6" target="_blank" style={{textDecoration:'none'}}><div className='pointer6' >DAY 6</div></a>
-            <a href="/HW4/Day7" target="_blank" style={{textDecoration:'none'}}><div className='pointer7' >DAY 7</div></a>
+            <a href="/HW4/Day1"  style={{textDecoration:'none'}}><div className='pointer1' >DAY 1</div></a>
+            <a href="/HW4/Day2"  style={{textDecoration:'none'}}><div className='pointer2' >DAY 2</div></a>
+            <a href="/HW4/Day3"  style={{textDecoration:'none'}}><div className='pointer3' >DAY 3</div></a>
+            <a href="/HW4/Day4"  style={{textDecoration:'none'}}><div className='pointer4' >DAY 4</div></a>
+            <a href="/HW4/Day5"  style={{textDecoration:'none'}}><div className='pointer5' >DAY 5</div></a>
+            <a href="/HW4/Day6"  style={{textDecoration:'none'}}><div className='pointer6' >DAY 6</div></a>
+            <a href="/HW4/Day7"  style={{textDecoration:'none'}}><div className='pointer7' >DAY 7</div></a>
 
           </div>
         </div>

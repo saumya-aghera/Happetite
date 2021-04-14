@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect}from 'react'
 import Introtomod4 from './Introtomod4';
 import GratIntro from './GratIntro';
 import Grat from './Grat';
@@ -42,6 +42,11 @@ const menu = [
 
 const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        
+    }, [])
+
     return (
         <div>
             <ModuleHeader

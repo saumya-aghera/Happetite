@@ -4,7 +4,8 @@ import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
-import './HW_Day6.css'
+import './HW_Day6.css';
+import HW_Header from './HW_Header';
 
 
 const clientId =
@@ -84,6 +85,13 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser }) => {
           />
         </Modal.Footer>
       </Modal>
+      <HW_Header
+            loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}
+             
+        />
       <div className='day6-main'>
         <div className='day6-cont'>
           <h2>Day 6</h2>

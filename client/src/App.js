@@ -5,7 +5,7 @@ import Home from './components/HomePage/Home';
 import Header from './components/Header';
 import Intro from './components/Intro/Intro';
 import FAQ from './components/FAQ/FAQ';
-import Helplines from './components/Helplines/Helplines';
+
 
 import Hope from './components/Hope/Hope';
 import Module2 from './components/Module2/Module2';
@@ -121,7 +121,7 @@ function App() {
             setUser={setUser}/></Route>
         
       </Switch>
-      <Helplines />
+     
     </Router>
   );
   }

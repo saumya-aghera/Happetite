@@ -6,6 +6,7 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import './HW_Day1.css'
+import HW_Header from './HW_Header';
 
 
 const clientId =
@@ -98,12 +99,12 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser}) => {
         </Modal.Footer>
       </Modal>
      
-        <ModuleHeader
+        <HW_Header
             loggedIn={loggedIn}
                 onLogin={onLogin}
                 user={user}
                 setUser={setUser}
-                menu={menu}
+             
         />
       <div className='day1-main'>
         <div className='day1-cont'>
