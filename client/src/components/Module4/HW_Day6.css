@@ -1,14 +1,14 @@
 /** @format */
 
-.game-main {
-	background-color: #d2ffa6 !important;
-	padding: 50px;
-	text-align: center;
+.day6-main {
+	background-color: #ff7f7f;
+	padding: 100px 50px 50px 50px;
+	box-shadow: inset 0 0 20px #000000;
 }
-.outer-box6 {
-	background-color: #d2ffa6 !important;
-	padding-left: 50px;
-	padding-bottom: 40px;
+
+.day6-cont {
+	background-color: #ff7f7f !important;
+	padding: 20px 40px 50px 40px;
 	text-align: center;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
 		0 6.7px 53px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -16,12 +16,12 @@
 		0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-.game {
+.day6-text {
 	border: none;
-	padding: 20px;
-	width: 84%;
-	margin-left: 6%;
 	text-align: center;
+	padding: 60px;
+	width: 95%;
+	margin: auto;
 	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),

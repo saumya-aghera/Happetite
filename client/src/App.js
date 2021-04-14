@@ -9,6 +9,13 @@ import Hope from './components/Hope/Hope';
 import Module2 from './components/Module2/Module2';
 import Module3 from './components/Module3/Module3';
 import Module4 from './components/Module4/Module4';
+import HW_Day1 from './components/Module4/HW_Day1';
+import HW_Day2 from './components/Module4/HW_Day2';
+import HW_Day3 from './components/Module4/HW_Day3';
+import HW_Day4 from './components/Module4/HW_Day4';
+import HW_Day5 from './components/Module4/HW_Day5';
+import HW_Day6 from './components/Module4/HW_Day6';
+import HW_Day7 from './components/Module4/HW_Day7';
 
 import './App.css';
 
@@ -48,8 +55,6 @@ function App() {
             user={user}
             setUser={setUser}
           />
-          
-          <Route path='/underconstruction'><UnderCons /></Route>
         </Route>
         <Route path='/Module2'>
           <Module2
@@ -77,10 +82,39 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
-          />
+          /></Route>
           
+          <Route path='/underconstruction'><UnderCons /></Route>
           
-        </Route>
+          <Route path='/HW4/Day1'><HW_Day1 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser} /></Route>
+              <Route path='/HW4/Day2'><HW_Day2 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser} /></Route>
+              <Route path='/HW4/Day3'><HW_Day3 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
+              <Route path='/HW4/Day4'><HW_Day4 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
+              <Route path='/HW4/Day5'><HW_Day5 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
+              <Route path='/HW4/Day6'><HW_Day6 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
+              <Route path='/HW4/Day7'><HW_Day7 loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
+        
       </Switch>
     </Router>
   );

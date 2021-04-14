@@ -87,7 +87,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     <div className="mind-main" >
       <div className="mind-cont">
         <div className="video-box">
-        <h2>Mindfullness</h2>
+        <h2>Mindfulness</h2>
         <h4 className="mind-h4">What is Mindfulness?</h4>
         <div className="video">
           <ReactPlayer

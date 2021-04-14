@@ -4,9 +4,11 @@
 	position: relative;
 	z-index: -1;
 	width: 100%;
+	text-align: center;
 }
 .home-h1 {
 	font-size: 80px;
+	text-align: center;
 }
 .home-main {
 	/* background-color: #ffffe6; */
@@ -17,6 +19,7 @@
 	/* position: relative; */
 	/* text-align: center; */
 	position: relative;
+	text-align: center;
 }
 /* .container-home{ */
 /* position: absolute; */
@@ -32,7 +35,6 @@
 	border: none;
 	position: absolute;
 	top: 34%;
-	left: -5%;
 	z-index: 1;
 	text-align: center;
 	border-radius: 5px;

@@ -13,7 +13,7 @@ import './Module.css'
 const images1 = [
   {
     url: i1,
-    title: 'Module 1: Hope and Scope',
+    title: "Module 1: There's always Hope and Scope",
     width: '30%',
   }
 ]

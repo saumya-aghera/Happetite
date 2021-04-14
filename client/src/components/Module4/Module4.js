@@ -7,6 +7,8 @@ import Homework4 from './Homework4';
 import Quiz4 from './Quiz4';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 
+
+
 const menu = [
     {
         title: "Welcome",
@@ -49,7 +51,7 @@ const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
                 setUser={setUser}
                 menu={menu}
             />
-            <Introtomod4/>
+            
             <GratIntro/>
             <Grat
              loggedIn={loggedIn}
@@ -66,7 +68,7 @@ const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
             onLogin={onLogin}
             user={user}
             setUser={setUser}/>
-            <Quiz4 />
+                        <Quiz4 />
         </div>
     );
 }
