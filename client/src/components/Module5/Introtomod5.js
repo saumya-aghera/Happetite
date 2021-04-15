@@ -2,7 +2,7 @@ import React from 'react'
 import './Introtomod5.css'
 function Introtomod5() {
     return (
-        <>
+     
          <div className="mod5-main" id="welcome5">
             
             <div className="intro-cont-mod5">
@@ -13,7 +13,7 @@ function Introtomod5() {
             
             </div>
         
-    </>
+   
     )
 }
 

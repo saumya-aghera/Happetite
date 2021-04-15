@@ -1,4 +1,8 @@
-.main-helpline{
-    background-color: #f5edf2;
+/** @format */
 
+.main-helpline {
+	background-color: #f5edf2;
+	padding: 20px;
+	box-shadow: inset 0 0 20px #000000;
+	text-align: center;
 }

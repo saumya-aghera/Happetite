@@ -101,7 +101,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         
         
         {loggedIn ? (<Nav>
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}><Link
             activeClass="active"
             to="helpline"
             spy={true}
@@ -133,7 +133,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
-            <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            <Nav.Link style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}><Link
             activeClass="active"
             to="helpline"
             spy={true}

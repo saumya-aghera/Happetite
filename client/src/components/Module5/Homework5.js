@@ -6,6 +6,7 @@ import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import { useLocation } from 'react-router-dom';
+import TextareaAutosize from 'react-textarea-autosize';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -55,7 +56,7 @@ function Homework5({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     }
 }
     return (
-        <>
+      <div id='hw5'>
          <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Sign in Required</Modal.Title>
@@ -80,14 +81,34 @@ function Homework5({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
           />
         </Modal.Footer>
       </Modal>
-            <div className="hw5-main">
+        <div className="hw5-main">
+           <div className="hw5-cont">
                 <h2>Home Assignment</h2>
-                <p><u>Creating Habits</u> -Practice using your strengths. Make your strengths a routine, simply part of your daily existence. Once they become habit, it will feel more like the real you. Write about how you utilised your strengths throughout the week in the space provided below.
-</p>
-<TextField
-              id="outlined-full-width"
+                <div style={{
+                        fontSize: 'medium',
+                        fontWeight: '500',
+                        textAlign: 'center',
+                        paddingBottom:'10px'
+                    
+                    }}><u>Creating Habits</u> -Practice using your strengths. Make your strengths a routine, simply part of your daily existence. Once they become habit, it will feel more like the real you. Write about how you utilised your strengths throughout the week in the space provided below.
+            </div>
+            <div className='hw5-text'>
+
+              
+
+              <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon">
+                <i className="fas fa-pencil-alt prefix"></i>
+              </span>
+            </div>
+              
+                <TextareaAutosize
+                   autoFocus
+              minRows='10'
+                  id="outlined-full-width"
               label=""
-              style={{ width:'700px'}}
+               style={{ width: '90%' }}
               placeholder=""
               helperText=""
               fullWidth
@@ -99,17 +120,19 @@ function Homework5({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
               value={hw5.str}
               onChange={(event) => {
                 sethw5({ ...hw5, str: event.target.value })
-              }}
+                  }}
+                
             />
+          </div>
             <div className="Submit-btn workbtn">
             <button type="submit" onClick={createhw5} style={{ margin:'10px' }}>
                 Submit
                         </button>
-                    
+                </div>    
             </div>
             </div>
-            
-        </>
+            </div>
+       </div>
     )
 }
 
