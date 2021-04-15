@@ -49,6 +49,7 @@ const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
 
     return (
         <div>
+            <Introtomod4 />
             <ModuleHeader
             loggedIn={loggedIn}
                 onLogin={onLogin}
