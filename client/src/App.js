@@ -18,6 +18,7 @@ import HW_Day4 from './components/Module4/HW_Day4';
 import HW_Day5 from './components/Module4/HW_Day5';
 import HW_Day6 from './components/Module4/HW_Day6';
 import HW_Day7 from './components/Module4/HW_Day7';
+import Module5 from './components/Module5/Module5';
 
 import './App.css';
 import { Helpers } from 'react-scroll';
@@ -119,6 +120,16 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}/></Route>
+            <Route path='/Module5'>
+          <Module5
+            loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+          />
+          
+          
+        </Route>
         
       </Switch>
      
