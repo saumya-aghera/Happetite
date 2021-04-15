@@ -17,7 +17,7 @@ import HW4_4 from './routes/hw4_4.js';
 import HW4_5 from './routes/hw4_5.js';
 import HW4_6 from './routes/hw4_6.js';
 import HW4_7 from './routes/hw4_7.js';
-
+import HW5Routes from './routes/hw5.js';
 
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
@@ -38,6 +38,7 @@ app.use('/hw4_4', HW4_4);
 app.use('/hw4_5', HW4_5);
 app.use('/hw4_6', HW4_6);
 app.use('/hw4_7', HW4_7);
+app.use('/hw5', HW5Routes);
 
 
 
