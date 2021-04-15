@@ -1,12 +1,11 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import './HopeBox.css'
 import TextField from '@material-ui/core/TextField';
-import { Typography } from '@material-ui/core';
+import { refreshTokenSetup } from '../../utils/refreshToken';
 import axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-import { refreshTokenSetup } from '../../utils/refreshToken';
-import {useLocation } from 'react-router-dom';
+
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -43,11 +42,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser}) {
         file: ''
     });
 
-    useEffect(() => {
-        console.log('inside effect',user)
-      
-       
-    }, [])
+   
 
     const createhopebox = async() => {
         if (loggedIn) {

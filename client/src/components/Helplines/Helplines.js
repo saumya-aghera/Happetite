@@ -72,7 +72,8 @@ const rows = [
 function Helplines() {
     const classes = useStyles();
   
-    return (
+  return (
+      <div id="helpline">
       <TableContainer component={Paper}>
           <h2>Helplines</h2>
         <Table className={classes.table} aria-label="simple table">
@@ -103,6 +104,7 @@ function Helplines() {
 NIMHANS COVID-19 Helpline number is also extending a helping hand, their contact info is – 080 46110007
 </p>
       </TableContainer>
+      </div>
       
     );
   }

@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
+
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
@@ -100,6 +101,15 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         
         
         {loggedIn ? (<Nav>
+          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="helpline"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >Helplines</Link></Nav.Link>
           <Nav.Link>
             <GoogleLogout
               clientId={clientId}
@@ -123,6 +133,15 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
+            <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
+            activeClass="active"
+            to="helpline"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            activeStyle={{ color: 'white' }}
+          >Helplines</Link></Nav.Link>
             <Nav.Link>
           <GoogleLogin
             clientId={clientId}

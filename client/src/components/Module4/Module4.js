@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect}from 'react'
 import Introtomod4 from './Introtomod4';
 import GratIntro from './GratIntro';
 import Grat from './Grat';
@@ -6,6 +6,8 @@ import Letter from './Letter';
 import Homework4 from './Homework4';
 import Quiz4 from './Quiz4';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
+
+
 
 const menu = [
     {
@@ -40,6 +42,11 @@ const menu = [
 
 const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        
+    }, [])
+
     return (
         <div>
             <ModuleHeader
@@ -49,7 +56,7 @@ const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
                 setUser={setUser}
                 menu={menu}
             />
-            <Introtomod4/>
+            
             <GratIntro/>
             <Grat
              loggedIn={loggedIn}
@@ -66,7 +73,7 @@ const Module4 = ({ loggedIn,onLogin,user,setUser }) => {
             onLogin={onLogin}
             user={user}
             setUser={setUser}/>
-            <Quiz4 />
+                        <Quiz4 />
         </div>
     );
 }
