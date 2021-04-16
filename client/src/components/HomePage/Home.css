@@ -1,3 +1,5 @@
+/** @format */
+
 #video {
 	position: relative;
 	z-index: -1;
@@ -32,7 +34,7 @@
 	color: white;
 	border: none;
 	position: absolute;
-	top: 16%;
+	top: 50%;
 	z-index: 1;
 	text-align: center;
 	border-radius: 5px;

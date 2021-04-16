@@ -62,14 +62,14 @@ const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName,menu})=> {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
            
             <Navbar.Brand >
-          <SideMenu menu={menu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+          <SideMenu menu={menu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'}  />
           </Navbar.Brand>
                 <Navbar.Brand style={{marginLeft:'30px'}} href="/">HAPPETITE</Navbar.Brand>
                 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         {loggedIn ? (<Nav>
-          <Nav.Link>
+          <Nav.Link style={{ paddingTop: '18px' }}>
             <GoogleLogout
               clientId={clientId}
               render={renderProps => (
@@ -81,7 +81,7 @@ const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName,menu})=> {
             />
           </Nav.Link>
           <Nav.Link >
-            <div className="popup" onClick={popUp} style={{ textAlign: 'center' }}>
+            <div className="popup" onClick={popUp} style={{ textAlign: 'center',paddingTop: '10px' }}>
               <Avatar alt={user.name} src={user.imageUrl}>{user.name.charAt(0)}
                  </Avatar>
               <p class="popuptext" id="myPopup">
@@ -92,7 +92,7 @@ const ModuleHeader=({loggedIn,onLogin,user,setUser,ModuleName,menu})=> {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
-            <Nav.Link>
+            <Nav.Link style={{ paddingTop: '15px' }}>
           <GoogleLogin
             clientId={clientId}
               render={renderProps => (

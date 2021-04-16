@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './Helplines.css'
+import BackHeader from '../BackHeader/BackHeader'
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -89,8 +91,11 @@ function Helplines() {
     const classes = useStyles();
   
   return (
+    <>
+      <BackHeader />
       <div id="helpline" className="main-helpline">
-      <TableContainer component={Paper}>
+      
+      <TableContainer component={Paper} className="cont-helpline">
           <h2>Helplines</h2>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -120,8 +125,9 @@ function Helplines() {
 NIMHANS COVID-19 Helpline number is also extending a helping hand, their contact info is – 080 46110007
 </p>
       </TableContainer>
-      </div>
-      
+        </div>
+       
+      </>
     );
   }
 export default Helplines

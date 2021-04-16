@@ -1,59 +1,164 @@
-.collapsible-link {
-	width: 100%;
+/** @format */
+
+.flex {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+@media (max-width: 991.98px) {
+	.padding {
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.padding {
+		padding: 1rem;
+	}
+}
+
+.padding {
+	padding: 5rem;
+}
+
+.card {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+}
+
+.pl-3,
+.px-3 {
+	padding-left: 1rem !important;
+}
+
+.card {
 	position: relative;
-	text-align: left;
-}
-.card-body {
-	color: black;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
 	font-size: medium;
-}
-.collapsible-link::before {
-	content: "\f107";
-	position: absolute;
-	top: 50%;
-	right: 0.8rem;
-	transform: translateY(-50%);
-	display: block;
-	font-family: "FontAwesome";
-	font-size: 1.1rem;
-}
-
-.collapsible-link[aria-expanded="true"]::before {
-	content: "\f106";
+	font-weight: 500;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	word-wrap: break-word;
+	color: white;
+	background-color: black;
+	opacity: 0.7;
+	background-clip: border-box;
+	border: 1px solid #d2d2dc;
+	border-radius: 0;
 }
 
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSES
-* ==========================================
-*
-*/
-body {
-	background: #f5edf2;
-	/* background: -webkit-linear-gradient(to left, #c797eb, #f0ecfc);
-	background: linear-gradient(to left, #c797eb, #f0ecfc); */
-	/* background-color: #f0ecfc;
-	background-image: -webkit-linear-gradient(320deg, #c797eb 0%,  #f0ecfc 30%);
-    background-image: linear-gradient(320deg, #c797eb 0%,  #f0ecfc 30%); */
-	min-height: 100vh;
-	/* background-repeat: no-repeat; */
+.card .card-title {
+	color: #000000;
+	margin-bottom: 0.625rem;
+	text-transform: capitalize;
+	font-size: 0.875rem;
+	font-weight: 500;
 }
 
-.cont-faq {
-	background: #f5edf2;
-	/* background: -webkit-linear-gradient(to left, #654ea3, #eaafc8);
-	background: linear-gradient(to left, #654ea3, #eaafc8); */
-	/* background-color: #f0ecfc;
-	background-image: linear-gradient(320deg, #c797eb 0%, #f0ecfc 50%); */
-	text-align: center;
-	width: 90%;
+.card .card-description {
+	margin-bottom: 0.875rem;
+	font-weight: 400;
+	color: #76838f;
+}
 
-	background: rgba(0, 0, 0, 0.5);
+.accordion .card:first-of-type {
+	border-bottom: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
 
+.accordion .card {
+	margin-bottom: 0.75rem;
+	box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+	border-radius: 0.25rem;
 	border: none;
-	border-radius: 5px;
-	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.7);
-	margin: 100px auto;
-	padding-bottom: 10%;
+}
+
+.accordion .card .card-header {
+	background-color: transparent;
+	border: none;
+	padding: 2rem;
+}
+
+.card-header:first-child {
+	border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.accordion .card .card-header * {
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+.mb-0,
+.my-0 {
+	margin-bottom: 0 !important;
+}
+
+.accordion .card .card-header a {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	font-size: medium;
+	position: relative;
+	-webkit-transition: color 0.5s ease;
+	-moz-transition: color 0.5s ease;
+	-ms-transition: color 0.5s ease;
+	-o-transition: color 0.5s ease;
+	transition: color 0.5s ease;
+	padding-right: 1.5rem;
+	font-weight: 700;
+}
+
+.accordion .card .card-header * {
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+.accordion .card .card-header a[aria-expanded="false"]:before {
+	content: "\f067";
+}
+
+.accordion .card .card-header a[aria-expanded="true"]:before {
+	content: "\f068";
+}
+
+.accordion .card .card-header a:before {
+	position: absolute;
+	right: 7px;
+	top: 0;
+	font-size: 18px;
+	display: block;
+	font-family: FontAwesome;
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-size: 0.756em;
+	color: #405189;
+}
+
+.faq-main {
+	padding: 50px 200px;
+	background-color: #f5fcff;
+	background: url(../../images/faq.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align: center;
+}
+
+.faq-cont {
+	margin-top: 5% !important;
+}
+
+.card-title {
+	font-size: 40px;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #8d8d8d, 0 0 20px #a4a4a5,
+		0 0 25px #a7a8a8, 0 0 30px #a9aaac, 0 0 35px #949697;
 }
