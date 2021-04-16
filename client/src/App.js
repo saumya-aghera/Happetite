@@ -148,24 +148,9 @@ function App() {
             setUser={setUser}
           />
           
-          
-        
-          
         </Route>
 
-        </Route>
-          <Route path='/Module6'>
-          <Module6
-            loggedIn={loggedIn}
-            onLogin={setLogin}
-            user={user}
-            setUser={setUser}
-          />
-          
-          
-        
-          
-        </Route>
+      
         
       </Switch>
      
