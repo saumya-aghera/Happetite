@@ -1,0 +1,21 @@
+.mod6-main {
+	padding: 200px 300px;
+	background-color: #f5fcff;
+	background: url(../../images/orangeback.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align: center;
+}
+.intro-cont-mod6 {
+	z-index: 1;
+	width: 90%;
+	margin-left: 10%;
+	text-align: center;
+	display: flex-box;
+	border-radius: 5px;
+	top: 45%;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+}
