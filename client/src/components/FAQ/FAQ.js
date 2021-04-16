@@ -2,10 +2,14 @@ import React from 'react'
 import './FAQ.css'
 import BackHeader from '../BackHeader/BackHeader'
 
-const FAQ = () => {
+const FAQ = ({ loggedIn, onLogin, user, setUser }) => {
     return (
-        <>
-            <BackHeader />
+        <div>
+            <BackHeader
+            loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}/>
         <div className='faq-main'>
             
             <div className='faq-cont'>
@@ -125,7 +129,7 @@ Any Suggestions related to present program can be directly sent to program moder
                 
             </div>
         </div>
-         </>       
+         </div>       
     );
 }
 

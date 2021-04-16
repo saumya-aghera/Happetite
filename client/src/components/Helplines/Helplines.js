@@ -87,12 +87,15 @@ const rows = [
   createData('Sevakendram-Health Information Helpline','Hyderabad, Telangana','104','Toll Free','24x7'),
   createData('Lifeline Foundation','Kolkatta, West Bengal', '+91 033 24637401, +91 033 24637432', 'Not mentioned', 'Mon-Sun 10am  to 6pm'),
 ];
-function Helplines() {
+function Helplines({ loggedIn, onLogin, user, setUser }) {
     const classes = useStyles();
   
   return (
     <>
-      <BackHeader />
+      <BackHeader loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}/>
       <div id="helpline" className="main-helpline">
       
       <TableContainer component={Paper} className="cont-helpline">

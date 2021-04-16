@@ -53,8 +53,17 @@ function App() {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route path='/about'><Intro /></Route>
-        <Route path='/FAQ'><FAQ /></Route>
-        <Route path='/helpline'><Helplines/></Route>
+        <Route path='/FAQ'><FAQ
+        loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+        /></Route>
+        <Route path='/helpline'><Helplines
+        loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
         
         <Route path='/Module1'>
           <Hope
@@ -131,6 +140,20 @@ function App() {
             setUser={setUser}
           />
           
+          
+        </Route>
+
+        </Route>
+          <Route path='/Module6'>
+          <Module6
+            loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+          />
+          
+          
+        
           
         </Route>
         

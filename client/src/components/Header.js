@@ -79,7 +79,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             to="module"
             spy={true}
             smooth={true}
-            offset={-35}
+            offset={-45}
             duration={500}
             activeStyle={{ color: 'white' }}
              
