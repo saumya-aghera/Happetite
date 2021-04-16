@@ -19,7 +19,7 @@ import HW_Day5 from './components/Module4/HW_Day5';
 import HW_Day6 from './components/Module4/HW_Day6';
 import HW_Day7 from './components/Module4/HW_Day7';
 import Module5 from './components/Module5/Module5';
-
+import Module6 from './components/Module6/Module6';
 import './App.css';
 import { Helpers } from 'react-scroll';
 import Helplines from './components/Helplines/Helplines';
@@ -139,7 +139,17 @@ function App() {
             user={user}
             setUser={setUser}
           />
+          </Route>
+          <Route path='/Module6'>
+          <Module6
+            loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+          />
           
+          
+        
           
         </Route>
 

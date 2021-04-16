@@ -90,7 +90,7 @@ function Homework5({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
                         textAlign: 'center',
                         paddingBottom:'10px'
                     
-                    }}><u>Creating Habits</u> -Practice using your strengths. Make your strengths a routine, simply part of your daily existence. Once they become habit, it will feel more like the real you. Write about how you utilised your strengths throughout the week in the space provided below.
+                    }}><u>Creating Habits</u> -Practice using your strengths. Make your strengths a routine, simply part of your daily existence. Once they become habit, it will feel more like the real you. Write about how you utilised your strengths throughout the week in the space provided below.
             </div>
             <div className='hw5-text'>
 

@@ -1,14 +1,14 @@
-.mod5-main {
+.mod6-main {
 	padding: 200px 300px;
 	background-color: #f5fcff;
-	background: url(../../images/bulb.jpeg) no-repeat center center fixed;
+	background: url(../../images/orangeback.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	text-align: center;
 }
-.intro-cont-mod5 {
+.intro-cont-mod6 {
 	z-index: 1;
 	width: 90%;
 	margin-left: 10%;
