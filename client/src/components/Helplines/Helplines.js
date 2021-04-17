@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './Helplines.css'
+import BackHeader from '../BackHeader/BackHeader'
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -85,12 +87,18 @@ const rows = [
   createData('Sevakendram-Health Information Helpline','Hyderabad, Telangana','104','Toll Free','24x7'),
   createData('Lifeline Foundation','Kolkatta, West Bengal', '+91 033 24637401, +91 033 24637432', 'Not mentioned', 'Mon-Sun 10am  to 6pm'),
 ];
-function Helplines() {
+function Helplines({ loggedIn, onLogin, user, setUser }) {
     const classes = useStyles();
   
   return (
+    <>
+      <BackHeader loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}/>
       <div id="helpline" className="main-helpline">
-      <TableContainer component={Paper}>
+      
+      <TableContainer component={Paper} className="cont-helpline">
           <h2>Helplines</h2>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -120,8 +128,9 @@ function Helplines() {
 NIMHANS COVID-19 Helpline number is also extending a helping hand, their contact info is – 080 46110007
 </p>
       </TableContainer>
-      </div>
-      
+        </div>
+       
+      </>
     );
   }
 export default Helplines

@@ -1,3 +1,5 @@
+/** @format */
+
 .mod6-main {
 	padding: 200px 300px;
 	background-color: #f5fcff;
@@ -10,7 +12,8 @@
 }
 .intro-cont-mod6 {
 	z-index: 1;
-	width: 90%;
+	width: 94%;
+	padding: 10px;
 	margin-left: 10%;
 	text-align: center;
 	display: flex-box;

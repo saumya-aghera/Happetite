@@ -70,7 +70,7 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             to="about"
             spy={true}
             smooth={true}
-            offset={-120}
+            offset={-25}
             duration={500}
             activeStyle={{ color: 'white' }}
           >About</Link></Nav.Link>
@@ -79,21 +79,14 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
             to="module"
             spy={true}
             smooth={true}
-            offset={-35}
+            offset={-45}
             duration={500}
             activeStyle={{ color: 'white' }}
              
           >Modules</Link></Nav.Link>
          
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
-            activeClass="active"
-            to="faq"
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-          >FAQ</Link></Nav.Link>
+          <Nav.Link href="/FAQ" style={{fontSize:'medium', fontWeight:'400'}}>
+           FAQ</Nav.Link>
         
         <Nav.Link onClick={()=>window.open('mailto:email@example.com?')} style={{fontSize:'medium', fontWeight:'400'}}>Contact Us</Nav.Link>
           
@@ -101,28 +94,23 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
         
         
         {loggedIn ? (<Nav>
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}><Link
-            activeClass="active"
-            to="helpline"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-          >Helplines</Link></Nav.Link>
-          <Nav.Link>
+          <Nav.Link href='/helpline' style={{ fontSize: 'medium', fontWeight: '400', paddingTop: '20px' }}>
+            Helplines
+            </Nav.Link>
+          <Nav.Link style={{ paddingTop: '18px' }}>
             <GoogleLogout
               clientId={clientId}
               render={renderProps => (
-                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled} >
                       Logout
                   </Button>)}
         buttonText="Logout"
-        onLogoutSuccess={logout}
+              onLogoutSuccess={logout}
+              
             />
           </Nav.Link>
           <Nav.Link >
-            <div className="popup" onClick={popUp} style={{ textAlign: 'center' }}>
+            <div className="popup" onClick={popUp} style={{ textAlign: 'center',paddingTop: '10px' }}>
               <Avatar alt={user.name} src={user.imageUrl}>{user.name.charAt(0)}
                  </Avatar>
               <p class="popuptext" id="myPopup">
@@ -133,16 +121,8 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
                 
             </Nav.Link>
         </Nav>) : (<Nav>
-            <Nav.Link style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}><Link
-            activeClass="active"
-            to="helpline"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-          >Helplines</Link></Nav.Link>
-            <Nav.Link>
+            <Nav.Link href='/helpline' style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}>Helplines</Nav.Link>
+            <Nav.Link style={{ paddingTop: '14px' }}>
           <GoogleLogin
             clientId={clientId}
               render={renderProps => (

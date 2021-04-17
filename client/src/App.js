@@ -22,6 +22,7 @@ import Module5 from './components/Module5/Module5';
 import Module6 from './components/Module6/Module6';
 import './App.css';
 import { Helpers } from 'react-scroll';
+import Helplines from './components/Helplines/Helplines';
 
 
 
@@ -52,7 +53,17 @@ function App() {
       <Switch>
         <Route exact path='/'><Home /></Route>
         <Route path='/about'><Intro /></Route>
-        <Route path='/FAQ'><FAQ /></Route>
+        <Route path='/FAQ'><FAQ
+        loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}
+        /></Route>
+        <Route path='/helpline'><Helplines
+        loggedIn={loggedIn}
+            onLogin={setLogin}
+            user={user}
+            setUser={setUser}/></Route>
         
         <Route path='/Module1'>
           <Hope
@@ -68,9 +79,7 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
-          />
-          
-          
+          />  
         </Route>
         <Route path='/Module3'>
           <Module3
@@ -119,8 +128,11 @@ function App() {
               <Route path='/HW4/Day7'><HW_Day7 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser}/></Route>
-            <Route path='/Module5'>
+          setUser={setUser} /></Route>
+        
+
+        <Route path='/Module5'>
+          
           <Module5
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -136,10 +148,9 @@ function App() {
             setUser={setUser}
           />
           
-          
-        
-          
         </Route>
+
+      
         
       </Switch>
      

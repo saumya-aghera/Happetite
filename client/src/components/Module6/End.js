@@ -56,9 +56,24 @@ function End({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
 }
     return (
         <>
-        <div className="end-main">
-            <p>Thank you for being a part of this program and actively participating in it. We hope that you have benefited from the program and that it has helped you to some extent. We would definitely like to know your takeaway thoughts after completing this program. Please give us your feedback in the space provided below with regards to which activities did you like, enjoy, which helped you and have benefited from.
-</p>
+        <div className="end-main" id='feedback'>
+          <div className='end-cont'>
+          <h2>Feedback</h2>
+            <div style={{
+                        fontSize: 'medium',
+                        fontWeight: '500',
+                        textAlign: 'center',
+                        paddingBottom:'20px'
+                    
+                    }}>Thank you for being a part of this program and actively participating in it. We hope that you have benefited from the program and that it has helped you to some extent. We would definitely like to know your takeaway thoughts after completing this program. Please give us your feedback in the space provided below with regards to which activities did you like, enjoy, which helped you and have benefited from.
+            </div>
+            <div className='end-text'>
+              <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon">
+                <i className="fas fa-pencil-alt prefix"></i>
+              </span>
+            </div>
 <TextareaAutosize
      autoFocus
 minRows='10'
@@ -78,14 +93,16 @@ onChange={(event) => {
   setend({ ...end, fb: event.target.value })
     }}
   
-/>
+                />
+                </div>
 <div className="Submit-btn workbtn">
 <button type="submit" onClick={createend} style={{ margin:'10px' }}>
   Submit
           </button>
   </div>  
         </div>
-            
+          </div>
+          </div>
         </>
         
     )

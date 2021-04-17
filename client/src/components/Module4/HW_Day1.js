@@ -6,7 +6,7 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import './HW_Day1.css'
-import HW_Header from './HW_Header';
+import BackHeader from '../BackHeader/BackHeader';
 
 
 const clientId =
@@ -99,7 +99,7 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser}) => {
         </Modal.Footer>
       </Modal>
      
-        <HW_Header
+        <BackHeader
             loggedIn={loggedIn}
                 onLogin={onLogin}
                 user={user}
