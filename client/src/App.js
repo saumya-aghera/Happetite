@@ -21,7 +21,7 @@ import HW_Day7 from './components/Module4/HW_Day7';
 import Module5 from './components/Module5/Module5';
 import Module6 from './components/Module6/Module6';
 import './App.css';
-import { Helpers } from 'react-scroll';
+
 import Helplines from './components/Helplines/Helplines';
 
 
@@ -38,6 +38,48 @@ function App() {
     name: "start"
   });
 
+ 
+
+  const [updatedModuleStatus, changeUpdatedModuleStatus] = useState(
+    {
+      userId: "start@example.com",
+      module1_completed: false,
+      module2_completed: false,
+      module3_completed: false,
+      module4_completed: false,
+      module5_completed: false,
+      module6_completed: false,
+      
+        worksheet1: false,
+        hopeBox1: false,
+        homeAssignment1:false,
+  
+      minfulness2: false,
+      
+      try3: false,
+      homeAssignment3: false,
+      
+      thankful4: false,
+      letter4: false,
+      homeAssignment4:false,
+      hw4_day1: false,
+      hw4_day2: false,
+      hw4_day3: false,
+      hw4_day4: false,
+      hw4_day5: false,
+      hw4_day6: false,
+      hw4_day7: false,
+      
+      survey5: false,
+      strength5: false,
+      homeAssignment5: false,
+      
+      activity6: false,
+      feedback6:false
+    }
+  );
+
+
   
 
   return (
@@ -46,12 +88,18 @@ function App() {
         loggedIn={loggedIn}
         onLogin={setLogin}
         user={user}
-        setUser={setUser}
-      
+        setUser={setUser}      
+        updatedModuleStatus={updatedModuleStatus}
+        changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
       />
       
       <Switch>
-        <Route exact path='/'><Home /></Route>
+        <Route exact path='/'>
+          <Home
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} />
+        </Route>
+
         <Route path='/about'><Intro /></Route>
         <Route path='/FAQ'><FAQ
         loggedIn={loggedIn}
@@ -71,6 +119,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />
         </Route>
         <Route path='/Module2'>
@@ -79,6 +129,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />  
         </Route>
         <Route path='/Module3'>
@@ -87,6 +139,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />
           
           
@@ -97,6 +151,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           /></Route>
           
           <Route path='/underconstruction'><UnderCons /></Route>
@@ -104,31 +160,45 @@ function App() {
           <Route path='/HW4/Day1'><HW_Day1 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser} /></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day2'><HW_Day2 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser} /></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day3'><HW_Day3 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser}/></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day4'><HW_Day4 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser}/></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day5'><HW_Day5 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser}/></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day6'><HW_Day6 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-            setUser={setUser}/></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
               <Route path='/HW4/Day7'><HW_Day7 loggedIn={loggedIn}
             onLogin={setLogin}
             user={user}
-          setUser={setUser} /></Route>
+          setUser={setUser}
+        updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
         
 
         <Route path='/Module5'>
@@ -138,6 +208,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus}
           />
           </Route>
           <Route path='/Module6'>
@@ -146,6 +218,8 @@ function App() {
             onLogin={setLogin}
             user={user}
             setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus}
           />
           
         </Route>

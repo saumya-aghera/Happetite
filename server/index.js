@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import User from './routes/User.js';
 import HomeAssignRoutes from './routes/homeassign.js';
 import HopeBoxRoutes from './routes/hopebox.js';
 import WorksheetRoutes from './routes/worksheet.js';
@@ -19,7 +20,10 @@ import HW4_6 from './routes/hw4_6.js';
 import HW4_7 from './routes/hw4_7.js';
 import HW5Routes from './routes/hw5.js';
 import StrRoutes from './routes/strength.js';
-import ERoutes from './routes/end.js'
+import ERoutes from './routes/end.js';
+
+
+
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
@@ -42,6 +46,7 @@ app.use('/hw4_7', HW4_7);
 app.use('/hw5', HW5Routes);
 app.use('/strength', StrRoutes);
 app.use('/end', ERoutes);
+app.use('/users', User);
 
 
 
@@ -51,7 +56,12 @@ app.use(bodyParser.urlencoded({limit:"20mb", extended:"true"}));
 
 // app.use((cors()));
 
-const CONNECT_URL = 'tmongodb+srv://trial:trial@cluster0.2jmqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+app.get('/', (req, res) => res.status(200).send("Hello World"));
+
+
+
+
+const CONNECT_URL = 'mongodb+srv://pragya:pb78fFEj4s5QKddN@cluster0.pbcpg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECT_URL,{

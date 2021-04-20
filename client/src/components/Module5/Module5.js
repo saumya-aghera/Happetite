@@ -5,37 +5,126 @@ import CharStrength from './CharStrength';
 import MyStrength from './MyStrength';
 import Homework5 from './Homework5';
 import ModuleHeader from '../ModuleHeader/ModuleHeader'
+import axios from 'axios'
 
-const menu = [
+
+
+const Module5 = ({ loggedIn, onLogin, user, setUser,
+    updatedModuleStatus, changeUpdatedModuleStatus }) => {
+     
+    const menu = [
     {
         title: "Welcome",
-        id:"welcome5"
+        id:"welcome5",
+        sectionComplete:false
     },
     {
         title: "VIA Survey",
-        id:"survey"
+        id:"survey",
+        sectionComplete:updatedModuleStatus.survey5
     },
     {
         title: "Intoduction to Character Strength",
-        id:"character"
+        id:"character",
+        sectionComplete:false
     },
     {
         title: "My Strength",
-        id:"strength"
+        id:"strength",
+        sectionComplete:updatedModuleStatus.strength5
     },
     {
         title: "Home Assignment",
-        id:"hw5"
+        id:"hw5",
+        sectionComplete:updatedModuleStatus.homeAssignment5
     },
-]
-
-
-const Module5 = ({ loggedIn, onLogin, user, setUser }) => {
-     useEffect(() => {
-        window.scrollTo(0, 0);
-        
-    }, [])
+    ]
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+         updateModuleCompletion();
+    }, [], [updatedModuleStatus.module5_completed])
+    
+    const updateModuleCompletion = () => {
+        const { userId,
+        module1_completed,
+        module2_completed,
+        module3_completed,
+        module4_completed,
+        module5_completed,
+        module6_completed,
+        worksheet1,
+        hopeBox1,
+      homeAssignment1,
+      
+        minfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+      letter4,
+       homeAssignment4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
+      } = updatedModuleStatus
+
+      
+      const updatedStatus={ userId,
+        module1_completed,
+        module2_completed,
+        module3_completed,
+        module4_completed,
+        module5_completed,
+        module6_completed,
+        worksheet1,    
+        hopeBox1,
+          homeAssignment1,
+        
+      minfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+      letter4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
+      }
+      
+      axios.post('http://localhost:5000/users/update', updatedStatus);
+      console.log('what updated in back',updatedStatus)
+    }
+
+    
+
+    
+    
+
     return (
         <div>
             <ModuleHeader
@@ -44,6 +133,8 @@ const Module5 = ({ loggedIn, onLogin, user, setUser }) => {
                 user={user}
                 setUser={setUser}
                 menu={menu}
+                updatedModuleStatus={updatedModuleStatus}
+                changeUpdatedModuleStatus={changeUpdatedModuleStatus}
             />
             <Introtomod5/>
             <Survey/>
@@ -53,14 +144,17 @@ const Module5 = ({ loggedIn, onLogin, user, setUser }) => {
                 onLogin={onLogin}
                 user={user}
                 setUser={setUser}
-                
+                updatedModuleStatus={updatedModuleStatus}
+                changeUpdatedModuleStatus={changeUpdatedModuleStatus}
             />
             
             <Homework5
             loggedIn={loggedIn}
             onLogin={onLogin}
             user={user}
-            setUser={setUser} />
+                setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+                changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
         </div>
     );
 }
