@@ -23,6 +23,7 @@
 .bm-cross-button {
 	height: 40px;
 	width: 40px;
+	margin-left: 105%;
 }
 
 /* Color/shape of close button cross */
@@ -44,8 +45,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
 	background: #212529;
-	padding: 2.5em 1em;
+	padding: 2em 0em 2em 1em;
 	font-size: 1em;
+	width: 105%;
 }
 
 /* Morph shape necessary with bubble or elastic */

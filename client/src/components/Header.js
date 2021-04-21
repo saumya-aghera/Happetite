@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
 import { Link} from "react-scroll";
 import './Header.css';
@@ -7,6 +7,7 @@ import { refreshTokenSetup } from '../utils/refreshToken';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import axios from 'axios';
 
 
 
@@ -16,9 +17,75 @@ const clientId =
 
 
 
-const Header = ({loggedIn,onLogin,user,setUser}) => {
+const Header = ({ loggedIn, onLogin, user, setUser,
+ 
+  updatedModuleStatus,changeUpdatedModuleStatus
+        }) => {
+  
+  //const [userLoggedBefore, setUserLoggedBefore] = useState();
+  //const [test, setTest] = useState('hi');
+ 
+
+   function addNewUser( newEmail,newUserStatus ){
+    console.log('Not registered before',newUserStatus)
+     axios.post('http://localhost:5000/users/add', newUserStatus);
+      changeUpdatedModuleStatus(prevState => ({
+        ...prevState,
+        userId:newEmail
+      }))
+      console.log('posted user in back')
+  };
+
+  const updateProgress = async (newEmail) => {
+  console.log('Already registered before');
+
+  try {
+    const response = await axios.get('http://localhost:5000/users/updatedInfo', {
+      params: {
+        userId: newEmail
+      }
+    });
+    changeUpdatedModuleStatus(response.data)
+    console.log('finalcheck',updatedModuleStatus)
+  }catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+      
+  }
+
+  const checkForNewUser = async (newEmail,newUserStatus) => {
+    console.log('function called')
+    try {
+        const resp = await axios.get('http://localhost:5000/users/newold', {
+      params: {
+        userId: newEmail
+      }
+    });
+      console.log('resp', resp.data);
+     
+    //If new user then register the user in db
+    if (!resp.data) {
+      addNewUser(newEmail,newUserStatus)
+    }
+    // else bring the user till now progress from back
+    else {
+      updateProgress(newEmail); 
+    }
+    
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+};
+
+ 
+
   const onSuccess = (res) => {
     onLogin(true);
+
+
     setUser({
       email: res.profileObj.email,
       familyName: res.profileObj.familyName,
@@ -27,7 +94,48 @@ const Header = ({loggedIn,onLogin,user,setUser}) => {
       imageUrl: res.profileObj.imageUrl,
       name: res.profileObj.name
     });
-    console.log('login', user, res)
+
+    const newUserStatus = {
+      userId:res.profileObj.email,
+      module1_completed: false,
+      module2_completed: false,
+      module3_completed: false,
+      module4_completed: false,
+      module5_completed: false,
+      module6_completed: false,
+      worksheet1: false,
+        hopeBox1: false,
+      homeAssignment1: false,
+      
+        minfulness2: false,
+      
+      try3: false,
+      homeAssignment3: false,
+      
+      thankful4: false,
+      letter4: false,
+       homeAssignment4:false,
+      hw4_day1: false,
+      hw4_day2: false,
+      hw4_day3: false,
+      hw4_day4: false,
+      hw4_day5: false,
+      hw4_day6: false,
+      hw4_day7: false,
+      
+      survey5: false,
+      strength5: false,
+      homeAssignment5: false,
+      
+      activity6: false,
+      feedback6:false
+
+    }
+
+    
+    //for checking if user is new to website
+    checkForNewUser(res.profileObj.email,newUserStatus)
+    
     refreshTokenSetup(res);
   };
 

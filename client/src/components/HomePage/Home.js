@@ -8,7 +8,7 @@ import FAQ from '../FAQ/FAQ';
 import Helplines from '../Helplines/Helplines';
 
 
-const Home=()=> {
+const Home=({updatedModuleStatus,changeUpdatedModuleStatus})=> {
     return (
         
         <div className='home-main' id ='home'>
@@ -25,7 +25,8 @@ const Home=()=> {
                 
             {/* </div> */}
             <Intro />
-            <Module />
+            <Module updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
            
            
            

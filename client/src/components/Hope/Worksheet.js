@@ -1,36 +1,120 @@
 import React, { useState,useEffect } from 'react'
 import './Worksheet.css'
-import { Typography } from '@material-ui/core';
+
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-import {useLocation } from 'react-router-dom';
+
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
-function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
+function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
+      updatedModuleStatus, changeUpdatedModuleStatus
+      }) {
   
   const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const location = useLocation();
 
-   const onSuccess = async (res) => {
-        onLogin(true);
-        setUser({
-            email: res.profileObj.email,
-            familyName: res.profileObj.familyName,
-            givenName: res.profileObj.givenName,
-            googleId: res.profileObj.googleId,
-            imageUrl: res.profileObj.imageUrl,
-            name: res.profileObj.name
-        });
-        console.log('login', user, res)
-     refreshTokenSetup(res);
-     handleClose();
-    };
+  useEffect(() => {
+   
+    changeUpdate();
+    
+  }, [updatedModuleStatus.worksheet1])
+
+    function addNewUser( newEmail,newUserStatus ){
+    console.log('Not registered before',newUserStatus)
+     axios.post('http://localhost:5000/users/add', newUserStatus);
+      changeUpdatedModuleStatus(prevState => ({
+        ...prevState,
+        userId:newEmail
+      }))
+      console.log('posted user in back')
+  };
+
+  const updateProgress = async (newEmail) => {
+  console.log('Already registered before');
+
+  try {
+    const response = await axios.get('http://localhost:5000/users/updatedInfo', {
+      params: {
+        userId: newEmail
+      }
+    });
+    changeUpdatedModuleStatus(response.data)
+    console.log('finalcheck',updatedModuleStatus)
+  }catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+      
+  }
+
+  const checkForNewUser = async (newEmail,newUserStatus) => {
+    console.log('function called')
+    try {
+        const resp = await axios.get('http://localhost:5000/users/newold', {
+      params: {
+        userId: newEmail
+      }
+    });
+      console.log('resp', resp.data);
+     
+    //If new user then register the user in db
+    if (!resp.data) {
+      addNewUser(newEmail,newUserStatus)
+    }
+    // else bring the user till now progress from back
+    else {
+      updateProgress(newEmail); 
+    }
+    
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+};
+
+ 
+
+  const onSuccess = (res) => {
+    onLogin(true);
+
+
+    setUser({
+      email: res.profileObj.email,
+      familyName: res.profileObj.familyName,
+      givenName: res.profileObj.givenName,
+      googleId: res.profileObj.googleId,
+      imageUrl: res.profileObj.imageUrl,
+      name: res.profileObj.name
+    });
+
+    const newUserStatus = {
+      userId:res.profileObj.email,
+      module1_completed: false,
+      module2_completed: false,
+      module3_completed: false,
+      module4_completed: false,
+      module5_completed: false,
+      module6_completed: false,
+      worksheet1: false,
+        hopeBox1: false,
+        homeAssignment1:false
+
+    }
+
+    
+    //for checking if user is new to website
+    checkForNewUser(res.profileObj.email,newUserStatus)
+    
+      refreshTokenSetup(res);
+      handleClose();
+  };
+
 
   const onFailure = (res) => {
     handleClose();
@@ -44,6 +128,54 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
     ans3: '',
     
   });
+
+
+  const changeUpdate =  () => {
+    
+
+    console.log('change hua ki nahi', updatedModuleStatus)
+    
+    if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
+      
+      console.log('inside if statement')
+      
+      changeUpdatedModuleStatus(prevState => ({
+      ...prevState,
+      module1_completed:true
+    }));
+    }
+    
+    const { userId,
+        module1_completed,
+        module2_completed,
+        module3_completed,
+        module4_completed,
+        module5_completed,
+        module6_completed,
+        worksheet1,    
+        hopeBox1,
+        homeAssignment1
+      } = updatedModuleStatus
+
+      
+      const updatedStatus={ userId,
+        module1_completed,
+        module2_completed,
+        module3_completed,
+        module4_completed,
+        module5_completed,
+        module6_completed,
+        worksheet1,    
+        hopeBox1,
+        homeAssignment1
+      }
+      
+      axios.post('http://localhost:5000/users/update', updatedStatus);
+      console.log('what updated in back',updatedStatus)
+    
+  }
+
+
   const createworksheet = () => {
       
     if (loggedIn) {
@@ -55,7 +187,14 @@ function Worksheet({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp }) {
         ans2: '',
         ans3: '',
       });
-      //alert(`thank you for your answers`);//very annoying
+      
+      changeUpdatedModuleStatus(prevState => ({
+      ...prevState, 
+      worksheet1: true,
+      
+    }));
+      
+
       
     } else {
       handleShow();
