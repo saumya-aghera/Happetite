@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import './Survey.css'
 import axios from 'axios'
 import { refreshTokenSetup } from '../../utils/refreshToken';
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 
 function Survey({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdatedModuleStatus }) {
     
@@ -233,7 +235,9 @@ const onFailure = (res) => {
               <div className="surv-cont" >
                 <h2>VIA Survey</h2>
                     <div className="surv-text" >
-
+                    <AwesomeButton  type="primary" className="surv-btn"
+      href="https://www.viacharacter.org/survey/account/register"
+      target="_blank">Take This Survey</AwesomeButton>
                     </div>
                     </div>  
         </div>
