@@ -12,13 +12,14 @@ const userSchema = new mongoose.Schema(
         worksheet1: Boolean,
         hopeBox1: Boolean,
         homeAssignment1: Boolean,
-        minfulness2: Boolean,
+        mindfulness2: Boolean,
       
         try3: Boolean,
         homeAssignment3: Boolean,
       
         thankful4: Boolean,
         letter4: Boolean,
+        homeAssignment4:Boolean,
         hw4_day1: Boolean,
         hw4_day2: Boolean,
         hw4_day3: Boolean,

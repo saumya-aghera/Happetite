@@ -1,34 +1,36 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
 import { Navbar, Nav} from 'react-bootstrap';
-import { Link} from "react-scroll";
-import './Header.css';
+//import { Link} from "react-scroll";
+
 import { Avatar, Button} from '@material-ui/core';
-import { refreshTokenSetup } from '../utils/refreshToken';
+import { refreshTokenSetup } from '../../utils/refreshToken';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SideMenu from '../Menu/SideMenu';
 import axios from 'axios';
 
-
+const useStyles = makeStyles((theme) => ({
+  
+  menuButton: {
+    marginRight: theme.spacing(-2),
+  },
+  
+}));
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
 
+const ModuleHeaderHW = ({ loggedIn, onLogin, user, setUser,
+ menu,
+  updatedModuleStatus, changeUpdatedModuleStatus }) => {
 
-
-const Header = ({ loggedIn, onLogin, user, setUser,
- 
-  updatedModuleStatus,changeUpdatedModuleStatus
-        }) => {
+  //const [userLoggedBefore, setUserLoggedBefore] = useState();
   
-
-  useEffect(() => {
-    console.log('finalcheck', updatedModuleStatus,)
-            
-  }, [updatedModuleStatus]);
-
-   function addNewUser( newEmail,newUserStatus ){
+    function addNewUser( newEmail,newUserStatus ){
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -48,7 +50,7 @@ const Header = ({ loggedIn, onLogin, user, setUser,
       }
     });
     changeUpdatedModuleStatus(response.data)
-    
+    console.log('finalcheck',updatedModuleStatus)
   }catch (err) {
         // Handle Error Here
         console.error(err);
@@ -57,7 +59,7 @@ const Header = ({ loggedIn, onLogin, user, setUser,
   }
 
   const checkForNewUser = async (newEmail,newUserStatus) => {
-    console.log('function called',newEmail)
+    console.log('function called')
     try {
         const resp = await axios.get('http://localhost:5000/users/newold', {
       params: {
@@ -105,11 +107,11 @@ const Header = ({ loggedIn, onLogin, user, setUser,
       module4_completed: false,
       module5_completed: false,
       module6_completed: false,
-      worksheet1: false,
+       worksheet1: false,
         hopeBox1: false,
       homeAssignment1: false,
-      
-        mindfulness2: false,
+        
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -131,7 +133,6 @@ const Header = ({ loggedIn, onLogin, user, setUser,
       
       activity6: false,
       feedback6:false
-
     }
 
     
@@ -152,71 +153,33 @@ const Header = ({ loggedIn, onLogin, user, setUser,
     };
 
   
-  const popUp = () => {
-    console.log('inside function')
-    var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-  }
+    const popUp = () => {
+        console.log('inside function')
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    };
 
-  return (
+    return (
     
-            
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
-      <Navbar.Brand href="/">HAPPETITE</Navbar.Brand>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
+           
+            <Navbar.Brand >
+          <SideMenu menu={menu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'}  />
+          </Navbar.Brand>
+                <Navbar.Brand style={{marginLeft:'30px'}} href="/">HAPPETITE</Navbar.Brand>
+                
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link  style={{fontSize:'medium', fontWeight:'400'}}><Link
-            activeClass="active"
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-          >Home</Link></Nav.Link>
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-25}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-          >About</Link></Nav.Link>
-          <Nav.Link style={{fontSize:'medium', fontWeight:'400'}}><Link
-            activeClass="active"
-            to="module"
-            spy={true}
-            smooth={true}
-            offset={-45}
-            duration={500}
-            activeStyle={{ color: 'white' }}
-             
-          >Modules</Link></Nav.Link>
-         
-          <Nav.Link href="/FAQ" style={{fontSize:'medium', fontWeight:'400'}}>
-           FAQ</Nav.Link>
-        
-        <Nav.Link onClick={()=>window.open('mailto:email@example.com?')} style={{fontSize:'medium', fontWeight:'400'}}>Contact Us</Nav.Link>
-          
-        </Nav>
-        
-        
+      <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         {loggedIn ? (<Nav>
-          <Nav.Link href='/helpline' style={{ fontSize: 'medium', fontWeight: '400', paddingTop: '20px' }}>
-            Helplines
-            </Nav.Link>
           <Nav.Link style={{ paddingTop: '18px' }}>
             <GoogleLogout
               clientId={clientId}
               render={renderProps => (
-                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled} >
+                  <Button variant="contained" color="grey" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                       Logout
                   </Button>)}
         buttonText="Logout"
-              onLogoutSuccess={logout}
-              
+        onLogoutSuccess={logout}
             />
           </Nav.Link>
           <Nav.Link >
@@ -231,8 +194,7 @@ const Header = ({ loggedIn, onLogin, user, setUser,
                 
             </Nav.Link>
         </Nav>) : (<Nav>
-            <Nav.Link href='/helpline' style={{fontSize:'medium', fontWeight:'400',paddingTop:'15px'}}>Helplines</Nav.Link>
-            <Nav.Link style={{ paddingTop: '14px' }}>
+            <Nav.Link style={{ paddingTop: '15px' }}>
           <GoogleLogin
             clientId={clientId}
               render={renderProps => (
@@ -253,8 +215,10 @@ const Header = ({ loggedIn, onLogin, user, setUser,
        
       </Navbar.Collapse>
     </Navbar>
+        
+
+    
   );
 }
 
-export default Header;
-
+export default ModuleHeaderHW;

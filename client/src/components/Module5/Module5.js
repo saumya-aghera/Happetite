@@ -57,7 +57,7 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
         hopeBox1,
       homeAssignment1,
       
-        minfulness2,
+        mindfulness2,
       
       try3,
       homeAssignment3,
@@ -93,11 +93,11 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
-      
+      homeAssignment4,
       thankful4,
       letter4,
       hw4_day1,

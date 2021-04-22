@@ -15,14 +15,18 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
       updatedModuleStatus, changeUpdatedModuleStatus}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);
+  
+    const [hopebox, sethopebox] = useState({
+        list: '',
+        file: ''
+    });
 
     useEffect(() => {
-   
+   console.log('useeffect of hopeBox')
     changeUpdate();
     
-    }, [updatedModuleStatus.hopeBox1])
-    
+  }, [updatedModuleStatus.hopeBox1])
 
     function addNewUser( newEmail,newUserStatus ){
     console.log('Not registered before',newUserStatus)
@@ -105,7 +109,7 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -138,15 +142,22 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
       handleClose();
   };
 
+  const onFailure = (res) => {
+    handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
+  };
+  
 
+  
+
+
+  const changeUpdate =  () => {
     
-    const changeUpdate = () => {
-     
 
-    console.log('change hua ki nahi', updatedModuleStatus)
+    //console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
-     changeUpdatedModuleStatus(prevState => ({
+      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module1_completed:true
     }));
@@ -163,13 +174,14 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -194,17 +206,18 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
         module4_completed,
         module5_completed,
         module6_completed,
-       worksheet1,    
+        worksheet1,    
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-      letter4,
+        letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -222,24 +235,9 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
       }
       
       axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+      //console.log('what updated in back',updatedStatus)
     
   }
-
-
-  const onFailure = (res) => {
-        handleClose();
-        alert('Google Sign In was unsuccessful. Try again later');
-  };
-  
-    
-
-    const [hopebox, sethopebox] = useState({
-        list: '',
-        file: ''
-    });
-
-
     const createhopebox = () => {
         if (loggedIn) {
             console.log('testing', user)
@@ -251,11 +249,14 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
                 file: ''
             });
 
+          if (!updatedModuleStatus.hopebox1) {
             changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
      hopeBox1: true,
      
     }));
+          }
+            
 
         } else {
             handleShow();

@@ -106,7 +106,7 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -141,7 +141,7 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
 
 
     
-    const changeUpdate = () => {
+    const changeUpdate = async() => {
      
 
     console.log('change hua ki nahi', updatedModuleStatus)
@@ -166,13 +166,14 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -201,11 +202,11 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
-      
+      homeAssignment4,
       thankful4,
       letter4,
       hw4_day1,
@@ -224,7 +225,7 @@ const HW_Day6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
       feedback6
       }
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
+      await axios.post('http://localhost:5000/users/update', updatedStatus);
       console.log('what updated in back',updatedStatus)
     
   }

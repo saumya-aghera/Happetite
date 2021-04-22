@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 
 import { Navbar, Nav} from 'react-bootstrap';
@@ -24,7 +24,12 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
     const history = useHistory();
 
 
-    function addNewUser( newEmail,newUserStatus ){
+    useEffect(() => {
+    console.log('finalcheck', updatedModuleStatus,)
+            
+  }, [updatedModuleStatus]);
+
+   function addNewUser( newEmail,newUserStatus ){
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -44,7 +49,7 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
       }
     });
     changeUpdatedModuleStatus(response.data)
-    console.log('finalcheck',updatedModuleStatus)
+    
   }catch (err) {
         // Handle Error Here
         console.error(err);
@@ -53,7 +58,7 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
   }
 
   const checkForNewUser = async (newEmail,newUserStatus) => {
-    console.log('function called')
+    console.log('function called',newEmail)
     try {
         const resp = await axios.get('http://localhost:5000/users/newold', {
       params: {
@@ -104,7 +109,8 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
       worksheet1: false,
         hopeBox1: false,
       homeAssignment1: false,
-        minfulness2: false,
+      
+        mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -147,22 +153,24 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
     };
 
   
-    const popUp = () => {
-        console.log('inside function')
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    };
+  const popUp = () => {
+    console.log('inside function')
+    var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+  }
 
     return (
     
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
            
             <Navbar.Brand >
-         <div onClick={() => {
+        
+                    <div onClick={() => {
                     history.goBack();
                 }}>
                     <MDBIcon icon="fa fa-arrow-circle-left" style={{ fontSize: "30px" }} />
                 </div>
+              
           </Navbar.Brand>
                 <Navbar.Brand style={{marginLeft:'12px'}} href="/">HAPPETITE</Navbar.Brand>
                 

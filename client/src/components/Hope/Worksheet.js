@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import './Worksheet.css'
-
+import './Worksheet.css';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
@@ -17,9 +16,15 @@ function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [worksheet, setworksheet] = useState({
+    ans1: '',
+    ans2: '',
+    ans3: ''
+  });
 
   useEffect(() => {
-   
+    
+   console.log('useeffect of worksheet')
     changeUpdate();
     
   }, [updatedModuleStatus.worksheet1])
@@ -103,7 +108,30 @@ function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
       module6_completed: false,
       worksheet1: false,
         hopeBox1: false,
-        homeAssignment1:false
+        homeAssignment1:false,
+  
+      mindfulness2: false,
+      
+      try3: false,
+      homeAssignment3: false,
+      
+      thankful4: false,
+      letter4: false,
+      homeAssignment4:false,
+      hw4_day1: false,
+      hw4_day2: false,
+      hw4_day3: false,
+      hw4_day4: false,
+      hw4_day5: false,
+      hw4_day6: false,
+      hw4_day7: false,
+      
+      survey5: false,
+      strength5: false,
+      homeAssignment5: false,
+      
+      activity6: false,
+      feedback6:false
 
     }
 
@@ -115,30 +143,21 @@ function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
       handleClose();
   };
 
-
   const onFailure = (res) => {
     handleClose();
     alert('Google Sign In was unsuccessful. Try again later');
   };
   
 
-  const [worksheet, setworksheet] = useState({
-    ans1: '',
-    ans2: '',
-    ans3: '',
-    
-  });
+  
 
 
   const changeUpdate =  () => {
     
 
-    console.log('change hua ki nahi', updatedModuleStatus)
+    //console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
-      
-      console.log('inside if statement')
-      
       changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module1_completed:true
@@ -154,7 +173,30 @@ function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
         module6_completed,
         worksheet1,    
         hopeBox1,
-        homeAssignment1
+          homeAssignment1,
+        
+      mindfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+      letter4,
+      homeAssignment4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
       } = updatedModuleStatus
 
       
@@ -167,32 +209,70 @@ function Worksheet({ loggedIn, onLogin, user, setUser, userHelp, setUserHelp,
         module6_completed,
         worksheet1,    
         hopeBox1,
-        homeAssignment1
+          homeAssignment1,
+        
+      mindfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+        letter4,
+      homeAssignment4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
       }
       
       axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+      //console.log('what updated in back',updatedStatus)
     
   }
-
-
   const createworksheet = () => {
       
     if (loggedIn) {
      
-      axios.post('http://localhost:5000/worksheet', worksheet);
-      console.log(`Worksheet submitted: `,worksheet,user.name,user.email);
+      const userName = user.name
+      const userId= user.email
+    
+
+      
+      const post = {
+        ...worksheet,
+        userId,
+        userName
+        
+      };
+
+      axios.post('http://localhost:5000/worksheet', post);
+      console.log(`Worksheet submitted: `, post, user.name, user.email);
       setworksheet({
+      
         ans1: '',
         ans2: '',
         ans3: '',
-      });
+    });
       
+      if (!updatedModuleStatus.worksheet1) {
+        console.log('woksheet false')
       changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
       worksheet1: true,
       
     }));
+    }
+      
       
 
       

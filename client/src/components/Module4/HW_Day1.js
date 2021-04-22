@@ -4,9 +4,10 @@ import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
-import ModuleHeader from '../ModuleHeader/ModuleHeader';
+import ModuleHeaderHW from '../ModuleHeader/ModuleHeaderHW';
 import './HW_Day1.css'
 import BackHeader from '../BackHeader/BackHeader';
+
 
 
 const clientId =
@@ -19,12 +20,54 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
 
 }) => {
 
+  const menu = [
+    {
+        title: "Day 1",
+            id: "/day1",
+        sectionComplete:updatedModuleStatus.hw4_day1
+    },
+    {
+       title: "Day 2",
+            id: "/day2",
+        sectionComplete:updatedModuleStatus.hw4_day2
+    },
+    {
+        title: "Day 3",
+            id: "/day3",
+        sectionComplete:updatedModuleStatus.hw4_day3
+    },
+    {
+        title: "Day 4",
+            id: "/day4",
+        sectionComplete:updatedModuleStatus.hw4_day4
+    },
+    {
+        title: "Day 5",
+            id: "/day5",
+        sectionComplete:updatedModuleStatus.hw4_day5
+    },
+    {
+        title: "Day 6",
+            id: "/day6",
+        sectionComplete:updatedModuleStatus.hw4_day6
+
+    },
+    {
+        title: "Day 7",
+            id: "/day7",
+        sectionComplete:updatedModuleStatus.hw4_day7
+
+    }
+    
+
+]
+
   const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-   
+   console.log('useEffect of hw4_day1')
     changeUpdate();
     
     }, [updatedModuleStatus.hw4_day1])
@@ -111,7 +154,7 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -146,7 +189,7 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
 
 
     
-    const changeUpdate = () => {
+    const changeUpdate = async() => {
      
 
     console.log('change hua ki nahi', updatedModuleStatus)
@@ -171,13 +214,14 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -206,13 +250,14 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-      letter4,
+        letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -229,7 +274,7 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
       feedback6
       }
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
+      await axios.post('http://localhost:5000/users/update', updatedStatus);
       console.log('what updated in back',updatedStatus)
     
   }
@@ -259,6 +304,8 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
         d1_2: '',
         d1_3: ''
       });
+
+
       changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
     hw4_day1: true,
@@ -304,7 +351,7 @@ const HW_Day1 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
                 onLogin={onLogin}
                 user={user}
                 setUser={setUser}
-             
+             menu={menu}
         />
       <div className='day1-main'>
         <div className='day1-cont'>

@@ -5,7 +5,7 @@ import User from '../models/User.js';
 
 //For checking whether user is new or old
 router.route('/newold').get((req, res) => {
-    console.log(req.query.userId)
+    console.log('requsted',req.query.userId)
   
     User.findOne({userId: req.query.userId }, function (err,data) {
      if (err) {
@@ -23,7 +23,7 @@ router.route('/newold').get((req, res) => {
             
         }
 
-        console.log('found or not?')
+        
 });
 
 });
@@ -36,9 +36,7 @@ router.route('/check').get((req, res) => {
      User.findOneAndRemove({userId: req.query.userId }, function (err,data) {
      if (err) {
             res.status(500).send(error)
-     } else {
-         console.log(data)
-        }
+     } 
      });
     
 
@@ -51,7 +49,7 @@ router.route('/check').get((req, res) => {
 
 //for getting progess of old user
 router.route('/updatedInfo').get((req, res) => {
-  
+   console.log('inside update info')
     User.findOne({userId: req.query.userId }, function (err,data) {
      if (err) {
             res.status(500).send(error)
@@ -66,6 +64,7 @@ router.route('/updatedInfo').get((req, res) => {
 
 //For adding new user
 router.route('/add').post((req, res) => {
+    
   const userInfo = req.body;
    
     console.log('from post',userInfo)
@@ -80,11 +79,12 @@ router.route('/add').post((req, res) => {
 
 //For updating user status
 router.route('/update').post((req, res) => {
-
     const newdoc = req.body
-    const uid =req.body.userId
-
-    console.log('checkchek',newdoc,uid)
+    const uid = req.body.userId
+    
+    if (uid !== "start@example.com") {
+        console.log('inside update')
+    
 
     User.findOneAndReplace({userId: uid }, newdoc,
         null, function (err, docs) {
@@ -98,6 +98,8 @@ router.route('/update').post((req, res) => {
 });
     
 
+    }
+    
 });
 
 export default router;

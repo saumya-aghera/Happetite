@@ -5,6 +5,7 @@ import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { useLocation } from 'react-router-dom';
+import { MDBIcon } from 'mdbreact';
 
 
 const clientId =
@@ -106,7 +107,7 @@ function Homework4({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUp
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -164,13 +165,14 @@ function Homework4({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUp
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -199,13 +201,14 @@ function Homework4({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUp
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-      letter4,
+        letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -264,37 +267,69 @@ function Homework4({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUp
           </div>
           <div className='hw4-pointer'>
 
-            <a href="/HW4/Day1" style={{ textDecoration: 'none' }}><div className='pointer1' >DAY 1</div></a>
+            <a href="/HW4/Day1"style={{ textDecoration: 'none' }}><div className='pointer1' ><span>DAY 1</span> {updatedModuleStatus.hw4_day1 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null} </div></a>
             
-            {(updatedModuleStatus.hw4_day1) ? <a href="/HW4/Day2" style={{ textDecoration: 'none' }}><div className='pointer2' >DAY 2</div></a> :
-          <div className='pointer2' onClick={handleShow} >DAY 2</div>}
+            {(updatedModuleStatus.hw4_day1) ? <a href="/HW4/Day2"style={{ textDecoration: 'none' }}><div className='pointer2' ><span>DAY 2</span> {updatedModuleStatus.hw4_day2 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a> :              
+              <div className='pointer2' onClick={handleShow} ><span>DAY 2</span> {updatedModuleStatus.hw4_day2 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
             
-            {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2) ? <a href="/HW4/Day3" style={{ textDecoration: 'none' }}><div className='pointer3' >DAY 3</div></a>
-              :
-              <div className='pointer3' onClick={handleShow}>DAY 3</div>}
             
-            {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3) ?  <a href="/HW4/Day4"  style={{textDecoration:'none'}}><div className='pointer4' >DAY 4</div></a>
-              :
-          <div className='pointer4' onClick={handleShow} >DAY 4</div>}
+            
+            
+            {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2) ? <a href="/HW4/Day3"style={{ textDecoration: 'none' }}><div className='pointer3' ><span>DAY 3</span> {updatedModuleStatus.hw4_day3 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a>
+              :              
+              <div className='pointer3' onClick={handleShow}><span>DAY 3</span> {updatedModuleStatus.hw4_day3 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
+            
+            {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3) ?  <a href="/HW4/Day4" style={{textDecoration:'none'}}><div className='pointer4' ><span>DAY 4</span> {updatedModuleStatus.hw4_day4 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a>
+              :             
+              <div className='pointer4' onClick={handleShow} ><span>DAY 4</span> {updatedModuleStatus.hw4_day4 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
+            
+            
+            
             
             {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
               && updatedModuleStatus.hw4_day4
-            ) ? <a href="/HW4/Day5"  style={{textDecoration:'none'}}><div className='pointer5' >DAY 5</div></a>
+            ) ? <a href="/HW4/Day5" style={{textDecoration:'none'}}><div className='pointer5' ><span>DAY 5</span> {updatedModuleStatus.hw4_day5 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a>
               :
-              <div className='pointer5' onClick={handleShow} >DAY 5</div>}
+              <div className='pointer5' onClick={handleShow} ><span>DAY 5</span> {updatedModuleStatus.hw4_day5 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
             
 
             {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
               && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5
-            ) ? <a href="/HW4/Day6"  style={{textDecoration:'none'}}><div className='pointer6' >DAY 6</div></a>
+            ) ? <a href="/HW4/Day6" style={{textDecoration:'none'}}><div className='pointer6' ><span>DAY 6</span> {updatedModuleStatus.hw4_day6 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a>
               :
-              <div className='pointer6' onClick={handleShow} >DAY 6</div>}
+              <div className='pointer6' onClick={handleShow} ><span>DAY 6</span> {updatedModuleStatus.hw4_day6 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
             
             {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
               && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5
-            ) ?  <a href="/HW4/Day7"  style={{textDecoration:'none'}}><div className='pointer7' >DAY 7</div></a>
-              :
-              <div className='pointer7' onClick={handleShow} >DAY 7</div>}
+            ) ?  <a href="/HW4/Day7" style={{textDecoration:'none'}}><div className='pointer7' ><span>DAY 7</span> {updatedModuleStatus.hw4_day7 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div></a>
+              :  
+              <div className='pointer7' onClick={handleShow} ><span>DAY 7</span> {updatedModuleStatus.hw4_day7 ?<span>
+                                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color:'green', marginLeft:'7px', marginRight:'5px'}} />
+                                    </span> :null}</div>}
             
            
 
