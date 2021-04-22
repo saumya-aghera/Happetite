@@ -19,10 +19,10 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
   const location = useLocation();
 
   useEffect(() => {
-   
+   console.log('useEffect of mindfulness')
     changeUpdate();
     
-    }, [updatedModuleStatus.minfulness2])
+    }, [updatedModuleStatus.mindfulness2])
 
    function addNewUser( newEmail,newUserStatus ){
     console.log('Not registered before',newUserStatus)
@@ -105,7 +105,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -143,7 +143,8 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
 
     console.log('change hua ki nahi', updatedModuleStatus)
     
-    if (updatedModuleStatus.midfulness2) {
+    if (!updatedModuleStatus.mindfulness2) {
+      console.log('if called')
      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module2_completed:true
@@ -161,13 +162,14 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -196,13 +198,14 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-      letter4,
+        letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -246,6 +249,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         feelings: '',
       });
      
+      if (!updatedModuleStatus.mindfulness2)
       changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
      mindfulness2: true,

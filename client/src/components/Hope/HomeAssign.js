@@ -19,8 +19,15 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [homeassign, sethomeassign] = useState({
+    goal1: '',
+    goal2: '',
+    goal3: '',
+    obs: ''
+  });
+
   useEffect(() => {
-   
+   console.log('useeffect of homeassignment')
     changeUpdate();
     
   }, [updatedModuleStatus.homeAssignment1])
@@ -104,7 +111,30 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
       module6_completed: false,
       worksheet1: false,
         hopeBox1: false,
-        homeAssignment1:false
+        homeAssignment1:false,
+  
+      mindfulness2: false,
+      
+      try3: false,
+      homeAssignment3: false,
+      
+      thankful4: false,
+      letter4: false,
+      homeAssignment4:false,
+      hw4_day1: false,
+      hw4_day2: false,
+      hw4_day3: false,
+      hw4_day4: false,
+      hw4_day5: false,
+      hw4_day6: false,
+      hw4_day7: false,
+      
+      survey5: false,
+      strength5: false,
+      homeAssignment5: false,
+      
+      activity6: false,
+      feedback6:false
 
     }
 
@@ -122,18 +152,13 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
   };
   
 
-  const [homeassign, sethomeassign] = useState({
-    goal1: '',
-    goal2: '',
-    goal3: '',
-    obs: ''
-  });
+  
 
 
   const changeUpdate =  () => {
     
 
-    console.log('change hua ki nahi', updatedModuleStatus)
+    //console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
       changeUpdatedModuleStatus(prevState => ({
@@ -151,7 +176,30 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
         module6_completed,
         worksheet1,    
         hopeBox1,
-        homeAssignment1
+          homeAssignment1,
+        
+      mindfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+      letter4,
+      homeAssignment4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
       } = updatedModuleStatus
 
       
@@ -164,11 +212,34 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
         module6_completed,
         worksheet1,    
         hopeBox1,
-        homeAssignment1
+          homeAssignment1,
+        
+      mindfulness2,
+      
+      try3,
+      homeAssignment3,
+      
+      thankful4,
+        letter4,
+      homeAssignment4,
+      hw4_day1,
+      hw4_day2,
+      hw4_day3,
+      hw4_day4,
+      hw4_day5,
+      hw4_day6,
+      hw4_day7,
+      
+      survey5,
+      strength5,
+      homeAssignment5,
+      
+      activity6,
+      feedback6
       }
       
       axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+      //console.log('what updated in back',updatedStatus)
     
   }
 
@@ -185,11 +256,15 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
         obs: ''
       });
       //alert(`thank you for your answers`);//very annoying
-       changeUpdatedModuleStatus(prevState => ({
+      if (!updatedModuleStatus.homeAssignment1) {
+        changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
       homeAssignment1: true,
       
     }));
+
+      }
+       
       
       
     } else {

@@ -34,7 +34,7 @@ function App() {
     familyName: "start",
     givenName: "start",
     googleId: "106161716030241020753",
-    imageUrl: "https://lh6.googleusercontent.com/-YnY_k1gqAsc/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucljSruPsTBmPmYNkGzUARwKYtu0UA/s96-c/photo.jpg",
+    imageUrl: "start",
     name: "start"
   });
 
@@ -54,7 +54,7 @@ function App() {
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,

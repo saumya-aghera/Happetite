@@ -111,7 +111,7 @@ const ModuleHeader = ({ loggedIn, onLogin, user, setUser,
         hopeBox1: false,
       homeAssignment1: false,
         
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,

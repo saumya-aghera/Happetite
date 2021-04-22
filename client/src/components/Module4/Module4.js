@@ -68,7 +68,7 @@ const Module4 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1,
       homeAssignment1,
       
-        minfulness2,
+        mindfulness2,
       
       try3,
       homeAssignment3,
@@ -103,8 +103,8 @@ const Module4 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         worksheet1,    
         hopeBox1,
           homeAssignment1,
-        
-      minfulness2,
+        homeAssignment4,
+      mindfulness2,
       
       try3,
       homeAssignment3,

@@ -45,7 +45,7 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         updateModuleCompletion();
         
   
-    }, [], [updatedModuleStatus.module2_completed])
+    }, [], [updatedModuleStatus.module6_completed])
     
     const updateModuleCompletion = () => {
         const { userId,
@@ -59,7 +59,7 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1,
       homeAssignment1,
       
-        minfulness2,
+        mindfulness2,
       
       try3,
       homeAssignment3,
@@ -95,11 +95,11 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
-      
+      homeAssignment4,
       thankful4,
       letter4,
       hw4_day1,

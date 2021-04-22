@@ -120,9 +120,10 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             url: i2,
             title: 'Module 4: Make gratitude your attitude',
             width: '30%',
-            moduleComplete: updatedModuleStatus.module2_completed,
-            open: updatedModuleStatus.module1_completed,
-            pageUrl:"/Module2"
+             moduleComplete: updatedModuleStatus.module4_completed,
+            open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
+                && updatedModuleStatus.module3_completed,
+            pageUrl:"/Module4"
         }
     ];
     const images3 = [
@@ -142,10 +143,12 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             url: i4,
             title: 'Module 6: My safety',
             width: '30%',
-            moduleComplete: updatedModuleStatus.module4_completed,
+            moduleComplete: updatedModuleStatus.module6_completed,
             open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
-                && updatedModuleStatus.module3_completed,
-            pageUrl:"/Module4"
+                && updatedModuleStatus.module3_completed && updatedModuleStatus.module4_completed
+                && updatedModuleStatus.module5_completed,
+            pageUrl:"/Module6"
+           
         }
     ];
     const images5 = [
@@ -164,11 +167,10 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             url: i5,
             title: 'Module 2: Right here, Right now',
             width: '30%',
-            moduleComplete: updatedModuleStatus.module6_completed,
-            open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
-                && updatedModuleStatus.module3_completed && updatedModuleStatus.module4_completed
-                && updatedModuleStatus.module5_completed,
-            pageUrl:"/Module6"
+            moduleComplete: updatedModuleStatus.module2_completed,
+            open: updatedModuleStatus.module1_completed,
+            pageUrl:"/Module2"
+            
         }
     ];
        

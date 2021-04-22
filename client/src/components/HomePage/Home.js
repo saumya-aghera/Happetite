@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import './Home.css'
 import Intro from '../Intro/Intro'
 import Module from '../Modules/Module'
@@ -8,7 +8,12 @@ import FAQ from '../FAQ/FAQ';
 import Helplines from '../Helplines/Helplines';
 
 
-const Home=({updatedModuleStatus,changeUpdatedModuleStatus})=> {
+const Home = ({ updatedModuleStatus, changeUpdatedModuleStatus }) => {
+    
+    useEffect(() => {
+         window.scrollTo(0, 0);
+    }, [])
+
     return (
         
         <div className='home-main' id ='home'>

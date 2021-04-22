@@ -21,7 +21,7 @@ function Homework3({ loggedIn,onLogin,user,setUser,
    
     changeUpdate();
     
-    }, [updatedModuleStatus.hopeBox1])
+    }, [updatedModuleStatus.homeAssignment3])
     
 
     function addNewUser( newEmail,newUserStatus ){
@@ -105,7 +105,7 @@ function Homework3({ loggedIn,onLogin,user,setUser,
         hopeBox1: false,
         homeAssignment1:false,
   
-      minfulness2: false,
+      mindfulness2: false,
       
       try3: false,
       homeAssignment3: false,
@@ -163,13 +163,14 @@ function Homework3({ loggedIn,onLogin,user,setUser,
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -198,13 +199,14 @@ function Homework3({ loggedIn,onLogin,user,setUser,
         hopeBox1,
           homeAssignment1,
         
-      minfulness2,
+      mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-      letter4,
+        letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
