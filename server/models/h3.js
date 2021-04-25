@@ -7,6 +7,8 @@ const h3Schema = new mongoose.Schema({
     d: String,
     e: String,
     date: Date,
+    userId: String,
+    userName: String
 });
 
 const h3 = mongoose.model('h3',h3Schema);

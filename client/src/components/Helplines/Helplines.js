@@ -87,7 +87,7 @@ const rows = [
   createData('Sevakendram-Health Information Helpline','Hyderabad, Telangana','104','Toll Free','24x7'),
   createData('Lifeline Foundation','Kolkatta, West Bengal', '+91 033 24637401, +91 033 24637432', 'Not mentioned', 'Mon-Sun 10am  to 6pm'),
 ];
-function Helplines({ loggedIn, onLogin, user, setUser }) {
+function Helplines({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdatedModuleStatus }) {
     const classes = useStyles();
   
   return (
@@ -95,7 +95,9 @@ function Helplines({ loggedIn, onLogin, user, setUser }) {
       <BackHeader loggedIn={loggedIn}
                 onLogin={onLogin}
                 user={user}
-                setUser={setUser}/>
+        setUser={setUser}
+      updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} />
       <div id="helpline" className="main-helpline">
       
       <TableContainer component={Paper} className="cont-helpline">

@@ -6,6 +6,8 @@ const trySchema = new mongoose.Schema({
     tc: String,
     td: String,
     te: String,
+    userId: String,
+    userName: String
 
 });
 

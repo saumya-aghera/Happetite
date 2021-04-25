@@ -41,11 +41,29 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
     ]
     
     useEffect(() => {
-        window.scrollTo(0, 0);
-         updateModuleCompletion();
-    }, [], [updatedModuleStatus.module5_completed])
+       window.scrollTo(0, 0);
+    }, [])
+  
+  
+   useEffect(() => {
+     const newUserModule5 = {
+      userId:updatedModuleStatus.userId,
+       survey5: false,
+       strength5: false,
+      homeAssignment5:false
+    }
+
+    console.log("useeffect of module5",updatedModuleStatus.userId,newUserModule5)
+    //for checking if user is new to website
+    checkForNewUser(updatedModuleStatus.userId,newUserModule5)
+  }, [updatedModuleStatus.userId])
     
-    const updateModuleCompletion = () => {
+  useEffect(() => {
+    updateModule5Completion();
+        
+  }, [updatedModuleStatus.module5_completed]);
+    
+    const updateModule5Completion = () => {
         const { userId,
         module1_completed,
         module2_completed,
@@ -89,38 +107,71 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
         module4_completed,
         module5_completed,
         module6_completed,
-        worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        
-      mindfulness2,
-      
-      try3,
-      homeAssignment3,
-      homeAssignment4,
-      thankful4,
-      letter4,
-      hw4_day1,
-      hw4_day2,
-      hw4_day3,
-      hw4_day4,
-      hw4_day5,
-      hw4_day6,
-      hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
       }
       
       axios.post('http://localhost:5000/users/update', updatedStatus);
       console.log('what updated in back',updatedStatus)
     }
 
+    const addNewUser=( newEmail,newUserStatus )=>{
+    console.log('Not registered before',newUserStatus)
+     axios.post('http://localhost:5000/module5/add', newUserStatus);
+      console.log('posted user in back')
+  };
+
+
+  const updateProgress = async (newEmail) => {
+  console.log('Already registered before',newEmail);
+
+  try {
+    const response = await axios.get('http://localhost:5000/module5/updatedInfo', {
+      params: {
+        userId: newEmail
+      }
+    });
+    console.log('in place of error',response.data)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+
+      survey5: response.data.survey5,
+      strength5: response.data.strength5,
+      homeAssignment5:response.data.homeAssignment5
+      
+      })))
     
+    
+  }catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+      
+  }
+
+  const checkForNewUser = async (newEmail,newUserStatus) => {
+    console.log('function called',newEmail)
+    try {
+        const resp = await axios.get('http://localhost:5000/module5/newold', {
+      params: {
+        userId: newEmail
+      }
+    });
+      console.log('resp', resp.data);
+     
+    //If new user then register the user in db
+    if (!resp.data) {
+      addNewUser(newEmail,newUserStatus)
+    }
+    // else bring the user till now progress from back
+    else {
+      updateProgress(newEmail); 
+    }
+    
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+};
 
     
     
@@ -137,7 +188,12 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}
             />
             <Introtomod5/>
-            <Survey/>
+            <Survey loggedIn={loggedIn}
+                onLogin={onLogin}
+                user={user}
+                setUser={setUser}
+                updatedModuleStatus={updatedModuleStatus}
+                changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
             <CharStrength/>
             <MyStrength
                 loggedIn={loggedIn}

@@ -2,14 +2,16 @@ import React from 'react'
 import './FAQ.css'
 import BackHeader from '../BackHeader/BackHeader'
 
-const FAQ = ({ loggedIn, onLogin, user, setUser }) => {
+const FAQ = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdatedModuleStatus }) => {
     return (
         <div>
             <BackHeader
             loggedIn={loggedIn}
                 onLogin={onLogin}
                 user={user}
-                setUser={setUser}/>
+                setUser={setUser}
+            updatedModuleStatus={updatedModuleStatus}
+            changeUpdatedModuleStatus={changeUpdatedModuleStatus} />
         <div className='faq-main'>
             
             <div className='faq-cont'>

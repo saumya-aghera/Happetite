@@ -6,7 +6,7 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-import { useLocation } from 'react-router-dom';
+
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -16,7 +16,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
   const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const location = useLocation();
+ 
 
   useEffect(() => {
    console.log('useEffect of mindfulness')
@@ -24,7 +24,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
     
     }, [updatedModuleStatus.mindfulness2])
 
-   function addNewUser( newEmail,newUserStatus ){
+   const addNewUser=( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -43,8 +43,17 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         userId: newEmail
       }
     });
-    changeUpdatedModuleStatus(response.data)
-    console.log('finalcheck',updatedModuleStatus)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+      userId: newEmail,
+      module1_completed: response.data.module1_completed,
+      module2_completed: response.data.module2_completed,
+      module3_completed: response.data.module3_completed,
+      module4_completed: response.data.module4_completed,
+      module5_completed: response.data.module5_completed,
+      module6_completed: response.data.module6_completed,
+      })))
+    
   }catch (err) {
         // Handle Error Here
         console.error(err);
@@ -53,7 +62,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
   }
 
   const checkForNewUser = async (newEmail,newUserStatus) => {
-    console.log('function called')
+    console.log('function called',newEmail)
     try {
         const resp = await axios.get('http://localhost:5000/users/newold', {
       params: {
@@ -101,55 +110,35 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
       module4_completed: false,
       module5_completed: false,
       module6_completed: false,
-      worksheet1: false,
-        hopeBox1: false,
-        homeAssignment1:false,
-  
-      mindfulness2: false,
-      
-      try3: false,
-      homeAssignment3: false,
-      
-      thankful4: false,
-      letter4: false,
-      homeAssignment4:false,
-      hw4_day1: false,
-      hw4_day2: false,
-      hw4_day3: false,
-      hw4_day4: false,
-      hw4_day5: false,
-      hw4_day6: false,
-      hw4_day7: false,
-      
-      survey5: false,
-      strength5: false,
-      homeAssignment5: false,
-      
-      activity6: false,
-      feedback6:false
-
     }
 
     
     //for checking if user is new to website
     checkForNewUser(res.profileObj.email,newUserStatus)
     
-      refreshTokenSetup(res);
-      handleClose();
+    refreshTokenSetup(res);
+    handleClose();
   };
+
+  
+
+  const onFailure = (res) => {
+    handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
+  };
+  
+
 
   const changeUpdate = () => {
      
 
     console.log('change hua ki nahi', updatedModuleStatus)
     
-    if (!updatedModuleStatus.mindfulness2) {
-      console.log('if called')
      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module2_completed:true
     }));
-    }
+    
     
     const { userId,
         module1_completed,
@@ -187,54 +176,15 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
       } = updatedModuleStatus
 
       
-      const updatedStatus={ userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-         worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        
-      mindfulness2,
-      
-      try3,
-      homeAssignment3,
-      
-      thankful4,
-        letter4,
-      homeAssignment4,
-      hw4_day1,
-      hw4_day2,
-      hw4_day3,
-      hw4_day4,
-      hw4_day5,
-      hw4_day6,
-      hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
+      const updatedStatus={ userId,   
+      mindfulness2
       }
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
+      axios.post('http://localhost:5000/module2/update', updatedStatus);
       console.log('what updated in back',updatedStatus)
     
   }
 
-
-
-
-  const onFailure = (res) => {
-    handleClose();
-    alert('Google Sign In was unsuccessful. Try again later');
-  };
-  
 
   const [mindfull, setmindfull] = useState({
     feelings: '',
@@ -242,14 +192,21 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
   const createmindfull = () => {
       
     if (loggedIn) {
-     
-      axios.post('http://localhost:5000/mindfull', mindfull);
+      const userName = user.name
+      const userId= user.email
+      const post = {
+        ...mindfull,
+        userId,
+        userName
+        
+      };
+      axios.post('http://localhost:5000/mindfull', post);
       console.log(`Exercise submitted: `,mindfull,user.name,user.email);
       setmindfull({
         feelings: '',
       });
      
-      if (!updatedModuleStatus.mindfulness2)
+     
       changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
      mindfulness2: true,

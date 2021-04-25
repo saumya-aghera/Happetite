@@ -12,98 +12,89 @@ import axios from 'axios'
 
 
 
-const Module4 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeUpdatedModuleStatus  }) => {
+const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
+  changeUpdatedModuleStatus }) => {
     
-    const menu = [
+  const menu = [
     {
-        title: "Welcome",
-            id: "welcome4",
-        sectionComplete:false
+      title: "Welcome",
+      id: "welcome4",
+      sectionComplete: false
     },
     {
-        title: "Introduction to Gratitude",
-        id:"into-grat",
-        sectionComplete:false
+      title: "Introduction to Gratitude",
+      id: "into-grat",
+      sectionComplete: false
     },
     {
-        title: "What are you Thankful for?",
-        id:"thankful",
-        sectionComplete:updatedModuleStatus.thankful4
+      title: "What are you Thankful for?",
+      id: "thankful",
+      sectionComplete: updatedModuleStatus.thankful4
     },
     {
-        title: "My Gratitude Letter",
-        id:"letter",
-        sectionComplete:updatedModuleStatus.letter4
+      title: "My Gratitude Letter",
+      id: "letter",
+      sectionComplete: updatedModuleStatus.letter4
     },
     {
-        title: "Home Assignment",
-        id:"home4",
-        sectionComplete:updatedModuleStatus.homeAssignment4
+      title: "Home Assignment",
+      id: "home4",
+      sectionComplete: updatedModuleStatus.homeAssignment4
     },
     {
-        title: "Take the Quiz",
-        id:"quiz4",
-        sectionComplete:false
+      title: "Take the Quiz",
+      id: "quiz4",
+      sectionComplete: false
 
     }
     
 
-]
+  ];
+
+  useEffect(() => {
+    const newUserModule4 = {
+      userId: updatedModuleStatus.userId,
+      thanful4:false,
+      letter4:false,
+      homeAssignment4:false,
+      hw4_day1: false,
+      hw4_day2: false,
+      hw4_day3: false,
+      hw4_day4: false,
+      hw4_day5: false,
+      hw4_day6: false,
+      hw4_day7: false,
+    }
+
+    console.log("useeffect of module4", updatedModuleStatus.userId, newUserModule4)
+    //for checking if user is new to website
+    checkForNewUser(updatedModuleStatus.userId, newUserModule4)
+  }, [updatedModuleStatus.userId]);
     
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
     
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        updateModuleCompletion();
-    }, [], [updatedModuleStatus.module4_completed])
+  useEffect(() => {
+        
+    updateModule4Completion();
+  }, [updatedModuleStatus.module4_completed]);
     
-    const updateModuleCompletion = () => {
-        const { userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-        worksheet1,
-        hopeBox1,
+  const updateModule4Completion = () => {
+    const { userId,
+      module1_completed,
+      module2_completed,
+      module3_completed,
+      module4_completed,
+      module5_completed,
+      module6_completed,
+      worksheet1,
+      hopeBox1,
       homeAssignment1,
       
-        mindfulness2,
-      
-      try3,
-      homeAssignment3,
-      
-      thankful4,
-      letter4,
-       homeAssignment4,
-      hw4_day1,
-      hw4_day2,
-      hw4_day3,
-      hw4_day4,
-      hw4_day5,
-      hw4_day6,
-      hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
-      } = updatedModuleStatus
-
-      
-      const updatedStatus={ userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-        worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        homeAssignment4,
       mindfulness2,
       
       try3,
@@ -111,6 +102,7 @@ const Module4 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
       
       thankful4,
       letter4,
+      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -125,11 +117,89 @@ const Module4 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
       
       activity6,
       feedback6
-      }
+    } = updatedModuleStatus
+
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+    const updatedStatus = {
+      userId,
+      module1_completed,
+      module2_completed,
+      module3_completed,
+      module4_completed,
+      module5_completed,
+      module6_completed,
     }
+      
+    axios.post('http://localhost:5000/users/update', updatedStatus);
+    console.log('what updated in back', updatedStatus)
+  };
+
+  const addNewUser=( newEmail,newUserStatus )=>{
+    console.log('Not registered before',newUserStatus)
+     axios.post('http://localhost:5000/module4/add', newUserStatus);
+      console.log('posted user in back')
+  };
+
+
+  const updateProgress = async (newEmail) => {
+  console.log('Already registered before',newEmail);
+
+  try {
+    const response = await axios.get('http://localhost:5000/module4/updatedInfo', {
+      params: {
+        userId: newEmail
+      }
+    });
+    console.log('in place of error',response.data)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+
+      thankful4: response.data.thankful4,
+      letter4:response.data.letter4,
+      homeAssignment4:response.data.homeAssignment4,
+      hw4_day1: response.data.hw4_day1,
+      hw4_day2: response.data.hw4_day2,
+      hw4_day3: response.data.hw4_day3,
+      hw4_day4: response.data.hw4_day4,
+      hw4_day5: response.data.hw4_day5,
+      hw4_day6: response.data.hw4_day6,
+      hw4_day7: response.data.hw4_day7,
+      
+      })))
+    
+    
+  }catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+      
+  }
+
+  const checkForNewUser = async (newEmail,newUserStatus) => {
+    console.log('function called',newEmail)
+    try {
+        const resp = await axios.get('http://localhost:5000/module4/newold', {
+      params: {
+        userId: newEmail
+      }
+    });
+      console.log('resp', resp.data);
+     
+    //If new user then register the user in db
+    if (!resp.data) {
+      addNewUser(newEmail,newUserStatus)
+    }
+    // else bring the user till now progress from back
+    else {
+      updateProgress(newEmail); 
+    }
+    
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+};
 
 
     return (

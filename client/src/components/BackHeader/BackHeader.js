@@ -19,17 +19,18 @@ const clientId =
 
 
 const HW_Header = ({ loggedIn, onLogin, user, setUser,
-  updatedModuleStatus, changeUpdatedModuleStatus }) => {
  
-    const history = useHistory();
+  updatedModuleStatus,changeUpdatedModuleStatus}) => {
+ 
+    
 
-
-    useEffect(() => {
+useEffect(() => {
     console.log('finalcheck', updatedModuleStatus,)
             
   }, [updatedModuleStatus]);
 
-   function addNewUser( newEmail,newUserStatus ){
+  const history = useHistory();
+   const addNewUser =( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -48,7 +49,16 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
         userId: newEmail
       }
     });
-    changeUpdatedModuleStatus(response.data)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+      userId: newEmail,
+      module1_completed: response.data.module1_completed,
+      module2_completed: response.data.module2_completed,
+      module3_completed: response.data.module3_completed,
+      module4_completed: response.data.module4_completed,
+      module5_completed: response.data.module5_completed,
+      module6_completed: response.data.module6_completed,
+      })))
     
   }catch (err) {
         // Handle Error Here
@@ -106,33 +116,6 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
       module4_completed: false,
       module5_completed: false,
       module6_completed: false,
-      worksheet1: false,
-        hopeBox1: false,
-      homeAssignment1: false,
-      
-        mindfulness2: false,
-      
-      try3: false,
-      homeAssignment3: false,
-      
-      thankful4: false,
-      letter4: false,
-       homeAssignment4:false,
-      hw4_day1: false,
-      hw4_day2: false,
-      hw4_day3: false,
-      hw4_day4: false,
-      hw4_day5: false,
-      hw4_day6: false,
-      hw4_day7: false,
-      
-      survey5: false,
-      strength5: false,
-      homeAssignment5: false,
-      
-      activity6: false,
-      feedback6:false
-
     }
 
     
@@ -149,7 +132,8 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
   
   const logout = () => {
     onLogin(false);
-    console.log('logout',user)  
+    console.log('logout', user)
+    window.location.reload(false);
     };
 
   
@@ -158,7 +142,6 @@ const HW_Header = ({ loggedIn, onLogin, user, setUser,
     var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
   }
-
     return (
     
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed='top'>
