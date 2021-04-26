@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import './Survey.css'
 import axios from 'axios'
+
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 
@@ -92,6 +93,7 @@ function Survey({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdat
             <div className="surv-main" id='survey'>
               <div className="surv-cont" >
                 <h2>VIA Survey</h2>
+
             <div className="surv-text">
               <div  onClick={surveyComplete} >
                     <AwesomeButton  type="primary" className="surv-btn"
@@ -99,6 +101,8 @@ function Survey({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdat
                 target="_blank" style={{width:"25%", borderRadius:'2%', textDecoration:'none'}} >Take This Survey</AwesomeButton>
               </div>
               </div>
+
+              
                     </div>  
         </div>
         
