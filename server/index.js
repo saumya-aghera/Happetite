@@ -28,7 +28,7 @@ import module4 from './routes/module4.js';
 import module5 from './routes/module5.js';
 import module6 from './routes/module6.js';
 import hwModule4 from './routes/hwModule4.js';
-
+import A6 from './routes/activity6.js'
 
 
 const app = express();
@@ -61,6 +61,7 @@ app.use('/module4', module4);
 app.use('/module5', module5);
 app.use('/module6', module6);
 app.use('/hwModule4', hwModule4);
+app.use('/writeup', A6);
 
 
 app.use(bodyParser.json({limit:"20mb", extended:"true"}));
@@ -73,7 +74,7 @@ app.get('/', (req, res) => res.status(200).send("Hello World"));
 
 
 
-const CONNECT_URL = 'mongodb+srv://pragya:pb78fFEj4s5QKddN@cluster0.pbcpg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECT_URL = 'mongodb+srv://trial:trial@cluster0.2jmqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECT_URL,{
