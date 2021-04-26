@@ -29,6 +29,7 @@ import module5 from './routes/module5.js';
 import module6 from './routes/module6.js';
 import hwModule4 from './routes/hwModule4.js';
 import A6 from './routes/activity6.js'
+import GIF from './routes/gif.js'
 
 
 const app = express();
@@ -62,7 +63,7 @@ app.use('/module5', module5);
 app.use('/module6', module6);
 app.use('/hwModule4', hwModule4);
 app.use('/writeup', A6);
-
+app.use('/gif', GIF);
 
 app.use(bodyParser.json({limit:"20mb", extended:"true"}));
 app.use(bodyParser.urlencoded({limit:"20mb", extended:"true"}));
