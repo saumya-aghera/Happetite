@@ -153,14 +153,14 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
             </Modal>
             
             <div className='hw4-pointer'>
-                <div className='pointer1' onClick={forDay1} >{updatedModuleStatus.hw4_day1 ? <span>
+                <div className='pointer1' onClick={forDay1} ><span>DAY 1</span>{updatedModuleStatus.hw4_day1 ? <span>
                     <MDBIcon icon="fa fa-check-circle" style={{
                         fontSize: "20px",
                         color: 'green',
                         marginLeft: '7px',
                         marginRight: '5px'
                     }} />
-                </span> : null}<span>DAY 1</span>
+                </span> : null}
                 </div>
                 {
                     day1 ? <HW_Day1 loggedIn={loggedIn}
@@ -175,23 +175,23 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 
 
 
-                {(updatedModuleStatus.hw4_day1) ? <div className='pointer2' onClick={forDay2} >{updatedModuleStatus.hw4_day2 ? <span>
+                {(updatedModuleStatus.hw4_day1) ? <div className='pointer2' onClick={forDay2} ><span>DAY 2</span>{updatedModuleStatus.hw4_day2 ? <span>
                     <MDBIcon icon="fa fa-check-circle" style={{
                         fontSize: "20px",
                         color: 'green',
                         marginLeft: '7px',
                         marginRight: '5px'
                     }} />
-                </span> : null}<span>DAY 2</span>
+                </span> : null}
                 </div> :
-                    <div className='pointer2' onClick={handleShow} >{updatedModuleStatus.hw4_day2 ? <span>
+                    <div className='pointer2' onClick={handleShow} ><span>DAY 2</span>{updatedModuleStatus.hw4_day2 ? <span>
                         <MDBIcon icon="fa fa-check-circle" style={{
                             fontSize: "20px",
                             color: 'green',
                             marginLeft: '7px',
                             marginRight: '5px'
                         }} />
-                    </span> : null}<span>DAY 2</span>
+                    </span> : null}
                     </div>
                 }
             
@@ -209,19 +209,19 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 
                 {
                     (updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2) ?
-                        <div className='pointer3' onClick={forDay3}>{updatedModuleStatus.hw4_day3 ? <span>
+                        <div className='pointer3' onClick={forDay3}><span>DAY 3</span>{updatedModuleStatus.hw4_day3 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{
                                 fontSize: "20px",
                                 color: 'green',
                                 marginLeft: '7px',
                                 marginRight: '5px'
                             }} />
-                        </span> : null}<span>DAY 3</span>
+                        </span> : null}
                         </div>
                         :
-                        <div className='pointer3' onClick={handleShow}>{updatedModuleStatus.hw4_day3 ? <span>
+                        <div className='pointer3' onClick={handleShow}><span>DAY 3</span> {updatedModuleStatus.hw4_day3 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color: 'green', marginLeft: '7px', marginRight: '5px' }} />
-                        </span> : null}<span>DAY 3</span> </div>
+                        </span> : null}</div>
                 }
               
                 {
@@ -238,24 +238,24 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 
                 {
                     (updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3) ?
-                        <div className='pointer4' onClick={forDay4}>{updatedModuleStatus.hw4_day4 ? <span>
+                        <div className='pointer4' onClick={forDay4}><span>DAY 4</span>{updatedModuleStatus.hw4_day4 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{
                                 fontSize: "20px",
                                 color: 'green',
                                 marginLeft: '7px',
                                 marginRight: '5px'
                             }} />
-                        </span> : null}<span>DAY 4</span>
+                        </span> : null}
                         </div>
                         :
-                        <div className='pointer4' onClick={handleShow} >{updatedModuleStatus.hw4_day4 ? <span>
+                        <div className='pointer4' onClick={handleShow} ><span>DAY 4</span> {updatedModuleStatus.hw4_day4 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{
                                 fontSize: "20px",
                                 color: 'green',
                                 marginLeft: '7px',
                                 marginRight: '5px'
                             }} />
-                        </span> : null}<span>DAY 4</span> </div>}
+                        </span> : null}</div>}
                 {
                     day4 ? <HW_Day4 loggedIn={loggedIn}
                         onLogin={onLogin}
@@ -272,23 +272,23 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
                     (updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
                         && updatedModuleStatus.hw4_day4
                     ) ?
-                        <div className='pointer5' onClick={forDay5}>{updatedModuleStatus.hw4_day5 ? <span>
+                        <div className='pointer5' onClick={forDay5}><span>DAY 5</span> {updatedModuleStatus.hw4_day5 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{
                                 fontSize: "20px",
                                 color: 'green',
                                 marginLeft: '7px',
                                 marginRight: '5px'
                             }} />
-                        </span> : null}<span>DAY 5</span> </div>
+                        </span> : null}</div>
                         :
-                        <div className='pointer5' onClick={handleShow} >{updatedModuleStatus.hw4_day5 ? <span>
+                        <div className='pointer5' onClick={handleShow} ><span>DAY 5</span>{updatedModuleStatus.hw4_day5 ? <span>
                             <MDBIcon icon="fa fa-check-circle" style={{
                                 fontSize: "20px",
                                 color: 'green',
                                 marginLeft: '7px',
                                 marginRight: '5px'
                             }} />
-                        </span> : null}<span>DAY 5</span> </div>}
+                        </span> : null} </div>}
                 {
                     day5 ? <HW_Day5 loggedIn={loggedIn}
                         onLogin={onLogin}
@@ -304,13 +304,13 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 
                 {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
                     && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5
-                ) ? <div className='pointer6' onClick={forDay6} >{updatedModuleStatus.hw4_day6 ? <span>
+                ) ? <div className='pointer6' onClick={forDay6} ><span>DAY 6</span>{updatedModuleStatus.hw4_day6 ? <span>
                     <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color: 'green', marginLeft: '7px', marginRight: '5px' }} />
-                </span> : null}<span>DAY 6</span></div>
+                </span> : null}</div>
                     :
-                    <div className='pointer6' onClick={handleShow} >{updatedModuleStatus.hw4_day6 ? <span>
+                    <div className='pointer6' onClick={handleShow} ><span>DAY 6</span>{updatedModuleStatus.hw4_day6 ? <span>
                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color: 'green', marginLeft: '7px', marginRight: '5px' }} />
-                    </span> : null}<span>DAY 6</span></div>}
+                    </span> : null}</div>}
                 {
                     day6 ? <HW_Day6 loggedIn={loggedIn}
                         onLogin={onLogin}
@@ -326,14 +326,14 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 
                 {(updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
                     && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5
-                ) ? <div className='pointer7' onClick={forDay7}>{updatedModuleStatus.hw4_day7 ? <span>
+                ) ? <div className='pointer7' onClick={forDay7}><span>DAY 7</span>{updatedModuleStatus.hw4_day7 ? <span>
                     <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color: 'green', marginLeft: '7px', marginRight: '5px' }} />
-                </span> : null}<span>DAY 7</span>
+                </span> : null}
                 </div>
                     :
-                    <div className='pointer7' onClick={handleShow} >{updatedModuleStatus.hw4_day7 ? <span>
+                    <div className='pointer7' onClick={handleShow} ><span>DAY 7</span>{updatedModuleStatus.hw4_day7 ? <span>
                         <MDBIcon icon="fa fa-check-circle" style={{ fontSize: "20px", color: 'green', marginLeft: '7px', marginRight: '5px' }} />
-                    </span> : null}<span>DAY 7</span></div>}
+                    </span> : null}</div>}
             
                 {
                     day7 ? <HW_Day7 loggedIn={loggedIn}
