@@ -282,11 +282,12 @@ onChange={(event) => {
   
                 />
                 </div>
-<div className="Submit-btn workbtn">
-<button type="submit" onClick={createend} style={{ margin:'10px' }}>
-  Submit
-          </button>
-  </div>  
+                <div className="Submit-btn">
+            <button type="submit" onClick={createend} className='primary' style={{ marginRight: '57%' }}>
+              Submit
+                        </button>
+                    
+          </div> 
         </div>
           </div>
           </div>
