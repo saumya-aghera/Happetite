@@ -4,6 +4,7 @@ import Activity6 from './Activity6';
 import Game6 from './Game6';
 import Vid6 from './Vid6';
 import End from './End';
+import Ques from './Ques';
 import ModuleHeader from '../ModuleHeader/ModuleHeader'
 import axios from 'axios'
 
@@ -28,7 +29,7 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         sectionComplete:false
     },
     {
-        title: "Activity",
+        title: "Well Being",
         id:"activity",
         sectionComplete:updatedModuleStatus.activity6
     },
@@ -197,6 +198,7 @@ const addNewUser=( newEmail,newUserStatus )=>{
                 updatedModuleStatus={updatedModuleStatus}
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}
             />
+            <Ques/>
             <End
                 loggedIn={loggedIn}
                 onLogin={onLogin}

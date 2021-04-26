@@ -2,6 +2,9 @@ import React,{useEffect,useState} from 'react'
 import './Activity6.css'
 import axios from 'axios'
 import { refreshTokenSetup } from '../../utils/refreshToken';
+import ReactPlayer from "react-player";
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function Activity6({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdatedModuleStatus }) {
 
@@ -219,13 +222,98 @@ function addNewUser(newEmail, newUserStatus) {
     
   }
 
-
+  const [wu, setwu] = useState({
+    writeup: '',
+  });
+  const createwu = () => {
+      
+    if (loggedIn) {
+     const userName = user.name
+      const userId= user.email
+      const post = {
+        ...wu,
+        userId,
+        userName
+        
+      };
+      axios.post('http://localhost:5000/writeup', post);
+      console.log(`Exercise submitted: `,wu,user.name,user.email);
+      setwu({
+        writeup: '',
+      });
+      changeUpdatedModuleStatus(prevState => ({
+      ...prevState, 
+    activity6: true,
+     
+    }));
+      
+    } else {
+      handleShow();
+    }
+}
     
     return (
         <>
-            <div className="a6-main" id='activity'>
-                <div className="a6-cont">
-            <h2>Activity</h2>
+         <div className="a6-main" id='activity'>
+          <div className='a6-cont'>
+            <h2>What is well-being?</h2>
+            <div style={{
+                        fontSize: 'medium',
+                        fontWeight: '500',
+                        textAlign: 'center',
+                        paddingBottom:'20px'
+                    
+                    }}>Well-being is the state where we feel happy, healthy and comfortable. Let’s watch the video below to get a basic idea of it.
+</div>
+<div className="video">
+                    <ReactPlayer
+                        className="vid-container"
+                        url="https://www.youtube.com/watch?v=mxz8KyV3Ydc"
+                    
+                    />
+              </div>
+              <div style={{
+                        fontSize: 'medium',
+                        fontWeight: '500',
+                        textAlign: 'center',
+                        paddingBottom:'20px'
+                    
+                    }}>Since well-being is a subjective concept and is different for each person. Tell us below what is your meaning of well-being in a few sentences.
+</div>
+<div className='a6-text'>
+              <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon">
+                <i className="fas fa-pencil-alt prefix"></i>
+              </span>
+            </div>
+<TextareaAutosize
+     autoFocus
+minRows='10'
+    id="outlined-full-width"
+label=""
+ style={{ width: '90%' }}
+placeholder=""
+helperText=""
+fullWidth
+margin="normal"
+InputLabelProps={{
+  shrink: true,
+}}
+variant="outlined"
+value={wu.writeup}
+onChange={(event) => {
+  setwu({ ...wu, writeup: event.target.value })
+    }}
+  
+                />
+                </div>
+<div className="Submit-btn workbtn">
+<button type="submit" onClick={createwu} style={{ margin:'10px' }}>
+  Submit
+          </button>
+  </div>  
+  </div>
         </div>
             </div>
         </>

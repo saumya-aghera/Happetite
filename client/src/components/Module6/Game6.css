@@ -1,14 +1,12 @@
-/** @format */
-
 .g6-main {
-	background-color: #ffd8b3;
+	background-color: #fcdcae;
 	box-shadow: inset 0 0 20px #000000;
 	padding: 10px;
 	text-align: center;
 }
 
 .g6-cont {
-	background-color: #ffd8b3;
+	background-color: #fcdcae;
 	margin: 40px;
 	padding: 20px 75px 45px 75px;
 	box-shadow: 0 2.8px 22px rgba(0, 0, 0, 0.034),
