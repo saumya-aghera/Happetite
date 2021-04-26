@@ -290,11 +290,12 @@ const addNewUser=( newEmail,newUserStatus )=>{
                 
             />
           </div>
-            <div className="Submit-btn workbtn">
-            <button type="submit" onClick={createhw5} style={{ margin:'10px' }}>
-                Submit
+          <div className="Submit-btn">
+            <button type="submit" onClick={createhw5} className='primary' style={{ marginRight: '57%' }}>
+              Submit
                         </button>
-                </div>    
+                    
+          </div>
             </div>
             </div>
             </div>
