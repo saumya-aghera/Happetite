@@ -1,9 +1,7 @@
-/** @format */
-
 .mod5-main {
 	padding: 200px 300px;
 	background-color: #f5fcff;
-	background: url(../../images/bulb.jpg) no-repeat center center fixed;
+	background: url(../../images/wheel.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -13,6 +11,7 @@
 .intro-cont-mod5 {
 	z-index: 1;
 	width: 90%;
+	padding: 3%;
 	margin-left: 10%;
 	text-align: center;
 	display: flex-box;
