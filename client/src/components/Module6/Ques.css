@@ -1,5 +1,7 @@
-.ques-main{
-    background-color: #ffc04c;
+/** @format */
+
+.ques-main {
+	background-color: #ffc04c;
 }
 h3 {
 	padding-bottom: 80px;
@@ -12,7 +14,7 @@ h3 {
 	box-shadow: inset 0 0 20px #000000;
 }
 
-.outer-box3 {
+.outer-cont {
 	text-align: center;
 	margin: 70px;
 	background-color: #fca32b !important;

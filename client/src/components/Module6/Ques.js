@@ -2,8 +2,8 @@ import React from 'react'
 import './Ques.css'
 function Ques() {
     return (
-        <div className="ques-main" id='Ques'>
-        <div className='outer-box3'>
+        <div className="ques-main" id='questionare'>
+        <div className='ques-cont'>
             <h2>Post Intervention Questionnaire</h2>
             <div style={{
                         fontSize: 'medium',

@@ -4,7 +4,7 @@ const module6Schema = new mongoose.Schema(
     {
         userId: String,
          activity6:Boolean,
-      feedback6:Boolean
+        feedback6:Boolean
 
     }
         

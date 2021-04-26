@@ -29,9 +29,14 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         sectionComplete:false
     },
     {
-        title: "Well Being",
+        title: "What is well being?",
         id:"activity",
         sectionComplete:updatedModuleStatus.activity6
+      },
+    {
+        title: "Post Intervention Questionare",
+        id:"questionare",
+        sectionComplete:false
     },
     {
         title: "Feedback",
