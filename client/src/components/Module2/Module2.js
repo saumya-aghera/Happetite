@@ -38,68 +38,46 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
         id:"homeassignmet2",
             sectionComplete:false
     }
-    ]
+  ]
+  
+
+  useEffect(() => {
+
+    
+    const newUserModule2 = {
+      userId:updatedModuleStatus.userId,
+      mindfulness2:false 
+    }
+
+    console.log("useeffect of hope",updatedModuleStatus.userId,newUserModule2)
+    //for checking if user is new to website
+    checkForNewUser(updatedModuleStatus.userId,newUserModule2)
+  }, [updatedModuleStatus.userId])
     
     useEffect(() => {
-        updateModuleCompletion();
+        updateModule2Completion();
         
     }, [updatedModuleStatus.module2_completed])
 
-    const updateModuleCompletion = () => {
-        const { userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-        worksheet1,
-        hopeBox1,
-      homeAssignment1,
+  const updateModule2Completion = () => {
+    const { userId,
+      module1_completed,
+      module2_completed,
+      module3_completed,
+      module4_completed,
+      module5_completed,
+      module6_completed,
+      worksheet2,
+      hopeBox2,
+      homeAssignment2,
       
-        mindfulness2,
-      
-      try3,
-      homeAssignment3,
-      
-      thankful4,
-      letter4,
-       homeAssignment4,
-      hw4_day1,
-      hw4_day2,
-      hw4_day3,
-      hw4_day4,
-      hw4_day5,
-      hw4_day6,
-      hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
-      } = updatedModuleStatus
-
-      
-      const updatedStatus={ userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-        worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        
       mindfulness2,
       
       try3,
       homeAssignment3,
       
       thankful4,
-          letter4,
+      letter4,
       homeAssignment4,
       hw4_day1,
       hw4_day2,
@@ -115,11 +93,81 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
       
       activity6,
       feedback6
-      }
+    } = updatedModuleStatus
+
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+    const updatedStatus = {
+      userId,
+      module1_completed,
+      module2_completed,
+      module3_completed,
+      module4_completed,
+      module5_completed,
+      module6_completed,
+    };
+      
+    axios.post('http://localhost:5000/users/update', updatedStatus);
+    console.log('what updated in back', updatedStatus)
+  };
+
+  const addNewUser=( newEmail,newUserStatus )=>{
+    console.log('Not registered before',newUserStatus)
+     axios.post('http://localhost:5000/module2/add', newUserStatus);
+      console.log('posted user in back')
+  };
+
+
+  const updateProgress = async (newEmail) => {
+  console.log('Already registered before',newEmail);
+
+  try {
+    const response = await axios.get('http://localhost:5000/module2/updatedInfo', {
+      params: {
+        userId: newEmail
+      }
+    });
+    console.log('in place of error',response.data)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+
+      mindfulness2: response.data.mindfulness2,
+     
+      
+      })))
+    
+    
+  }catch (err) {
+        // Handle Error Here
+        console.error(err);
     }
+      
+  }
+
+  const checkForNewUser = async (newEmail,newUserStatus) => {
+    console.log('function called',newEmail)
+    try {
+        const resp = await axios.get('http://localhost:5000/module2/newold', {
+      params: {
+        userId: newEmail
+      }
+    });
+      console.log('resp', resp.data);
+     
+    //If new user then register the user in db
+    if (!resp.data) {
+      addNewUser(newEmail,newUserStatus)
+    }
+    // else bring the user till now progress from back
+    else {
+      updateProgress(newEmail); 
+    }
+    
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+    }
+};
 
     return (
         <div>

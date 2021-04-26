@@ -6,68 +6,36 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import './HW_Day2.css';
 import BackHeader from '../BackHeader/BackHeader';
-
+import ModuleHeader from '../ModuleHeader/ModuleHeader';
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
-const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, changeUpdatedModuleStatus
+const HW_Day2 = ({ loggedIn, onLogin, user, setUser,
+  updatedModuleStatus, changeUpdatedModuleStatus, setDay2
 
 }) => {
   
-  const menu = [
-    {
-        title: "Day 1",
-            id: "day1",
-        sectionComplete:updatedModuleStatus.hw4_day1
-    },
-    {
-       title: "Day 2",
-            id: "day2",
-        sectionComplete:updatedModuleStatus.hw4_day2
-    },
-    {
-        title: "Day 3",
-            id: "day3",
-        sectionComplete:updatedModuleStatus.hw4_day3
-    },
-    {
-        title: "Day 4",
-            id: "day4",
-        sectionComplete:updatedModuleStatus.hw4_day4
-    },
-    {
-        title: "Day 5",
-            id: "day5",
-        sectionComplete:updatedModuleStatus.hw4_day5
-    },
-    {
-        title: "Day 6",
-            id: "day6",
-        sectionComplete:updatedModuleStatus.hw4_day6
-
-    },
-    {
-        title: "Day 7",
-            id: "day7",
-        sectionComplete:updatedModuleStatus.hw4_day7
-
-    }
-    
-
-]
 
   const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);
+  const [now,setNow]=useState(false)
+
+  const menu=[]
+  const [hw4_2, sethw4_2] = useState({
+    d2_1: '',
+    d2_2: '',
+    d2_3: '',
+  });
 
     useEffect(() => {
-   
+    console.log('useeffect of hw4_day2',updatedModuleStatus)
     changeUpdate();
     
-    }, [updatedModuleStatus.hw4_day2])
+    }, [now])
     
 
-    function addNewUser( newEmail,newUserStatus ){
+    const addNewUser=( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -86,8 +54,17 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
         userId: newEmail
       }
     });
-    changeUpdatedModuleStatus(response.data)
-    console.log('finalcheck',updatedModuleStatus)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+      userId: newEmail,
+      module1_completed: response.data.module1_completed,
+      module2_completed: response.data.module2_completed,
+      module3_completed: response.data.module3_completed,
+      module4_completed: response.data.module4_completed,
+      module5_completed: response.data.module5_completed,
+      module6_completed: response.data.module6_completed,
+      })))
+    
   }catch (err) {
         // Handle Error Here
         console.error(err);
@@ -96,7 +73,7 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
   }
 
   const checkForNewUser = async (newEmail,newUserStatus) => {
-    console.log('function called')
+    console.log('function called',newEmail)
     try {
         const resp = await axios.get('http://localhost:5000/users/newold', {
       params: {
@@ -144,59 +121,42 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
       module4_completed: false,
       module5_completed: false,
       module6_completed: false,
-      worksheet1: false,
-        hopeBox1: false,
-        homeAssignment1:false,
-  
-      mindfulness2: false,
-      
-      try3: false,
-      homeAssignment3: false,
-      
-      thankful4: false,
-      letter4: false,
-      homeAssignment4:false,
-      hw4_day1: false,
-      hw4_day2: false,
-      hw4_day3: false,
-      hw4_day4: false,
-      hw4_day5: false,
-      hw4_day6: false,
-      hw4_day7: false,
-      
-      survey5: false,
-      strength5: false,
-      homeAssignment5: false,
-      
-      activity6: false,
-      feedback6:false
-
     }
 
     
     //for checking if user is new to website
     checkForNewUser(res.profileObj.email,newUserStatus)
     
-      refreshTokenSetup(res);
-      handleClose();
+    refreshTokenSetup(res);
+    handleClose();
   };
 
+  
 
-    
-    const changeUpdate = async () => {
-     
+  const onFailure = (res) => {
+    handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
+  };
+  
 
-    console.log('change hua ki nahi', updatedModuleStatus)
+
+  const changeUpdate =  async () => {
     
-      if (updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2
-        && updatedModuleStatus.hw4_day3 && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5
-      && updatedModuleStatus.hw4_day6) {
-     changeUpdatedModuleStatus(prevState => ({
-      ...prevState,
-      homeAssignment4:true
+    console.log('enter for update')
+   
+    
+    if (updatedModuleStatus.hw4_day1 && updatedModuleStatus.hw4_day2 && updatedModuleStatus.hw4_day3
+      && updatedModuleStatus.hw4_day4 && updatedModuleStatus.hw4_day5 && updatedModuleStatus.hw4_day6 && updatedModuleStatus.hw4_day7) {
+      changeUpdatedModuleStatus(prevState => ({
+        ...prevState,
+         // copy all the fields of the object
+        homeAssignment4:true
+      
     }));
     }
-    
+
+      
+      
     const { userId,
         module1_completed,
         module2_completed,
@@ -234,24 +194,6 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
 
       
       const updatedStatus={ userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-       worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        
-        mindfulness2,
-      
-      try3,
-      homeAssignment3,
-      
-      thankful4,
-        letter4,
-      homeAssignment4,
       hw4_day1,
       hw4_day2,
       hw4_day3,
@@ -259,49 +201,44 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
       hw4_day5,
       hw4_day6,
       hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
+      thankful4,
+      letter4,
+      homeAssignment4,
       }
       
-      await axios.post('http://localhost:5000/users/update', updatedStatus);
-      console.log('what updated in back',updatedStatus)
+      await axios.post('http://localhost:5000/module4/update', updatedStatus);
+      console.log('hw4 day2 updated in back',updatedStatus)
+     
     
   }
-
-
-
-    const onFailure = (res) => {
-        handleClose();
-        alert('Google Sign In was unsuccessful. Try again later');
-  };
-
-  const [hw4_2, sethw4_2] = useState({
-    d2_1: '',
-    d2_2: '',
-    d2_3: '',
-  });
+  
 
   const createhw4_2 = () => {
       
   if (loggedIn) {
-   
-    axios.post('http://localhost:5000/hw4_2', hw4_2);
+   const userName = user.name
+      const userId= user.email
+    const post = {
+      ...hw4_2,
+      userId,
+      userName
+    }
+    
+   axios.post('http://localhost:5000/hw4_2', post);
     console.log(`Exercise submitted: `,hw4_2,user.name,user.email);
     sethw4_2({
       d2_1: '',
       d2_2: '',
       d2_3: ''
     });
+  
+   
     changeUpdatedModuleStatus(prevState => ({
       ...prevState, 
      hw4_day2: true,
      
     }));
+    
     
   } else {
     handleShow();
@@ -336,14 +273,7 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
       />
         </Modal.Footer>
         </Modal>
-        <BackHeader
-            loggedIn={loggedIn}
-                onLogin={onLogin}
-                user={user}
-                setUser={setUser}
-             
-        />
-        <div className='day2-main'>
+       
         <div className='day2-cont'>
         <h2>Day 2</h2>
             <div className='day2-text'>
@@ -404,7 +334,7 @@ const HW_Day2 = ({ loggedIn, onLogin, user, setUser ,updatedModuleStatus, change
           </div>
           </div>
           </div>
-        </div>
+       
     )
 }
 

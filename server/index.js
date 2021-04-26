@@ -21,6 +21,13 @@ import HW4_7 from './routes/hw4_7.js';
 import HW5Routes from './routes/hw5.js';
 import StrRoutes from './routes/strength.js';
 import ERoutes from './routes/end.js';
+import module1 from './routes/module1.js';
+import module2 from './routes/module2.js';
+import module3 from './routes/module3.js';
+import module4 from './routes/module4.js';
+import module5 from './routes/module5.js';
+import module6 from './routes/module6.js';
+import hwModule4 from './routes/hwModule4.js';
 
 
 
@@ -47,8 +54,13 @@ app.use('/hw5', HW5Routes);
 app.use('/strength', StrRoutes);
 app.use('/end', ERoutes);
 app.use('/users', User);
-
-
+app.use('/module1', module1);
+app.use('/module2', module2);
+app.use('/module3', module3);
+app.use('/module4', module4);
+app.use('/module5', module5);
+app.use('/module6', module6);
+app.use('/hwModule4', hwModule4);
 
 
 app.use(bodyParser.json({limit:"20mb", extended:"true"}));

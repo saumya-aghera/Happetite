@@ -188,7 +188,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
                     </Modal.Header>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            OK
           </Button>
          
         </Modal.Footer>
@@ -201,7 +201,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'5px'}}>
                             
-                            {image.open ? (<a href={image.pageUrl} target="_blank">
+                            {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}
@@ -286,7 +286,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
 {images6.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            {image.open ? (<a href={image.pageUrl} target="_blank">
+                            {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}
@@ -371,7 +371,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
 {images3.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            {image.open ? (<a href={image.pageUrl} target="_blank">
+                            {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}
@@ -462,7 +462,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
                     {images2.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            {image.open ? (<a href={image.pageUrl} target="_blank">
+                            {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}
@@ -545,7 +545,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
                          {images5.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                            {image.open ? (<a href={image.pageUrl} target="_blank">
+                            {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}
@@ -628,7 +628,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
                     {images4.map((image) => (
                         
                         <div className='item' style={{ padding: '10px', display: 'inline', bottom:'20px'}}>
-                           {image.open ? (<a href={image.pageUrl} target="_blank">
+                           {image.open ? (<a href={image.pageUrl} >
                 <ButtonBase
                     focusRipple
                     key={image.title}

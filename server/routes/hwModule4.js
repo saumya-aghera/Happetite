@@ -1,7 +1,7 @@
 import express from 'express'
 
 const router = express.Router();
-import User from '../models/User.js';
+import User from '../models/hwModule4.js';
 
 //For checking whether user is new or old
 router.route('/newold').get((req, res) => {
@@ -52,10 +52,10 @@ router.route('/updatedInfo').get((req, res) => {
    console.log('inside update info')
     User.findOne({userId: req.query.userId }, function (err,data) {
      if (err) {
-            return res.status(500).send(error)
+            res.status(500).send(error)
      } else {
          console.log(data)
-            return res.json(data)
+            res.json(data)
         }
 });
 

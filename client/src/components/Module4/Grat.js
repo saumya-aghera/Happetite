@@ -24,7 +24,7 @@ const handleShow = () => setShow(true);
     }, [updatedModuleStatus.thankful4])
     
 
-    function addNewUser( newEmail,newUserStatus ){
+  const addNewUser=( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
      axios.post('http://localhost:5000/users/add', newUserStatus);
       changeUpdatedModuleStatus(prevState => ({
@@ -43,8 +43,17 @@ const handleShow = () => setShow(true);
         userId: newEmail
       }
     });
-    changeUpdatedModuleStatus(response.data)
-    console.log('finalcheck',updatedModuleStatus)
+    changeUpdatedModuleStatus((prevState => ({
+        ...prevState,
+      userId: newEmail,
+      module1_completed: response.data.module1_completed,
+      module2_completed: response.data.module2_completed,
+      module3_completed: response.data.module3_completed,
+      module4_completed: response.data.module4_completed,
+      module5_completed: response.data.module5_completed,
+      module6_completed: response.data.module6_completed,
+      })))
+    
   }catch (err) {
         // Handle Error Here
         console.error(err);
@@ -53,7 +62,7 @@ const handleShow = () => setShow(true);
   }
 
   const checkForNewUser = async (newEmail,newUserStatus) => {
-    console.log('function called')
+    console.log('function called',newEmail)
     try {
         const resp = await axios.get('http://localhost:5000/users/newold', {
       params: {
@@ -101,41 +110,21 @@ const handleShow = () => setShow(true);
       module4_completed: false,
       module5_completed: false,
       module6_completed: false,
-      worksheet1: false,
-        hopeBox1: false,
-        homeAssignment1:false,
-  
-      mindfulness2: false,
-      
-      try3: false,
-      homeAssignment3: false,
-      
-      thankful4: false,
-      letter4: false,
-      homeAssignment4:false,
-      hw4_day1: false,
-      hw4_day2: false,
-      hw4_day3: false,
-      hw4_day4: false,
-      hw4_day5: false,
-      hw4_day6: false,
-      hw4_day7: false,
-      
-      survey5: false,
-      strength5: false,
-      homeAssignment5: false,
-      
-      activity6: false,
-      feedback6:false
-
     }
 
     
     //for checking if user is new to website
     checkForNewUser(res.profileObj.email,newUserStatus)
     
-      refreshTokenSetup(res);
-      handleClose();
+    refreshTokenSetup(res);
+    handleClose();
+  };
+
+  
+
+  const onFailure = (res) => {
+    handleClose();
+    alert('Google Sign In was unsuccessful. Try again later');
   };
 
 
@@ -189,49 +178,23 @@ const handleShow = () => setShow(true);
 
       
       const updatedStatus={ userId,
-        module1_completed,
-        module2_completed,
-        module3_completed,
-        module4_completed,
-        module5_completed,
-        module6_completed,
-       worksheet1,    
-        hopeBox1,
-          homeAssignment1,
-        
-      mindfulness2,
-      
-      try3,
-      homeAssignment3,
       homeAssignment4,
       thankful4,
       letter4,
-      hw4_day1,
+       hw4_day1,
       hw4_day2,
       hw4_day3,
       hw4_day4,
       hw4_day5,
       hw4_day6,
       hw4_day7,
-      
-      survey5,
-      strength5,
-      homeAssignment5,
-      
-      activity6,
-      feedback6
       }
       
-      axios.post('http://localhost:5000/users/update', updatedStatus);
+      axios.post('http://localhost:5000/module4/update', updatedStatus);
       console.log('what updated in back',updatedStatus)
     
   }
 
-
-const onFailure = (res) => {
-  handleClose();
-  alert('Google Sign In was unsuccessful. Try again later');
-};
 
 
 const [thankful, setthankful] = useState({
@@ -244,8 +207,15 @@ const [thankful, setthankful] = useState({
 const createthankful = () => {
     
   if (loggedIn) {
-   
-    axios.post('http://localhost:5000/thankful', thankful);
+   const userName = user.name
+      const userId= user.email
+      const post = {
+        ...thankful,
+        userId,
+        userName
+        
+      };
+    axios.post('http://localhost:5000/thankful',post );
     console.log(`submitted: `,thankful,user.name,user.email);
     setthankful({
       n1: '',

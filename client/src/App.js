@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import { BrowserRouter as Router, Route ,Switch,Link} from 'react-router-dom';
-import UnderCons from './components/UnderCons/UnderCons';
+import React, {useState,useEffect} from 'react';
+import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import Home from './components/HomePage/Home';
 import Header from './components/Header';
 import Intro from './components/Intro/Intro';
@@ -26,7 +25,7 @@ import Helplines from './components/Helplines/Helplines';
 
 
 
-function App() {
+const App=()=> {
 
   const [loggedIn, setLogin] = useState(false);
   const [user, setUser] = useState({
@@ -79,7 +78,9 @@ function App() {
     }
   );
 
-
+  useEffect(() => {
+    window.scroll(0,0)
+  }, [])
   
 
   return (
@@ -133,6 +134,8 @@ function App() {
             changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />  
         </Route>
+
+
         <Route path='/Module3'>
           <Module3
             loggedIn={loggedIn}
@@ -142,10 +145,10 @@ function App() {
             updatedModuleStatus={updatedModuleStatus}
             changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />
-          
-          
         </Route>
-        <Route path='/Module4'>
+
+        
+      <Route path='/Module4'>
           <Module4
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -155,7 +158,6 @@ function App() {
             changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           /></Route>
           
-          <Route path='/underconstruction'><UnderCons /></Route>
           
           <Route path='/HW4/Day1'><HW_Day1 loggedIn={loggedIn}
             onLogin={setLogin}
@@ -198,10 +200,10 @@ function App() {
             user={user}
           setUser={setUser}
         updatedModuleStatus={updatedModuleStatus}
-            changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
+  changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
         
 
-        <Route path='/Module5'>
+       <Route path='/Module5'>
           
           <Module5
             loggedIn={loggedIn}
@@ -222,7 +224,7 @@ function App() {
             changeUpdatedModuleStatus={changeUpdatedModuleStatus}
           />
           
-        </Route>
+  </Route>
 
       
         

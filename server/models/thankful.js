@@ -6,6 +6,8 @@ const thankfulSchema = new mongoose.Schema({
     n3: String,
     n4: String,
     n5: String,
+    userId: String,
+    userName: String
 
 });
 
