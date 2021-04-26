@@ -141,7 +141,7 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
                 <Modal.Header closeButton>
          
         
-                    <Modal.Body>Please complete previous day Home Assignment to unlock this Assignment.</Modal.Body>
+                    <Modal.Body>Please complete previous day's Home Assignment to unlock this Assignment.</Modal.Body>
                 </Modal.Header>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
@@ -351,5 +351,3 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 }
 
 export default HWModule4;
-
-
