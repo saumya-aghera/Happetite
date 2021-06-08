@@ -3,7 +3,7 @@ import Video from './Video';
 import HopeBox from './HopeBox';
 import Quiz from './Quiz';
 import HomeAssign from './HomeAssign';
-
+import Form1 from './Form1'
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import SideMenu from '../Menu/SideMenu';
 import HopePPT from './HopePPT'
@@ -225,6 +225,7 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}
                 
             />
+            <Form1/>
         </div>
     );
 }
