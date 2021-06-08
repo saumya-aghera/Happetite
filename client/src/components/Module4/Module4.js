@@ -7,7 +7,7 @@ import Homework4 from './Homework4';
 import Quiz4 from './Quiz4';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import axios from 'axios'
-
+import Form4 from './Form4'
 
 
 
@@ -238,6 +238,7 @@ const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
             updatedModuleStatus={updatedModuleStatus}
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
                         <Quiz4 />
+                        <Form4/>
         </div>
     );
 }
