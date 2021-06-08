@@ -5,6 +5,7 @@ import Try from './Try';
 import Reading from './Reading';
 import Homework3 from './Homework3';
 import ModuleHeader from '../ModuleHeader/ModuleHeader'
+import Form3 from './Form3'
 
 import axios from 'axios'
 
@@ -207,6 +208,7 @@ const Module3 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpda
                 
                 updatedModuleStatus={updatedModuleStatus}
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
+                <Form3/>
         </div>
     );
 }
