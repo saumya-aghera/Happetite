@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import Home from './components/HomePage/Home';
 import Header from './components/Header';
 import Intro from './components/Intro/Intro';
+import Template from './components/Template/Template';
+
 import FAQ from './components/FAQ/FAQ';
 
 
@@ -102,6 +104,7 @@ const App=()=> {
         </Route>
 
         <Route path='/about'><Intro /></Route>
+        <Route path='/temp'><Template /></Route>
         <Route path='/FAQ'><FAQ
         loggedIn={loggedIn}
             onLogin={setLogin}
