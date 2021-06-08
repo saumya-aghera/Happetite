@@ -3,6 +3,7 @@ import Introtomod2 from './Introtomod2';
 import Mindfullness from './Mindfullness';
 import Affirmations from './Affirmations';
 import Game from './Game';
+import Form2 from './Form2'
 import Homework from './Homework';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import axios from 'axios';
@@ -192,6 +193,7 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
             <Affirmations />
             <Game/>
             <Homework />
+            <Form2 />
         </div>
     );
 }
