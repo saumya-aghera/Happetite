@@ -5,7 +5,8 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 const clientId =
@@ -136,6 +137,9 @@ function Homework3({ loggedIn,onLogin,user,setUser,
     console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.try3 && updatedModuleStatus.homeAssignment3) {
+      <Popup trigger={<button> Trigger</button>} position="right center">
+      <div>Popup content here !!</div>
+    </Popup>
      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module3_completed:true

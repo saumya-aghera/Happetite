@@ -1,4 +1,4 @@
-import React, { useEffect}from 'react'
+import React, { useEffect, useState}from 'react'
 import Introtomod3 from './Introtomod3';
 import Optimism from './Optimism';
 import Try from './Try';
@@ -8,10 +8,14 @@ import ModuleHeader from '../ModuleHeader/ModuleHeader'
 import Form3 from './Form3'
 
 import axios from 'axios'
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 
 const Module3 = ({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdatedModuleStatus  }) => {
+  const [show, setShow] = useState(false);
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
   const menu = [
     {
       title: "Welcome",

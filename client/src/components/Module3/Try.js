@@ -6,6 +6,8 @@ import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import {useLocation } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 
@@ -134,6 +136,9 @@ function Try({ loggedIn,onLogin,user,setUser,
     console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.try3 && updatedModuleStatus.homeAssignment3) {
+      <Popup trigger={<button> Trigger</button>} position="right center">
+      <div>Popup content here !!</div>
+    </Popup>
      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module3_completed:true
