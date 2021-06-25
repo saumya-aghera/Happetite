@@ -8,11 +8,7 @@ function Video(){
             <div className='outer-box1'>
                 <h2>Hope Theory</h2>
                 <div className="video">
-                    <ReactPlayer
-                        className="vid-container"
-                        url="https://www.youtube.com/watch?v=ZuHZhi1B4T4"
-                    
-                    />
+                <iframe src="https://drive.google.com/file/d/1_qMWunKLKrDVEcRWqakDqWmbmPWauazu/preview" width="640" height="480" allow="autoplay"></iframe>
                 </div>
             </div>
         </div>
