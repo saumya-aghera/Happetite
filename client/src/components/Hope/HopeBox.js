@@ -141,10 +141,23 @@ function HopeBox({ loggedIn,onLogin,user,setUser,
     //console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
+      // console.log("Yayy")
+      <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Congratulations!</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>You have completed module 1!</Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+      </Modal.Footer>
+    </Modal>
       changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module1_completed:true
     }));
+    
     }
     
     const { userId,

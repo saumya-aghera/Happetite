@@ -8,6 +8,8 @@ import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 import {useLocation } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -147,10 +149,26 @@ function HomeAssign({ loggedIn, onLogin, user, setUser,
     //console.log('change hua ki nahi', updatedModuleStatus)
     
     if (updatedModuleStatus.worksheet1 && updatedModuleStatus.hopeBox1 && updatedModuleStatus.homeAssignment1) {
+      // console.log("Yayy")
+  //     <Popup trigger={<button> Trigger</button>} position="right center">
+  //   <div>Popup content here !!</div>
+  // </Popup>
+  <Modal show={show} onHide={handleClose}>
+  <Modal.Header closeButton>
+    <Modal.Title>Congratulations!</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>You have completed module 1!</Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick={handleClose}>
+      Close
+    </Button>
+  </Modal.Footer>
+</Modal>
       changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module1_completed:true
     }));
+   
     }
     
     const { userId,
