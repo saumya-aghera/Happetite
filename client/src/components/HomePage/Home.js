@@ -2,10 +2,11 @@ import React, { useEffect} from 'react'
 import './Home.css'
 import Intro from '../Intro/Intro'
 import Module from '../Modules/Module'
-import vid from '../../images/vid.mp4'
+
 import sunset from '../../images/sunset.mp4'
 import FAQ from '../FAQ/FAQ';
 import Helplines from '../Helplines/Helplines';
+import Template from '../Template/Template'
 
 
 const Home = ({ updatedModuleStatus, changeUpdatedModuleStatus }) => {
@@ -30,6 +31,7 @@ const Home = ({ updatedModuleStatus, changeUpdatedModuleStatus }) => {
                 
             {/* </div> */}
             <Intro />
+            <Template />
             <Module updatedModuleStatus={updatedModuleStatus}
             changeUpdatedModuleStatus={changeUpdatedModuleStatus}/>
            

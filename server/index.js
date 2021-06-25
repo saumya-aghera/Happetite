@@ -75,7 +75,7 @@ app.get('/', (req, res) => res.status(200).send("Hello World"));
 
 
 
-const CONNECT_URL = 'mongodb+srv://trial:trial@cluster0.2jmqe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECT_URL = 'mongodb+srv://pragya:pb78fFEj4s5QKddN@cluster0.pbcpg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECT_URL,{

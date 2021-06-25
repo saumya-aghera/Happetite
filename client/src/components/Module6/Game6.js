@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import './Game6.css'
-import ReactDOM from 'react-dom';
-import GifList from '../GifList';
-import SearchBar from '../SearchBar';
-import request from 'superagent';
+//import ReactDOM from 'react-dom';
+
+//import SearchBar from '../SearchBar';
+//import request from 'superagent';
 import ReactGiphySearchbox from 'react-giphy-searchbox';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import axios from 'axios';
@@ -21,11 +21,7 @@ function Game6({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdate
     const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
- useEffect(() => {
-   
-    changeUpdate();
-    
- }, [updatedModuleStatus.game6])
+
     
 const addNewUser=( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
@@ -199,7 +195,14 @@ const addNewUser=( newEmail,newUserStatus )=>{
 const [gif, setgif] = useState({
   gif_file: '',
 });
-    const creategif = () => {
+  
+  useEffect(() => {
+   console.log("useEffect for gif",gif)
+  }, [gif])
+
+
+  const creategif = () => {
+    
         if (loggedIn) {
             const userName = user.name
       const userId= user.email
@@ -231,21 +234,11 @@ const [gif, setgif] = useState({
         }
         
       }
-    // constructor() {
-    //     super();
-
-    //     this.state = {
-    //         gifs: []
-    //     }
-    //     this.handleTermChange = this.handleTermChange.bind(this);
-    // }
-    // handleTermChange(term){
-    //     const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
-
-    //     request.get(url, (err, res) => {
-    //         this.setState({ gifs: res.body.data })
-    //     });
-    //   }
+    
+  const selectGif = (gif) => {
+    console.log(gif)
+    setgif(gif.url)
+}
       
     return (
         <>
@@ -267,10 +260,7 @@ const [gif, setgif] = useState({
                  <ReactGiphySearchbox
         apiKey="9Ixlv3DWC1biJRI57RanyL7RTbfzz0o7"
         // onSelect={(item) => console.log(item)}
-        onSelect={gif.gif_file}
-        onChange={(event) => {
-          setgif({ ...gif, gif_file: event.target.value })
-            }}
+        onSelect={(item) => selectGif(item)}
         masonryConfig={[
           { columns: 4, imageWidth: 200, imageHeight: 250, gutter: 7 },
           { mq: "700px", columns: 4, imageWidth: 200, imageHeight: 250, gutter: 7 }
