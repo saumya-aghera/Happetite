@@ -1,4 +1,4 @@
-import React, { useEffect}from 'react'
+import React, { useEffect, useState}from 'react'
 import Introtomod4 from './Introtomod4';
 import GratIntro from './GratIntro';
 import Grat from './Grat';
@@ -8,13 +8,16 @@ import Quiz4 from './Quiz4';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import axios from 'axios'
 import Form4 from './Form4'
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 
 
 const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
   changeUpdatedModuleStatus }) => {
-    
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true); 
   const menu = [
     {
       title: "Welcome",

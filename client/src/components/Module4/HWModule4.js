@@ -352,5 +352,3 @@ const HWModule4 = ({loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpd
 }
 
 export default HWModule4;
-
-
