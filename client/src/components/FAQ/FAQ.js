@@ -46,7 +46,7 @@ const FAQ = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdate
                             <div id="collapse-2" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="mb-0">
-                                        For what reason would it be advisable for me to think about business content? That might be little bit risky to have crew member like them.
+                                        
                                             </div>
                                 </div>
                             </div>

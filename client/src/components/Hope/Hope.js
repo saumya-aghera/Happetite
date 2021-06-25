@@ -9,12 +9,14 @@ import SideMenu from '../Menu/SideMenu';
 import HopePPT from './HopePPT'
 import Worksheet from './Worksheet';
 import axios from 'axios';
-
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 const Hope = ({ loggedIn, onLogin, user, setUser,
     updatedModuleStatus, changeUpdatedModuleStatus }) => {
-    
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const menu = [
     {
         title: "What is Hope?",
@@ -66,7 +68,8 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
 
     useEffect(() => {
         updateModule1Completion();
-        
+      console.log("module 1completee")
+      handleShow()
     }, [updatedModuleStatus.module1_completed])
     
 
@@ -185,7 +188,14 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
 
     return (
         <div>
-            
+             <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
+        <Modal.Header closeButton>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+          </Modal.Header>
+       
+        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
+        
+            </Modal>
             <ModuleHeader
                 loggedIn={loggedIn}
                 onLogin={onLogin}

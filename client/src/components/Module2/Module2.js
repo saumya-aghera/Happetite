@@ -171,7 +171,15 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
 };
 
     return (
-        <div>
+      <div>
+        <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
+        <Modal.Header closeButton>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+          </Modal.Header>
+       
+        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
+        
+            </Modal>
             <ModuleHeader
             loggedIn={loggedIn}
                 onLogin={onLogin}
