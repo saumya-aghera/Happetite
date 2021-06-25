@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import Introtomod5 from './Introtomod5';
 import Survey from './Survey';
 import CharStrength from './CharStrength';
@@ -6,12 +6,15 @@ import MyStrength from './MyStrength';
 import Homework5 from './Homework5';
 import ModuleHeader from '../ModuleHeader/ModuleHeader'
 import axios from 'axios'
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 
 const Module5 = ({ loggedIn, onLogin, user, setUser,
     updatedModuleStatus, changeUpdatedModuleStatus }) => {
-     
+      const [show, setShow] = useState(false);
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
     const menu = [
     {
         title: "Welcome",

@@ -1,7 +1,8 @@
 import React,{useEffect} from 'react'
 import './Survey.css'
 import axios from 'axios'
-
+import { Modal, Button } from 'react-bootstrap';
+import { GoogleLogin } from 'react-google-login';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 
 import { AwesomeButton } from "react-awesome-button";
@@ -92,6 +93,8 @@ function Survey({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdat
     
     return (
         <>
+        
+        
             <div className="surv-main" id='survey'>
               <div className="surv-cont" >
                 <h2>VIA Survey</h2>
@@ -104,7 +107,7 @@ function Survey({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdat
               </div>
               </div>
 
-              
+
                     </div>  
         </div>
         
