@@ -1,9 +1,7 @@
-/** @format */
-
 .mod2-main {
 	padding: 200px;
 	background-color: #f5fcff;
-	background: url(../../images/frame.jpg) no-repeat center center fixed;
+	background: url(../../images/frame.jpeg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

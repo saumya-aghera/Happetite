@@ -6,7 +6,8 @@ import axios from 'axios';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
@@ -133,7 +134,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
      
 
     console.log('change hua ki nahi', updatedModuleStatus)
-    
+   
      changeUpdatedModuleStatus(prevState => ({
       ...prevState,
       module2_completed:true

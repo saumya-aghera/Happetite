@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import Introtomod2 from './Introtomod2';
 import Mindfullness from './Mindfullness';
 import Affirmations from './Affirmations';
@@ -8,11 +8,14 @@ import Homework from './Homework';
 import ModuleHeader from '../ModuleHeader/ModuleHeader';
 import axios from 'axios';
 
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 const Module2 = ({ loggedIn, onLogin, user, setUser,
 updatedModuleStatus, changeUpdatedModuleStatus}) => {
-    
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     const menu = [
     {
         title: "Welcome",
