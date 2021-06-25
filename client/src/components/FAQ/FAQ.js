@@ -46,7 +46,8 @@ const FAQ = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdate
                             <div id="collapse-2" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="mb-0">
-                                        
+                                    It is important for you to view all the activities. A mark in front of the activity will automatically reflect to show whether activity is completed or not. 
+
                                             </div>
                                 </div>
                             </div>
@@ -61,7 +62,7 @@ const FAQ = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdate
                             <div id="collapse-3" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="mb-0">
-                                        The quiz is not given here to grade your knowledge about the contents but it is to give an opportunity to check your present knowledge and to keep a check on the progress in your knowledge and application due to the program
+                                    The quiz is not given here to grade your knowledge about the contents but it is to give an opportunity to check your present knowledge and to keep a check on the progress in your knowledge and application due to the program
                                          </div>
                                 </div>
                             </div>
