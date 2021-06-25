@@ -1,14 +1,12 @@
 import React, {useState,useEffect} from 'react'
 import './Game6.css'
-//import ReactDOM from 'react-dom';
-
-//import SearchBar from '../SearchBar';
-//import request from 'superagent';
+import ReactDOM from 'react-dom';
+import GifList from '../GifList';
+import SearchBar from '../SearchBar';
+import request from 'superagent';
 import ReactGiphySearchbox from 'react-giphy-searchbox';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
-import { GoogleLogin } from 'react-google-login';
 
 
 
@@ -21,7 +19,11 @@ function Game6({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdate
     const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   
-
+ useEffect(() => {
+   
+    changeUpdate();
+    
+ }, [updatedModuleStatus.game6])
     
 const addNewUser=( newEmail,newUserStatus )=>{
     console.log('Not registered before',newUserStatus)
@@ -195,38 +197,30 @@ const addNewUser=( newEmail,newUserStatus )=>{
 const [gif, setgif] = useState({
   gif_file: '',
 });
-  
-  useEffect(() => {
-   console.log("useEffect for gif",gif)
-  }, [gif])
-
-
-  const creategif = () => {
-    
+    const creategif = () => {
         if (loggedIn) {
             const userName = user.name
       const userId= user.email
       const post = {
-        ...gif,
+        ...gif.url,
         userId,
         userName
         
       };
               
             axios.post('http://localhost:5000/gif', post);
-            console.log(`Box submitted:`,gif,user.name,user.email);
+            console.log(`Box submitted:`,gif.url,user.name,user.email);
             setgif({
                 gif_file: '',
                 
             });
 
-          if (!updatedModuleStatus.gif) {
             changeUpdatedModuleStatus(prevState => ({
-      ...prevState, 
-      gif: true,
-     
-    }));
-          }
+              ...prevState, 
+            game6: true,
+             
+            }));
+          
             
 
         } else {
@@ -234,11 +228,21 @@ const [gif, setgif] = useState({
         }
         
       }
-    
-  const selectGif = (gif) => {
-    console.log(gif)
-    setgif(gif.url)
-}
+    // constructor() {
+    //     super();
+
+    //     this.state = {
+    //         gifs: []
+    //     }
+    //     this.handleTermChange = this.handleTermChange.bind(this);
+    // }
+    // handleTermChange(term){
+    //     const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
+
+    //     request.get(url, (err, res) => {
+    //         this.setState({ gifs: res.body.data })
+    //     });
+    //   }
       
     return (
         <>
@@ -259,8 +263,13 @@ const [gif, setgif] = useState({
                 <GifList gifs={this.state.gifs}/> */}
                  <ReactGiphySearchbox
         apiKey="9Ixlv3DWC1biJRI57RanyL7RTbfzz0o7"
-        // onSelect={(item) => console.log(item)}
-        onSelect={(item) => selectGif(item)}
+        onSelect={ (gif) => console.log(gif.url)}
+        // onSelect={(item) =>gif.gif_file=item}
+        // value={gif.gif_file}
+        // value={}
+        // onChange={(event) => {
+        //   setgif({ ...gif, gif_file: event.target.url })
+        //     }}
         masonryConfig={[
           { columns: 4, imageWidth: 200, imageHeight: 250, gutter: 7 },
           { mq: "700px", columns: 4, imageWidth: 200, imageHeight: 250, gutter: 7 }

@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import Introtomod6 from './Introtomod6';
 import Activity6 from './Activity6';
 import Game6 from './Game6';
@@ -7,11 +7,14 @@ import End from './End';
 import Ques from './Ques';
 import ModuleHeader from '../ModuleHeader/ModuleHeader'
 import axios from 'axios'
-
+import { MDBIcon} from 'mdbreact';
+import { Modal, Button } from 'react-bootstrap';
 
 
 const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeUpdatedModuleStatus  }) => {
-    
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     const menu = [
     {
         title: "Welcome",
@@ -24,14 +27,15 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
         sectionComplete:false
     },
     {
+      title: "What is well being?",
+      id:"activity",
+      sectionComplete:updatedModuleStatus.activity6
+    },
+    {
+        
         title: "What is Safety Planning?",
         id:"safety",
         sectionComplete:false
-    },
-    {
-        title: "What is well being?",
-        id:"activity",
-        sectionComplete:updatedModuleStatus.activity6
       },
     {
         title: "Post Intervention Questionare",
@@ -203,7 +207,7 @@ const addNewUser=( newEmail,newUserStatus )=>{
             />
             <Introtomod6/>
         {/*<Game6/>*/}
-            <Vid6/>
+           
             <Activity6
             loggedIn={loggedIn}
                 onLogin={onLogin}
@@ -212,6 +216,7 @@ const addNewUser=( newEmail,newUserStatus )=>{
                 updatedModuleStatus={updatedModuleStatus}
                 changeUpdatedModuleStatus={changeUpdatedModuleStatus}
             />
+             <Vid6/>
             <Ques/>
             <End
                 loggedIn={loggedIn}

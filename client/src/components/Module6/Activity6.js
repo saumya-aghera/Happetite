@@ -8,6 +8,8 @@ import { Modal, Button } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
 
 
+
+
 const clientId =
   '23157659159-k7of2mgt1a7ipa1hbpjqt7nnajf44d72.apps.googleusercontent.com';
 function Activity6({ loggedIn,onLogin,user,setUser,updatedModuleStatus, changeUpdatedModuleStatus }) {
@@ -215,6 +217,7 @@ const addNewUser=( newEmail,newUserStatus )=>{
       handleShow();
     }
 }
+
     
     return (
       <>
