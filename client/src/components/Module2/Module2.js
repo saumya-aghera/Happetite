@@ -41,6 +41,10 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
         title: "Home Assignment",
         id:"homeassignmet2",
             sectionComplete:false
+    },{
+        title:"It's Review Time",
+        id: "r2",
+        sectionComplete:false
     }
   ]
   
@@ -59,8 +63,12 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
   }, [updatedModuleStatus.userId])
     
     useEffect(() => {
-        updateModule2Completion();
-        
+      updateModule2Completion();
+      console.log('poppre',updatedModuleStatus.module2_completed)
+      if (updatedModuleStatus.module2_completed) {
+          console.log('pop',updatedModuleStatus.module2_completed)
+        handleShow()
+      }
     }, [updatedModuleStatus.module2_completed])
 
   const updateModule2Completion = () => {
@@ -177,10 +185,10 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
       <div>
         <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
         <Modal.Header closeButton>
-        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fas fa-award" size="5x" style={{color:'#228B22'}}/></Modal.Title>
           </Modal.Header>
        
-        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
+        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'22%'}}>You are doing good! Keep it up.</Modal.Body>
         
             </Modal>
             <ModuleHeader

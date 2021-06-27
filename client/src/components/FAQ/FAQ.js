@@ -79,10 +79,10 @@ const FAQ = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus,changeUpdate
                                         If you have any queries related to the program material, activity or any other point related to the present program it can be put ahead in following ways
                                         <ol>
                                             <li>
-There is a tab on queries and concern. You can directly post your queries over there. 
+There is a tab called 'Contact Us' on home page. You can directly email your queries over there. 
                                             </li>
                                             <li>
-Any Suggestions related to present program can be directly sent to program moderator
+Any Suggestions related to present program can be directly sent to program moderator via email using 'Contact Us' tab.
                                             </li>
 
                                         </ol>

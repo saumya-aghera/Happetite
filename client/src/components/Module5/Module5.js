@@ -40,7 +40,7 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
         title: "Home Assignment",
         id:"hw5",
         sectionComplete:updatedModuleStatus.homeAssignment5
-    },
+    }
     ]
     
     useEffect(() => {
@@ -63,7 +63,9 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
     
   useEffect(() => {
     updateModule5Completion();
-        
+    if (updatedModuleStatus.module5_completed) {
+        handleShow()
+      }
   }, [updatedModuleStatus.module5_completed]);
     
     const updateModule5Completion = () => {
@@ -181,12 +183,12 @@ const Module5 = ({ loggedIn, onLogin, user, setUser,
 
     return (
       <div>
-        <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
+        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fas fa-award" size="5x" style={{color:' #59bdff'}}/></Modal.Title>
           </Modal.Header>
        
-        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
+        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'20%'}}>Keep going, you are almost there.</Modal.Body>
         
             </Modal>
             <ModuleHeader

@@ -17,6 +17,7 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+  
     const menu = [
     {
         title: "What is Hope?",
@@ -47,6 +48,11 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
         title:'Home Assignment',
         id: "homeAssignment",
         sectionComplete:updatedModuleStatus.homeAssignment1
+    },
+    {
+        title:"It's Review Time",
+        id: "r1",
+        sectionComplete:false
     }
 ]
 
@@ -69,7 +75,10 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
     useEffect(() => {
         updateModule1Completion();
       console.log("module 1completee")
-      handleShow()
+      if (updatedModuleStatus.module1_completed) {
+        handleShow()
+      }
+      
     }, [updatedModuleStatus.module1_completed])
     
 
@@ -190,7 +199,7 @@ const Hope = ({ loggedIn, onLogin, user, setUser,
         <div>
              <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
         <Modal.Header closeButton>
-        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fas fa-award" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
           </Modal.Header>
        
         <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
