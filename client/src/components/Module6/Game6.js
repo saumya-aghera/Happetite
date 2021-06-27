@@ -1,9 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import './Game6.css'
-import ReactDOM from 'react-dom';
-import GifList from '../GifList';
-import SearchBar from '../SearchBar';
-import request from 'superagent';
+
 import ReactGiphySearchbox from 'react-giphy-searchbox';
 import { refreshTokenSetup } from '../../utils/refreshToken';
 import axios from 'axios';

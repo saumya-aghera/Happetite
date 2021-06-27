@@ -69,7 +69,7 @@ const Module6 = ({ loggedIn, onLogin, user, setUser,updatedModuleStatus, changeU
        
        
         updateModule6Completion();
-        
+      
   
     },[updatedModuleStatus.module6_completed])
     

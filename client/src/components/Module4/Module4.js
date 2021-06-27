@@ -49,6 +49,10 @@ const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
       id: "quiz4",
       sectionComplete: false
 
+    },{
+        title:"It's Review Time",
+        id: "r4",
+        sectionComplete:false
     }
     
 
@@ -84,6 +88,9 @@ const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
   useEffect(() => {
         
     updateModule4Completion();
+    if (updatedModuleStatus.module4_completed) {
+        handleShow()
+      }
   }, [updatedModuleStatus.module4_completed]);
     
   const updateModule4Completion = () => {
@@ -209,10 +216,10 @@ const Module4 = ({ loggedIn, onLogin, user, setUser, updatedModuleStatus,
       <div>
         <Modal show={show} onHide={handleClose} style={{backgroungColor:'yellow'}}>
         <Modal.Header closeButton>
-        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fa-solid fa-sun" size="5x" style={{color:'#FFEA00'}}/></Modal.Title>
+        <Modal.Title style={{paddingLeft:'40%'}}><MDBIcon icon="fas fa-award" size="5x" style={{color:'#ff0d0d'}}/></Modal.Title>
           </Modal.Header>
        
-        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Well Done!</Modal.Body>
+        <Modal.Body style={{fontFamily:'cursive', fontSize:'20px' , paddingLeft:'40%'}}>Good job!</Modal.Body>
         
             </Modal>
             <Introtomod4 />

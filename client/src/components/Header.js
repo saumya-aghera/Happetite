@@ -179,7 +179,7 @@ const Header = ({ loggedIn, onLogin, user, setUser,
           <Nav.Link href="/FAQ" style={{fontSize:'medium', fontWeight:'400'}}>
            FAQ</Nav.Link>
         
-        <Nav.Link onClick={()=>window.open('mailto:email@example.com?')} style={{fontSize:'medium', fontWeight:'400'}}>Contact Us</Nav.Link>
+        <Nav.Link onClick={()=>window.open('mailto:happetitedevelopers@gmail.com?')} style={{fontSize:'medium', fontWeight:'400'}}>Contact Us</Nav.Link>
           
         </Nav>
         
