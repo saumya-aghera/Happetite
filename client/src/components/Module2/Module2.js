@@ -64,9 +64,9 @@ updatedModuleStatus, changeUpdatedModuleStatus}) => {
     
     useEffect(() => {
       updateModule2Completion();
-      console.log('poppre',updatedModuleStatus.module2_completed)
-      if (updatedModuleStatus.module2_completed) {
-          console.log('pop',updatedModuleStatus.module2_completed)
+      console.log('poppre',updatedModuleStatus.mindfulness2)
+      if (updatedModuleStatus.mindfulness2) {
+        console.log('pop', updatedModuleStatus.mindfulness2)
         handleShow()
       }
     }, [updatedModuleStatus.module2_completed])
