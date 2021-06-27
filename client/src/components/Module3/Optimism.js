@@ -35,11 +35,7 @@ In the next video, we will learn about the ABCDE mode/technique related to learn
                     </div>
                     </div>
 <div className="video-opti">
-                    <ReactPlayer
-                        className="vid-container"
-                        url="https://www.youtube.com/watch?v=S-JOAM9G404"
-                    
-                    />
+<iframe src="https://drive.google.com/file/d/1BM58hwXJtG5qAxaovKqm_z0IcUvByNux/preview" width="700" height="480" allow="autoplay"></iframe>
                 </div>
             </div>
             
