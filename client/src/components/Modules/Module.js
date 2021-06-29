@@ -2,12 +2,12 @@ import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import i1 from "../../images/yellow.jpg";
-import i2 from "../../images/red.jpg";
-import i3 from "../../images/pink.jpg";
-import i4 from "../../images/orange.jpg";
-import i5 from "../../images/green.jpg";
-import i6 from "../../images/blue.jpg";
+import i1 from "../../images/yellow.jpeg";
+import i2 from "../../images/red.jpeg";
+import i3 from "../../images/pink.jpeg";
+import i4 from "../../images/orange.jpeg";
+import i5 from "../../images/green.jpeg";
+import i6 from "../../images/blue.jpeg";
 import './Module.css';
 import { MDBIcon } from 'mdbreact';
 import { Modal, Button } from 'react-bootstrap';
@@ -112,7 +112,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             width: '30%',
             moduleComplete: updatedModuleStatus.module1_completed,
             open: true,
-            pageUrl:"/Module1"
+            pageUrl:"/cbvyrt"
         }
     ];
     const images2 = [
@@ -123,7 +123,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
              moduleComplete: updatedModuleStatus.module4_completed,
             open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
                 && updatedModuleStatus.module3_completed,
-            pageUrl:"/Module4"
+            pageUrl:"/pyitje"
         }
     ];
     const images3 = [
@@ -133,7 +133,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             width: '30%',
             moduleComplete: updatedModuleStatus.module3_completed,
             open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed,
-            pageUrl:"/Module3"
+            pageUrl:"/hjgjte"
         },
   
     ];
@@ -147,7 +147,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
                 && updatedModuleStatus.module3_completed && updatedModuleStatus.module4_completed
                 && updatedModuleStatus.module5_completed,
-            pageUrl:"/Module6"
+            pageUrl:"/zagfde"
            
         }
     ];
@@ -159,7 +159,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             moduleComplete: updatedModuleStatus.module5_completed,
             open: updatedModuleStatus.module1_completed && updatedModuleStatus.module2_completed
                 && updatedModuleStatus.module3_completed && updatedModuleStatus.module4_completed,
-            pageUrl:"/Module5"
+            pageUrl:"/lhkjit"
         }
     ];
     const images6 = [
@@ -169,7 +169,7 @@ function Module({updatedModuleStatus,changeUpdatedModuleStatus}) {
             width: '30%',
             moduleComplete: updatedModuleStatus.module2_completed,
             open: updatedModuleStatus.module1_completed,
-            pageUrl:"/Module2"
+            pageUrl:"/dgfrye"
             
         }
     ];
