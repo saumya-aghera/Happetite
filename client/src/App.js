@@ -117,7 +117,7 @@ const App=()=> {
             user={user}
             setUser={setUser}/></Route>
         
-        <Route path='/Module1'>
+        <Route path='/cbvyrt'>
           <Hope
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -127,7 +127,7 @@ const App=()=> {
             changeUpdatedModuleStatus={changeUpdatedModuleStatus} 
           />
         </Route>
-        <Route path='/Module2'>
+        <Route path='/dgfrye'>
           <Module2
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -139,7 +139,7 @@ const App=()=> {
         </Route>
 
 
-        <Route path='/Module3'>
+        <Route path='/hjgjte'>
           <Module3
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -151,7 +151,7 @@ const App=()=> {
         </Route>
 
         
-      <Route path='/Module4'>
+      <Route path='/pyitje'>
           <Module4
             loggedIn={loggedIn}
             onLogin={setLogin}
@@ -206,7 +206,7 @@ const App=()=> {
   changeUpdatedModuleStatus={changeUpdatedModuleStatus} /></Route>
         
 
-       <Route path='/Module5'>
+       <Route path='/lhkjit'>
           
           <Module5
             loggedIn={loggedIn}
@@ -217,7 +217,7 @@ const App=()=> {
             changeUpdatedModuleStatus={changeUpdatedModuleStatus}
           />
           </Route>
-          <Route path='/Module6'>
+          <Route path='/zagfde'>
           <Module6
             loggedIn={loggedIn}
             onLogin={setLogin}
