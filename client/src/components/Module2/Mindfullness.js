@@ -251,11 +251,7 @@ function Mindfullness({ loggedIn,onLogin,user,setUser,userHelp,setUserHelp,updat
         <h2>Mindfulness</h2>
         <h4 className="mind-h4">What is Mindfulness?</h4>
         <div className="video">
-          <ReactPlayer
-            className="vid-container"
-            url="https://www.youtube.com/watch?v=7-1Y6IbAxdM"
-                    
-            />
+        <iframe src="https://drive.google.com/file/d/1wv9b7YKwMJtVaTAVoYh02ayO26hRyHat/preview" width="700" height="480" allow="autoplay"></iframe>
           </div>
           </div>
           <div className="para1" style={{ fontSize: 'medium',padding:'50px', fontWeight:'500' }}>Now that we have a basic understanding of mindfulness, let’s try and use a method of it on ourselves
